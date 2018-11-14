@@ -1,6 +1,7 @@
 version: '3'
 # 定义服务mysql,redis,php,nginx
 services:
+    #数据库
     mysql57:
         image: mysql:5.7
         environment:
@@ -37,7 +38,7 @@ services:
         restart: always
         volumes:
             - ./php72/www.conf:/usr/local/etc/php-fpm.d/www.conf:ro
-            - ../www/:/www/:rw
+            - ../www/:/data/www/:rw
             #- ./logs/php72/fpm-php.www.log:/var/log/fpm-php.www.log:rw
         expose:
             - "9000"
@@ -50,7 +51,7 @@ services:
         restart: always
         volumes:
             - ./php71/www.conf:/usr/local/etc/php-fpm.d/www.conf:ro
-            - ../www/:/www/:rw
+            - ../www/:/data/www/:rw
             #- ./logs/php71/fpm-php.www.log:/var/log/fpm-php.www.log:rw
         expose:
             - "9000"
@@ -63,7 +64,7 @@ services:
         restart: always
         volumes:
             - ./php70/www.conf:/usr/local/etc/php-fpm.d/www.conf:ro
-            - ../www/:/www/:rw
+            - ../www/:/data/www/:rw
             #- ./logs/php70/fpm-php.www.log:/var/log/fpm-php.www.log:rw
         expose:
             - "9000"
@@ -76,7 +77,7 @@ services:
         restart: always
         volumes:
             - ./php56/www.conf:/usr/local/etc/php-fpm.d/www.conf:ro
-            - ../www/:/www/:rw
+            - ../www/:/data/www/:rw
             #- ./logs/php56/fpm-php.www.log:/var/log/fpm-php.www.log:rw
         expose:
             - "9000"
@@ -89,14 +90,14 @@ services:
         restart: always
         volumes:
             - ./php55/www.conf:/usr/local/etc/php-fpm.d/www.conf:ro
-            - ../www/:/www/:rw
+            - ../www/:/data/www/:rw
             #- ./logs/php55/fpm-php.www.log:/var/log/fpm-php.www.log:rw
         expose:
             - "9000"
         container_name: php55
     #服务器nginx
     web_server:
-        image: nginx:latest
+        image: nginx:1.15.6
         ports:
         - '80:80'
         - '443:443'
@@ -106,13 +107,14 @@ services:
         #虚拟主机配置
         - ./conf/nginx/conf.d/:/etc/nginx/conf.d/:rw
         #web目录
-        - ../www/:/www/:rw
+        - ../www/:/data/www/:rw
         #证书目录
         - ./certificates/:/etc/letsencrypt/:ro
         #日志目录
-        - ./logs/nginx/:/var/log/:rw
+        - ./logs/nginx/:/var/log/nginx/:rw
         restart: always
         container_name: nginx
+    #mysql管理
     phpmyadmin:
         depends_on:
             - mysql57
@@ -122,6 +124,7 @@ services:
         ports:
             - "9906:80"
         container_name: phpmyadmin
+    #redis管理
     phpredisadmin:
         build: ./phpRedisAdmin
         environment:
@@ -133,6 +136,8 @@ services:
             - redis
         ports:
             - "9379:80"
+        container_name: phpredisadmin
+    #文档系统
     showdoc:
         build: ./showdoc
         volumes:
@@ -141,3 +146,23 @@ services:
         ports:
             - "9015:80"
         container_name: showdoc
+    #部分项目需要该版本兼容
+    php559:
+        build: ./php559
+        volumes:
+        #项目目录
+        - ../www/:/data/www/:rw
+        #虚拟主机
+        - ./apache2/sites-enabled/:/etc/apache2/sites-enabled/:ro
+        #主配置文件
+        - ./apache2/apache2.conf:/etc/apache2/apache2.conf:ro
+        #日志目录
+        - ./logs/apache2/:/var/log/apache2/:rw
+        container_name: php559
+        #仅对容器内开放访问
+        expose:
+        - 80
+
+networks:
+  default:
+    driver: bridge

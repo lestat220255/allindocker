@@ -1,5 +1,0 @@
-172.22.0.1 - - [14/Nov/2018:02:01:15 +0000] "GET / HTTP/1.1" 502 552 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36" "125.70.79.63, 127.0.0.1"
-172.22.0.1 - - [14/Nov/2018:02:01:20 +0000] "GET / HTTP/1.1" 502 552 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36" "125.70.79.63, 127.0.0.1"
-172.22.0.1 - - [14/Nov/2018:02:01:20 +0000] "GET /favicon.ico HTTP/1.1" 502 552 "http://doc.nat.lestat.me/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36" "125.70.79.63, 127.0.0.1"
-172.22.0.1 - - [14/Nov/2018:02:02:18 +0000] "GET / HTTP/1.1" 502 552 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36" "125.70.79.63, 127.0.0.1"
-172.22.0.1 - - [14/Nov/2018:02:02:19 +0000] "GET /favicon.ico HTTP/1.1" 502 552 "http://doc.nat.lestat.me/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36" "125.70.79.63, 127.0.0.1"
