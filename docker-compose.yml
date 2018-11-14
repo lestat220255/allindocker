@@ -1,0 +1,143 @@
+version: '3'
+# 定义服务mysql,redis,php,nginx
+services:
+    mysql57:
+        image: mysql:5.7
+        environment:
+            - MYSQL_ROOT_PASSWORD=123123
+            #- MYSQL_USER=user
+            #- MYSQL_PASSWORD=password
+        volumes:
+            #配置文件
+            - ./conf/mysql/my.cnf:/etc/mysql/my.cnf:ro
+            #数据目录
+            - ./mysql/:/var/lib/mysql/:rw
+            #查询日志文件
+            #- ./logs/mysql/query_mysql.log:/var/logs/mysql/query.mysql.log:rw
+            #慢查询日志文件
+            #- ./logs/mysql/slow_mysql.log:/var/logs/mysql/slow.mysql.log:rw
+        ports:
+            - "9006:3306"
+        container_name: mysql57
+    redis:
+        image: daocloud.io/library/redis:5.0-rc4-alpine3.8
+        expose:
+            - "6379"
+        container_name: redis
+    memcached:
+        image: memcached:1.5.12-alpine
+        expose:
+            - "11211"
+        container_name: memcached
+    php72:
+        depends_on:
+            - mysql57
+            - redis
+        build: ./php72
+        restart: always
+        volumes:
+            - ./php72/www.conf:/usr/local/etc/php-fpm.d/www.conf:ro
+            - ../www/:/www/:rw
+            #- ./logs/php72/fpm-php.www.log:/var/log/fpm-php.www.log:rw
+        expose:
+            - "9000"
+        container_name: php72
+    php71:
+        depends_on:
+            - mysql57
+            - redis
+        build: ./php71
+        restart: always
+        volumes:
+            - ./php71/www.conf:/usr/local/etc/php-fpm.d/www.conf:ro
+            - ../www/:/www/:rw
+            #- ./logs/php71/fpm-php.www.log:/var/log/fpm-php.www.log:rw
+        expose:
+            - "9000"
+        container_name: php71
+    php70:
+        depends_on:
+            - mysql57
+            - redis
+        build: ./php70
+        restart: always
+        volumes:
+            - ./php70/www.conf:/usr/local/etc/php-fpm.d/www.conf:ro
+            - ../www/:/www/:rw
+            #- ./logs/php70/fpm-php.www.log:/var/log/fpm-php.www.log:rw
+        expose:
+            - "9000"
+        container_name: php70
+    php56:
+        depends_on:
+            - mysql57
+            - redis
+        build: ./php56
+        restart: always
+        volumes:
+            - ./php56/www.conf:/usr/local/etc/php-fpm.d/www.conf:ro
+            - ../www/:/www/:rw
+            #- ./logs/php56/fpm-php.www.log:/var/log/fpm-php.www.log:rw
+        expose:
+            - "9000"
+        container_name: php56
+    php55:
+        depends_on:
+            - mysql57
+            - redis
+        build: ./php55
+        restart: always
+        volumes:
+            - ./php55/www.conf:/usr/local/etc/php-fpm.d/www.conf:ro
+            - ../www/:/www/:rw
+            #- ./logs/php55/fpm-php.www.log:/var/log/fpm-php.www.log:rw
+        expose:
+            - "9000"
+        container_name: php55
+    #服务器nginx
+    web_server:
+        image: nginx:latest
+        ports:
+        - '80:80'
+        - '443:443'
+        volumes:
+        #主配置
+        - ./conf/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+        #虚拟主机配置
+        - ./conf/nginx/conf.d/:/etc/nginx/conf.d/:rw
+        #web目录
+        - ../www/:/www/:rw
+        #证书目录
+        - ./certificates/:/etc/letsencrypt/:ro
+        #日志目录
+        - ./logs/nginx/:/var/log/:rw
+        restart: always
+        container_name: nginx
+    phpmyadmin:
+        depends_on:
+            - mysql57
+        image: phpmyadmin/phpmyadmin
+        environment:
+            - PMA_HOST=mysql57
+        ports:
+            - "9906:80"
+        container_name: phpmyadmin
+    phpredisadmin:
+        build: ./phpRedisAdmin
+        environment:
+            # - ADMIN_USER=admin
+            # - ADMIN_PASS=admin
+            - REDIS_1_HOST=redis
+            - REDIS_1_PORT=6379
+        links:
+            - redis
+        ports:
+            - "9379:80"
+    showdoc:
+        build: ./showdoc
+        volumes:
+        #项目文件
+        - ./showdoc/:/var/www/html/:rw
+        ports:
+            - "9015:80"
+        container_name: showdoc
