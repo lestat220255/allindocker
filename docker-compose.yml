@@ -162,6 +162,13 @@ services:
         #仅对容器内开放访问
         expose:
         - 80
+    acme:
+        image: neilpang/acme.sh
+        volumes:
+            - ./certificates/:/acme.sh:rw
+        command: daemon
+        network_mode: "host"
+        container_name: acme
 
 networks:
   default:
