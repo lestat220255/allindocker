@@ -1,8 +1,9 @@
 # ignore all logs
-*.log
 certificates/account.conf
 certificates/http.header
 certificates/spec.nat.lestat.me/spec.nat.lestat.me.conf
 certificates/test.lestat.me/test.lestat.me.conf
 showdoc
+showdoc
+*.log
 showdoc
