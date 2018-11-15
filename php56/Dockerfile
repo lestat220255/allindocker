@@ -63,5 +63,7 @@ RUN mkdir -p /usr/local/share/composer \
     # 配置composer中国全量镜像
     && composer config -g repo.packagist composer https://packagist.phpcomposer.com
 
+WORKDIR /data/www
+
 # 对其他容器开放9000端口
 EXPOSE 9000
