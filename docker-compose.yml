@@ -156,9 +156,14 @@ services:
         - ./apache2/sites-enabled/:/etc/apache2/sites-enabled/:ro
         #主配置文件
         - ./apache2/apache2.conf:/etc/apache2/apache2.conf:ro
+        #php.ini文件
+        - ./php559/php.ini:/etc/php5/apache2/php.ini:ro
         #日志目录
         - ./logs/apache2/:/var/log/apache2/:rw
         container_name: php559
+        #临时开放8080
+        ports:
+            - "8080:80"
         #仅对容器内开放访问
         ports:
             - "8080:80"
@@ -171,6 +176,30 @@ services:
         command: daemon
         network_mode: "host"
         container_name: acme
+    #ftp服务器
+    ftpd_server:
+        image: stilliard/pure-ftpd:hardened
+        container_name: pure-ftpd
+        ports:
+        - "21:21"
+        - "30000-30009:30000-30009"
+        volumes:
+        - "../:/home/ftpusers/:rw"
+        - "./docker-pure-ftpd/passwd:/etc/pure-ftpd/passwd"
+        environment:
+            PUBLICHOST: "localhost"
+        restart: always
+    svn:
+        build: ./docker-subversion
+        container_name: svn
+        ports:
+            - "9200:80"
+            - "9201:443"
+        volumes: 
+            - ./svn/svn:/var/local/svn:rw
+            - ./svn/svn_backup:/var/svn-backup:rw
+            - ./svn/svn_conf:/etc/apache2/dav_svn:rw
+        restart: always
 
 networks:
   default:

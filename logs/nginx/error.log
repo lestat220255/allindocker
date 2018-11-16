@@ -36,5 +36,18 @@
 2018/11/15 06:24:58 [emerg] 1#1: host not found in upstream "php72" in /etc/nginx/conf.d/admin_operation.conf:20
 2018/11/15 06:26:23 [emerg] 1#1: host not found in upstream "php72" in /etc/nginx/conf.d/admin_operation.conf:20
 2018/11/15 06:27:09 [emerg] 1#1: host not found in upstream "php72" in /etc/nginx/conf.d/admin_operation.conf:20
+<<<<<<< HEAD
 2018/11/15 13:23:19 [emerg] 1#1: host not found in upstream "php72" in /etc/nginx/conf.d/admin_operation.conf:20
 2018/11/15 13:29:50 [emerg] 1#1: host not found in upstream "php72" in /etc/nginx/conf.d/admin_operation.conf:20
+=======
+2018/11/16 02:25:41 [emerg] 1#1: host not found in upstream "php72" in /etc/nginx/conf.d/admin_operation.conf:20
+2018/11/16 02:36:58 [emerg] 1#1: host not found in upstream "php72" in /etc/nginx/conf.d/admin_operation.conf:20
+2018/11/16 02:39:22 [emerg] 1#1: host not found in upstream "php72" in /etc/nginx/conf.d/admin_operation.conf:20
+2018/11/16 02:41:35 [emerg] 1#1: host not found in upstream "php72" in /etc/nginx/conf.d/admin_operation.conf:20
+2018/11/16 03:34:55 [emerg] 1#1: host not found in upstream "php72" in /etc/nginx/conf.d/admin_operation.conf:20
+2018/11/16 05:12:35 [emerg] 1#1: host not found in upstream "php70" in /etc/nginx/conf.d/info.conf:20
+2018/11/16 05:26:36 [emerg] 1#1: host not found in upstream "php72" in /etc/nginx/conf.d/admin_operation.conf:20
+2018/11/16 05:27:28 [emerg] 1#1: host not found in upstream "php72" in /etc/nginx/conf.d/admin_operation.conf:20
+2018/11/16 05:30:29 [emerg] 1#1: host not found in upstream "php72" in /etc/nginx/conf.d/admin_operation.conf:20
+2018/11/16 08:26:41 [emerg] 1#1: host not found in upstream "php72" in /etc/nginx/conf.d/admin_operation.conf:20
+>>>>>>> 271313a6561db2594fc63b33d35e13c38658b16e

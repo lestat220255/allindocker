@@ -1,5 +1,5 @@
 # Baixa a imagem do ubuntu
-FROM ubuntu:14.04.5
+FROM ubuntu:14.04.2
 LABEL maintainer="Lestat <lestat@lestat.me>"
 
 # Instalação dos pacotes
