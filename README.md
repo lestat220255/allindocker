@@ -25,3 +25,19 @@ pure-pw useradd bob -f /etc/pure-ftpd/passwd/pureftpd.passwd -m -u ftpuser -d /h
 ```
 pure-pw passwd bob -f /etc/pure-ftpd/passwd/pureftpd.passwd -m
 ```
+
+### svn相关
+权限配置文件:`svn\svn_conf\dav_svn.authz`  
+
+以下命令均在svn容器内运行  
+创建项目
+```
+svnadmin create $PATH_TO/project1
+```
+创建用户
+```
+htdigest /etc/apache2/dav_svn/dav_svn.passwd Subversion 用户名
+```
+
+示例:  
+> 项目名称为:project1,则路径为:http://ip:port/svn/project1

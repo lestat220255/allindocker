@@ -45,3 +45,4 @@
 2018/11/16 05:26:36 [emerg] 1#1: host not found in upstream "php72" in /etc/nginx/conf.d/admin_operation.conf:20
 2018/11/16 05:27:28 [emerg] 1#1: host not found in upstream "php72" in /etc/nginx/conf.d/admin_operation.conf:20
 2018/11/16 05:30:29 [emerg] 1#1: host not found in upstream "php72" in /etc/nginx/conf.d/admin_operation.conf:20
+2018/11/16 08:26:41 [emerg] 1#1: host not found in upstream "php72" in /etc/nginx/conf.d/admin_operation.conf:20
