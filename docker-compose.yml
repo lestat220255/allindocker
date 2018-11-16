@@ -200,6 +200,18 @@ services:
             - ./svn/svn_backup:/var/svn-backup:rw
             - ./svn/svn_conf:/etc/apache2/dav_svn:rw
         restart: always
+    gitlab:
+        image: gitlab/gitlab-ce:latest
+        container_name: gitlab
+        ports:
+        - "10443:443"
+        - "10080:80"
+        - "10022:22"
+        volumes:
+        - "./gitlab/config:/etc/gitlab:rw"
+        - "./gitlab/logs:/var/log/gitlab:rw"
+        - "./gitlab/data:/var/opt/gitlab:rw"
+        restart: always
 
 networks:
   default:

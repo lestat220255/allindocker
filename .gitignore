@@ -12,3 +12,6 @@ certificates/test.lestat.me/test.lestat.me.conf
 *.MYD
 *.log
 *.MYD
+gitlab/
+logs/
+svn/svn/
