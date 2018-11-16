@@ -156,6 +156,8 @@ services:
         - ./apache2/sites-enabled/:/etc/apache2/sites-enabled/:ro
         #主配置文件
         - ./apache2/apache2.conf:/etc/apache2/apache2.conf:ro
+        #php.ini文件
+        - ./php559/php.ini:/etc/php5/apache2/php.ini:ro
         #日志目录
         - ./logs/apache2/:/var/log/apache2/:rw
         container_name: php559
