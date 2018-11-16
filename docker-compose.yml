@@ -161,6 +161,9 @@ services:
         #日志目录
         - ./logs/apache2/:/var/log/apache2/:rw
         container_name: php559
+        #临时开放8080
+        ports:
+            - "8080:80"
         #仅对容器内开放访问
         expose:
         - 80
@@ -171,6 +174,23 @@ services:
         command: daemon
         network_mode: "host"
         container_name: acme
+    #ftp服务器
+    ftpd_server:
+        image: stilliard/pure-ftpd:hardened
+        container_name: pure-ftpd
+        ports:
+        - "21:21"
+        - "30000-30009:30000-30009"
+        volumes: # remember to replace /folder_on_disk/ with the path to where you want to store the files on the host machine
+        - "../:/home/ftpusers/:rw"
+        - "./docker-pure-ftpd/passwd:/etc/pure-ftpd/passwd"
+        # uncomment for ssl/tls, see https://github.com/stilliard/docker-pure-ftpd#tls
+        #      - "/folder_on_disk/ssl:/etc/ssl/private/"
+        environment:
+            PUBLICHOST: "localhost"
+        # also for ssl/tls:
+        #      ADDED_FLAGS: "--tls=2"
+        restart: always
 
 networks:
   default:
