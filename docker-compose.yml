@@ -160,8 +160,10 @@ services:
         - ./logs/apache2/:/var/log/apache2/:rw
         container_name: php559
         #仅对容器内开放访问
+        ports:
+            - "8080:80"
         expose:
-        - 80
+            - 80
     acme:
         image: neilpang/acme.sh
         volumes:
