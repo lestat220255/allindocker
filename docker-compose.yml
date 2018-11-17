@@ -220,7 +220,45 @@ services:
         tty: true
         #下载目录
         volumes:
-            - "./you-get/download:/data/download:rw"
+            - "../Downloads:/data/download:rw"
+    #代理ip池
+    proxy_pool:
+        volumes:
+            - ./proxy_pool:/usr/src/app
+        # ports:
+        #     - "5010:5010"
+        links:
+            - redis
+        build: ./proxy_pool/Docker
+        container_name: proxy_pool
+    #下载器
+    h5ai:
+        image: bixidock/h5ai
+        volumes:
+            - ../Downloads:/var/www:rw
+        restart: always
+    aria2:
+        image: wahyd4/aria2-ui:h5ai
+        ports:
+            - "9080:80"
+            - "9443:443"
+            - "6800:6800"
+        volumes:
+            - ../Downloads:/var/www:rw
+        # volumes:
+        #   - /some_folder:/root/conf/key
+        #   - ~/test/aria2.conf:/root/conf/aria2.conf
+        environment:
+            - DOMAIN=:80
+            - PLEX_CLAIM=claim-KpMm8oqWA6a1rFV3zFqS
+            # - SSL=true
+            # - RPC_SECRET=Hello
+            - ARIA2_USER=lestat
+            - ARIA2_PWD=123123
+            - ENABLE_AUTH=true
+        links:
+            - h5ai:file-manager
+        restart: always
 
 networks:
   default:
