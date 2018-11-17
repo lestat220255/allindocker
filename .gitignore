@@ -15,3 +15,5 @@ certificates/test.lestat.me/test.lestat.me.conf
 gitlab/
 logs/
 svn/svn/
+logs/
+mysql/
