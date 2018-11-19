@@ -12,5 +12,13 @@ certificates/test.lestat.me/test.lestat.me.conf
 *.MYD
 *.log
 *.MYD
-mysql/*
-docker-subversion/*
+docker-subversion/
+gitlab/
+logs/
+svn/svn/
+logs/
+mysql/
+mysql/ib_buffer_pool
+mysql/ib_logfile0
+mysql/ibdata1
+mysql/ibtmp1

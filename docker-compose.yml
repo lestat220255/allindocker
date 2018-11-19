@@ -99,19 +99,19 @@ services:
     web_server:
         image: nginx:1.15.6
         ports:
-        - '80:80'
-        - '443:443'
+            - '80:80'
+            - '443:443'
         volumes:
         #主配置
-        - ./conf/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+            - ./conf/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
         #虚拟主机配置
-        - ./conf/nginx/conf.d/:/etc/nginx/conf.d/:rw
+            - ./conf/nginx/conf.d/:/etc/nginx/conf.d/:rw
         #web目录
-        - ../www/:/data/www/:rw
+            - ../www/:/data/www/:rw
         #证书目录
-        - ./certificates/:/etc/letsencrypt/:ro
+            - ./certificates/:/etc/letsencrypt/:ro
         #日志目录
-        - ./logs/nginx/:/var/log/nginx/:rw
+            - ./logs/nginx/:/var/log/nginx/:rw
         restart: always
         container_name: nginx
     #mysql管理
@@ -142,7 +142,7 @@ services:
         build: ./showdoc
         volumes:
         #项目文件
-        - ./showdoc/:/var/www/html/:rw
+            - ./showdoc/:/var/www/html/:rw
         ports:
             - "9015:80"
         container_name: showdoc
@@ -151,22 +151,24 @@ services:
         build: ./php559
         volumes:
         #项目目录
-        - ../www/:/data/www/:rw
+            - ../www/:/data/www/:rw
         #虚拟主机
-        - ./apache2/sites-enabled/:/etc/apache2/sites-enabled/:ro
+            - ./apache2/sites-enabled/:/etc/apache2/sites-enabled/:ro
         #主配置文件
-        - ./apache2/apache2.conf:/etc/apache2/apache2.conf:ro
+            - ./apache2/apache2.conf:/etc/apache2/apache2.conf:ro
         #php.ini文件
-        - ./php559/php.ini:/etc/php5/apache2/php.ini:ro
+            - ./php559/php.ini:/etc/php5/apache2/php.ini:ro
         #日志目录
-        - ./logs/apache2/:/var/log/apache2/:rw
+            - ./logs/apache2/:/var/log/apache2/:rw
         container_name: php559
         #临时开放8080
         ports:
             - "8080:80"
         #仅对容器内开放访问
+        ports:
+            - "8080:80"
         expose:
-        - 80
+            - 80
     acme:
         image: neilpang/acme.sh
         volumes:
@@ -179,11 +181,11 @@ services:
         image: stilliard/pure-ftpd:hardened
         container_name: pure-ftpd
         ports:
-        - "21:21"
-        - "30000-30009:30000-30009"
+            - "21:21"
+            - "30000-30009:30000-30009"
         volumes:
-        - "../:/home/ftpusers/:rw"
-        - "./docker-pure-ftpd/passwd:/etc/pure-ftpd/passwd"
+            - "../:/home/ftpusers/:rw"
+            - "./docker-pure-ftpd/passwd:/etc/pure-ftpd/passwd"
         environment:
             PUBLICHOST: "localhost"
         restart: always
@@ -197,6 +199,65 @@ services:
             - ./svn/svn:/var/local/svn:rw
             - ./svn/svn_backup:/var/svn-backup:rw
             - ./svn/svn_conf:/etc/apache2/dav_svn:rw
+        restart: always
+    gitlab:
+        image: gitlab/gitlab-ce:latest
+        container_name: gitlab
+        ports:
+            - "10443:443"
+            - "10080:80"
+            - "10022:22"
+        volumes:
+            - "./gitlab/config:/etc/gitlab:rw"
+            - "./gitlab/logs:/var/log/gitlab:rw"
+            - "./gitlab/data:/var/opt/gitlab:rw"
+        restart: always
+    #下载工具
+    you-get:
+        build: ./you-get
+        container_name: you-get
+        stdin_open: true
+        tty: true
+        #下载目录
+        volumes:
+            - "../Downloads:/data/download:rw"
+    #代理ip池
+    proxy_pool:
+        volumes:
+            - ./proxy_pool:/usr/src/app
+        # ports:
+        #     - "5010:5010"
+        links:
+            - redis
+        build: ./proxy_pool/Docker
+        container_name: proxy_pool
+    #下载器
+    h5ai:
+        image: bixidock/h5ai
+        volumes:
+            - ../Downloads:/var/www:rw
+        restart: always
+    aria2:
+        image: wahyd4/aria2-ui:h5ai
+        ports:
+            - "9080:80"
+            - "9443:443"
+            - "6800:6800"
+        volumes:
+            - ../Downloads:/var/www:rw
+        # volumes:
+        #   - /some_folder:/root/conf/key
+        #   - ~/test/aria2.conf:/root/conf/aria2.conf
+        environment:
+            - DOMAIN=:80
+            - PLEX_CLAIM=claim-KpMm8oqWA6a1rFV3zFqS
+            # - SSL=true
+            # - RPC_SECRET=Hello
+            - ARIA2_USER=lestat
+            - ARIA2_PWD=123123
+            - ENABLE_AUTH=true
+        links:
+            - h5ai:file-manager
         restart: always
 
 networks:

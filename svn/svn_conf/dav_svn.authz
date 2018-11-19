@@ -1,5 +1,5 @@
 [groups]
-admin = user1,user2, lestat
+admin = user1,user2, lestat, dante
 devgroup = user5, user6
 
 [project1:/]
