@@ -13,3 +13,4 @@ certificates/test.lestat.me/test.lestat.me.conf
 *.log
 *.MYD
 mysql/
+docker-subversion/
