@@ -1,0 +1,220 @@
+2019/02/27 03:56:05 [error] 6#6: *1 connect() failed (111: Connection refused), client: 172.20.0.1, server: localhost, request: "GET /admin HTTP/1.1", host: "localhost"
+2019/02/27 03:56:05 [error] 6#6: *1 lua entry thread aborted: runtime error: /usr/local/openresty/nginx/src/handle_access.lua:14: attempt to call global 'ngx_log' (a nil value)
+stack traceback:
+coroutine 0:
+	/usr/local/openresty/nginx/src/handle_access.lua: in function </usr/local/openresty/nginx/src/handle_access.lua:4>, client: 172.20.0.1, server: localhost, request: "GET /admin HTTP/1.1", host: "localhost"
+2019/02/27 03:56:06 [error] 6#6: *2 connect() failed (111: Connection refused), client: 172.20.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/admin"
+2019/02/27 03:56:06 [error] 6#6: *2 lua entry thread aborted: runtime error: /usr/local/openresty/nginx/src/handle_access.lua:14: attempt to call global 'ngx_log' (a nil value)
+stack traceback:
+coroutine 0:
+	/usr/local/openresty/nginx/src/handle_access.lua: in function </usr/local/openresty/nginx/src/handle_access.lua:4>, client: 172.20.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/admin"
+2019/02/27 03:57:05 [info] 6#6: *4 client timed out (110: Connection timed out) while waiting for request, client: 172.20.0.1, server: 0.0.0.0:80
+2019/02/27 04:00:44 [error] 6#6: *6 connect() failed (111: Connection refused), client: 172.20.0.1, server: localhost, request: "GET /admin HTTP/1.1", host: "localhost"
+2019/02/27 04:00:44 [error] 6#6: *6 lua entry thread aborted: runtime error: /usr/local/openresty/nginx/src/handle_access.lua:14: attempt to call global 'ngx_log' (a nil value)
+stack traceback:
+coroutine 0:
+	/usr/local/openresty/nginx/src/handle_access.lua: in function </usr/local/openresty/nginx/src/handle_access.lua:4>, client: 172.20.0.1, server: localhost, request: "GET /admin HTTP/1.1", host: "localhost"
+2019/02/27 04:00:44 [error] 6#6: *7 connect() failed (111: Connection refused), client: 172.20.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/admin"
+2019/02/27 04:00:44 [error] 6#6: *7 lua entry thread aborted: runtime error: /usr/local/openresty/nginx/src/handle_access.lua:14: attempt to call global 'ngx_log' (a nil value)
+stack traceback:
+coroutine 0:
+	/usr/local/openresty/nginx/src/handle_access.lua: in function </usr/local/openresty/nginx/src/handle_access.lua:4>, client: 172.20.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/admin"
+2019/02/27 05:57:10 [error] 6#6: *10 connect() failed (111: Connection refused), client: 172.20.0.1, server: localhost, request: "GET /admin HTTP/1.1", host: "localhost"
+2019/02/27 05:57:10 [error] 6#6: *10 lua entry thread aborted: runtime error: /usr/local/openresty/nginx/src/handle_access.lua:14: attempt to call global 'ngx_log' (a nil value)
+stack traceback:
+coroutine 0:
+	/usr/local/openresty/nginx/src/handle_access.lua: in function </usr/local/openresty/nginx/src/handle_access.lua:4>, client: 172.20.0.1, server: localhost, request: "GET /admin HTTP/1.1", host: "localhost"
+2019/02/27 05:57:11 [error] 6#6: *11 connect() failed (111: Connection refused), client: 172.20.0.1, server: localhost, request: "GET /admin HTTP/1.1", host: "localhost"
+2019/02/27 05:57:11 [error] 6#6: *11 lua entry thread aborted: runtime error: /usr/local/openresty/nginx/src/handle_access.lua:14: attempt to call global 'ngx_log' (a nil value)
+stack traceback:
+coroutine 0:
+	/usr/local/openresty/nginx/src/handle_access.lua: in function </usr/local/openresty/nginx/src/handle_access.lua:4>, client: 172.20.0.1, server: localhost, request: "GET /admin HTTP/1.1", host: "localhost"
+2019/02/27 05:57:11 [error] 6#6: *13 connect() failed (111: Connection refused), client: 172.20.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/admin"
+2019/02/27 05:57:11 [error] 6#6: *13 lua entry thread aborted: runtime error: /usr/local/openresty/nginx/src/handle_access.lua:14: attempt to call global 'ngx_log' (a nil value)
+stack traceback:
+coroutine 0:
+	/usr/local/openresty/nginx/src/handle_access.lua: in function </usr/local/openresty/nginx/src/handle_access.lua:4>, client: 172.20.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/admin"
+2019/02/27 05:57:21 [error] 6#6: *16 connect() failed (111: Connection refused), client: 172.20.0.1, server: localhost, request: "GET /admin HTTP/1.1", host: "localhost"
+2019/02/27 05:57:21 [error] 6#6: *16 lua entry thread aborted: runtime error: /usr/local/openresty/nginx/src/handle_access.lua:14: attempt to call global 'ngx_log' (a nil value)
+stack traceback:
+coroutine 0:
+	/usr/local/openresty/nginx/src/handle_access.lua: in function </usr/local/openresty/nginx/src/handle_access.lua:4>, client: 172.20.0.1, server: localhost, request: "GET /admin HTTP/1.1", host: "localhost"
+2019/02/27 05:57:22 [error] 6#6: *17 connect() failed (111: Connection refused), client: 172.20.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/admin"
+2019/02/27 05:57:22 [error] 6#6: *17 lua entry thread aborted: runtime error: /usr/local/openresty/nginx/src/handle_access.lua:14: attempt to call global 'ngx_log' (a nil value)
+stack traceback:
+coroutine 0:
+	/usr/local/openresty/nginx/src/handle_access.lua: in function </usr/local/openresty/nginx/src/handle_access.lua:4>, client: 172.20.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/admin"
+2019/02/27 05:57:24 [error] 6#6: *21 connect() failed (111: Connection refused), client: 172.20.0.1, server: localhost, request: "GET /admin HTTP/1.1", host: "localhost"
+2019/02/27 05:57:24 [error] 6#6: *21 lua entry thread aborted: runtime error: /usr/local/openresty/nginx/src/handle_access.lua:14: attempt to call global 'ngx_log' (a nil value)
+stack traceback:
+coroutine 0:
+	/usr/local/openresty/nginx/src/handle_access.lua: in function </usr/local/openresty/nginx/src/handle_access.lua:4>, client: 172.20.0.1, server: localhost, request: "GET /admin HTTP/1.1", host: "localhost"
+2019/02/27 05:57:25 [error] 6#6: *20 connect() failed (111: Connection refused), client: 172.20.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/admin"
+2019/02/27 05:57:25 [error] 6#6: *20 lua entry thread aborted: runtime error: /usr/local/openresty/nginx/src/handle_access.lua:14: attempt to call global 'ngx_log' (a nil value)
+stack traceback:
+coroutine 0:
+	/usr/local/openresty/nginx/src/handle_access.lua: in function </usr/local/openresty/nginx/src/handle_access.lua:4>, client: 172.20.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/admin"
+2019/02/27 05:57:50 [error] 6#6: *25 connect() failed (111: Connection refused), client: 172.20.0.1, server: localhost, request: "GET /admin HTTP/1.1", host: "localhost"
+2019/02/27 05:57:50 [error] 6#6: *25 lua entry thread aborted: runtime error: /usr/local/openresty/nginx/src/handle_access.lua:14: attempt to call global 'ngx_log' (a nil value)
+stack traceback:
+coroutine 0:
+	/usr/local/openresty/nginx/src/handle_access.lua: in function </usr/local/openresty/nginx/src/handle_access.lua:4>, client: 172.20.0.1, server: localhost, request: "GET /admin HTTP/1.1", host: "localhost"
+2019/02/27 05:57:51 [error] 6#6: *24 connect() failed (111: Connection refused), client: 172.20.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/admin"
+2019/02/27 05:57:51 [error] 6#6: *24 lua entry thread aborted: runtime error: /usr/local/openresty/nginx/src/handle_access.lua:14: attempt to call global 'ngx_log' (a nil value)
+stack traceback:
+coroutine 0:
+	/usr/local/openresty/nginx/src/handle_access.lua: in function </usr/local/openresty/nginx/src/handle_access.lua:4>, client: 172.20.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/admin"
+2019/02/27 05:58:02 [error] 6#6: *29 connect() failed (111: Connection refused), client: 172.20.0.1, server: localhost, request: "GET /admin HTTP/1.1", host: "localhost"
+2019/02/27 05:58:02 [error] 6#6: *29 lua entry thread aborted: runtime error: /usr/local/openresty/nginx/src/handle_access.lua:14: attempt to call global 'ngx_log' (a nil value)
+stack traceback:
+coroutine 0:
+	/usr/local/openresty/nginx/src/handle_access.lua: in function </usr/local/openresty/nginx/src/handle_access.lua:4>, client: 172.20.0.1, server: localhost, request: "GET /admin HTTP/1.1", host: "localhost"
+2019/02/27 05:58:02 [error] 6#6: *28 connect() failed (111: Connection refused), client: 172.20.0.1, server: localhost, request: "GET /admin HTTP/1.1", host: "localhost"
+2019/02/27 05:58:02 [error] 6#6: *28 lua entry thread aborted: runtime error: /usr/local/openresty/nginx/src/handle_access.lua:14: attempt to call global 'ngx_log' (a nil value)
+stack traceback:
+coroutine 0:
+	/usr/local/openresty/nginx/src/handle_access.lua: in function </usr/local/openresty/nginx/src/handle_access.lua:4>, client: 172.20.0.1, server: localhost, request: "GET /admin HTTP/1.1", host: "localhost"
+2019/02/27 05:58:02 [error] 6#6: *31 connect() failed (111: Connection refused), client: 172.20.0.1, server: localhost, request: "GET /admin HTTP/1.1", host: "localhost"
+2019/02/27 05:58:02 [error] 6#6: *31 lua entry thread aborted: runtime error: /usr/local/openresty/nginx/src/handle_access.lua:14: attempt to call global 'ngx_log' (a nil value)
+stack traceback:
+coroutine 0:
+	/usr/local/openresty/nginx/src/handle_access.lua: in function </usr/local/openresty/nginx/src/handle_access.lua:4>, client: 172.20.0.1, server: localhost, request: "GET /admin HTTP/1.1", host: "localhost"
+2019/02/27 05:58:02 [error] 6#6: *33 connect() failed (111: Connection refused), client: 172.20.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/admin"
+2019/02/27 05:58:02 [error] 6#6: *33 lua entry thread aborted: runtime error: /usr/local/openresty/nginx/src/handle_access.lua:14: attempt to call global 'ngx_log' (a nil value)
+stack traceback:
+coroutine 0:
+	/usr/local/openresty/nginx/src/handle_access.lua: in function </usr/local/openresty/nginx/src/handle_access.lua:4>, client: 172.20.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/admin"
+2019/02/27 06:00:13 [error] 6#6: *36 connect() failed (111: Connection refused), client: 192.168.0.98, server: localhost, request: "GET / HTTP/1.0"
+2019/02/27 06:00:13 [error] 6#6: *36 lua entry thread aborted: runtime error: /usr/local/openresty/nginx/src/handle_access.lua:14: attempt to call global 'ngx_log' (a nil value)
+stack traceback:
+coroutine 0:
+	/usr/local/openresty/nginx/src/handle_access.lua: in function </usr/local/openresty/nginx/src/handle_access.lua:4>, client: 192.168.0.98, server: localhost, request: "GET / HTTP/1.0"
+2019/02/27 06:00:43 [error] 16#16: *39 connect() failed (111: Connection refused), client: 172.20.0.1, server: localhost, request: "GET /admin HTTP/1.1", host: "localhost"
+2019/02/27 06:00:43 [error] 16#16: *39 lua entry thread aborted: runtime error: /usr/local/openresty/nginx/src/handle_access.lua:14: attempt to call global 'ngx_log' (a nil value)
+stack traceback:
+coroutine 0:
+	/usr/local/openresty/nginx/src/handle_access.lua: in function </usr/local/openresty/nginx/src/handle_access.lua:4>, client: 172.20.0.1, server: localhost, request: "GET /admin HTTP/1.1", host: "localhost"
+2019/02/27 06:00:44 [error] 16#16: *38 connect() failed (111: Connection refused), client: 172.20.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/admin"
+2019/02/27 06:00:44 [error] 16#16: *38 lua entry thread aborted: runtime error: /usr/local/openresty/nginx/src/handle_access.lua:14: attempt to call global 'ngx_log' (a nil value)
+stack traceback:
+coroutine 0:
+	/usr/local/openresty/nginx/src/handle_access.lua: in function </usr/local/openresty/nginx/src/handle_access.lua:4>, client: 172.20.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/admin"
+2019/02/27 06:00:45 [error] 16#16: *43 connect() failed (111: Connection refused), client: 172.20.0.1, server: localhost, request: "GET /admin HTTP/1.1", host: "localhost"
+2019/02/27 06:00:45 [error] 16#16: *43 lua entry thread aborted: runtime error: /usr/local/openresty/nginx/src/handle_access.lua:14: attempt to call global 'ngx_log' (a nil value)
+stack traceback:
+coroutine 0:
+	/usr/local/openresty/nginx/src/handle_access.lua: in function </usr/local/openresty/nginx/src/handle_access.lua:4>, client: 172.20.0.1, server: localhost, request: "GET /admin HTTP/1.1", host: "localhost"
+2019/02/27 06:00:45 [error] 16#16: *42 connect() failed (111: Connection refused), client: 172.20.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/admin"
+2019/02/27 06:00:45 [error] 16#16: *42 lua entry thread aborted: runtime error: /usr/local/openresty/nginx/src/handle_access.lua:14: attempt to call global 'ngx_log' (a nil value)
+stack traceback:
+coroutine 0:
+	/usr/local/openresty/nginx/src/handle_access.lua: in function </usr/local/openresty/nginx/src/handle_access.lua:4>, client: 172.20.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/admin"
+2019/02/27 06:01:33 [info] 18#18: *46 client closed connection while waiting for request, client: 172.20.0.1, server: 0.0.0.0:80
+2019/02/27 06:03:49 [info] 18#18: *49 client 172.20.0.1 closed keepalive connection
+2019/02/27 06:03:49 [info] 18#18: *50 client closed connection while waiting for request, client: 172.20.0.1, server: 0.0.0.0:80
+2019/02/27 06:17:59 [info] 6#6: *1 client closed connection while waiting for request, client: 172.22.0.1, server: 0.0.0.0:80
+2019/02/27 06:39:14 [info] 6#6: *3 client closed connection while waiting for request, client: 172.22.0.1, server: 0.0.0.0:80
+2019/02/27 06:39:27 [info] 6#6: *7 client closed connection while waiting for request, client: 172.22.0.1, server: 0.0.0.0:80
+2019/02/27 06:39:29 [error] 6#6: *2 lua entry thread aborted: runtime error: /usr/local/openresty/nginx/src/handle_access.lua:14: attempt to call global 'ngx_log' (a nil value)
+stack traceback:
+coroutine 0:
+	/usr/local/openresty/nginx/src/handle_access.lua: in function </usr/local/openresty/nginx/src/handle_access.lua:4>, client: 172.22.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost"
+2019/02/27 06:39:37 [error] 6#6: *9 lua entry thread aborted: runtime error: /usr/local/openresty/nginx/src/handle_access.lua:14: attempt to call global 'ngx_log' (a nil value)
+stack traceback:
+coroutine 0:
+	/usr/local/openresty/nginx/src/handle_access.lua: in function </usr/local/openresty/nginx/src/handle_access.lua:4>, client: 172.22.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost"
+2019/02/27 06:39:37 [error] 6#6: *10 lua entry thread aborted: runtime error: /usr/local/openresty/nginx/src/handle_access.lua:14: attempt to call global 'ngx_log' (a nil value)
+stack traceback:
+coroutine 0:
+	/usr/local/openresty/nginx/src/handle_access.lua: in function </usr/local/openresty/nginx/src/handle_access.lua:4>, client: 172.22.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
+2019/02/27 06:39:38 [error] 6#6: *11 lua entry thread aborted: runtime error: /usr/local/openresty/nginx/src/handle_access.lua:14: attempt to call global 'ngx_log' (a nil value)
+stack traceback:
+coroutine 0:
+	/usr/local/openresty/nginx/src/handle_access.lua: in function </usr/local/openresty/nginx/src/handle_access.lua:4>, client: 172.22.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost"
+2019/02/27 06:39:38 [error] 6#6: *12 lua entry thread aborted: runtime error: /usr/local/openresty/nginx/src/handle_access.lua:14: attempt to call global 'ngx_log' (a nil value)
+stack traceback:
+coroutine 0:
+	/usr/local/openresty/nginx/src/handle_access.lua: in function </usr/local/openresty/nginx/src/handle_access.lua:4>, client: 172.22.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
+2019/02/27 06:39:38 [error] 6#6: *14 lua entry thread aborted: runtime error: /usr/local/openresty/nginx/src/handle_access.lua:14: attempt to call global 'ngx_log' (a nil value)
+stack traceback:
+coroutine 0:
+	/usr/local/openresty/nginx/src/handle_access.lua: in function </usr/local/openresty/nginx/src/handle_access.lua:4>, client: 172.22.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost"
+2019/02/27 06:39:38 [error] 6#6: *13 lua entry thread aborted: runtime error: /usr/local/openresty/nginx/src/handle_access.lua:14: attempt to call global 'ngx_log' (a nil value)
+stack traceback:
+coroutine 0:
+	/usr/local/openresty/nginx/src/handle_access.lua: in function </usr/local/openresty/nginx/src/handle_access.lua:4>, client: 172.22.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
+2019/02/27 06:49:55 [error] 6#6: *16 lua entry thread aborted: runtime error: /usr/local/openresty/nginx/src/handle_access.lua:14: attempt to call global 'ngx_log' (a nil value)
+stack traceback:
+coroutine 0:
+	/usr/local/openresty/nginx/src/handle_access.lua: in function </usr/local/openresty/nginx/src/handle_access.lua:4>, client: 172.22.0.1, server: localhost, request: "GET / HTTP/1.1", host: "127.0.0.11"
+2019/02/27 06:49:55 [error] 6#6: *15 lua entry thread aborted: runtime error: /usr/local/openresty/nginx/src/handle_access.lua:14: attempt to call global 'ngx_log' (a nil value)
+stack traceback:
+coroutine 0:
+	/usr/local/openresty/nginx/src/handle_access.lua: in function </usr/local/openresty/nginx/src/handle_access.lua:4>, client: 172.22.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.11", referrer: "http://127.0.0.11/"
+2019/02/27 06:50:02 [error] 6#6: *17 lua entry thread aborted: runtime error: /usr/local/openresty/nginx/src/handle_access.lua:14: attempt to call global 'ngx_log' (a nil value)
+stack traceback:
+coroutine 0:
+	/usr/local/openresty/nginx/src/handle_access.lua: in function </usr/local/openresty/nginx/src/handle_access.lua:4>, client: 172.22.0.1, server: localhost, request: "GET / HTTP/1.1", host: "127.0.0.12"
+2019/02/27 06:50:03 [error] 6#6: *18 lua entry thread aborted: runtime error: /usr/local/openresty/nginx/src/handle_access.lua:14: attempt to call global 'ngx_log' (a nil value)
+stack traceback:
+coroutine 0:
+	/usr/local/openresty/nginx/src/handle_access.lua: in function </usr/local/openresty/nginx/src/handle_access.lua:4>, client: 172.22.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.12", referrer: "http://127.0.0.12/"
+2019/02/27 06:51:36 [info] 13#13: *20 client closed connection while waiting for request, client: 172.22.0.1, server: 0.0.0.0:80
+2019/02/27 06:51:56 [info] 15#15: *24 client closed connection while waiting for request, client: 172.22.0.1, server: 0.0.0.0:80
+2019/02/27 06:52:02 [error] 17#17: *27 lua entry thread aborted: runtime error: /usr/local/openresty/nginx/src/handle_access.lua:14: attempt to call global 'ngx_log' (a nil value)
+stack traceback:
+coroutine 0:
+	/usr/local/openresty/nginx/src/handle_access.lua: in function </usr/local/openresty/nginx/src/handle_access.lua:4>, client: 172.22.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost"
+2019/02/27 06:52:03 [error] 17#17: *26 lua entry thread aborted: runtime error: /usr/local/openresty/nginx/src/handle_access.lua:14: attempt to call global 'ngx_log' (a nil value)
+stack traceback:
+coroutine 0:
+	/usr/local/openresty/nginx/src/handle_access.lua: in function </usr/local/openresty/nginx/src/handle_access.lua:4>, client: 172.22.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
+2019/02/27 06:52:06 [error] 15#15: *23 lua entry thread aborted: runtime error: /usr/local/openresty/nginx/src/handle_access.lua:14: attempt to call global 'ngx_log' (a nil value)
+stack traceback:
+coroutine 0:
+	/usr/local/openresty/nginx/src/handle_access.lua: in function </usr/local/openresty/nginx/src/handle_access.lua:4>, client: 172.22.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost"
+2019/02/27 06:52:13 [error] 17#17: *28 lua entry thread aborted: runtime error: /usr/local/openresty/nginx/src/handle_access.lua:14: attempt to call global 'ngx_log' (a nil value)
+stack traceback:
+coroutine 0:
+	/usr/local/openresty/nginx/src/handle_access.lua: in function </usr/local/openresty/nginx/src/handle_access.lua:4>, client: 172.22.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost"
+2019/02/27 06:52:13 [error] 17#17: *29 lua entry thread aborted: runtime error: /usr/local/openresty/nginx/src/handle_access.lua:14: attempt to call global 'ngx_log' (a nil value)
+stack traceback:
+coroutine 0:
+	/usr/local/openresty/nginx/src/handle_access.lua: in function </usr/local/openresty/nginx/src/handle_access.lua:4>, client: 172.22.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
+2019/02/27 06:52:37 [info] 19#19: *31 client closed connection while waiting for request, client: 172.22.0.1, server: 0.0.0.0:80
+2019/02/27 06:52:38 [error] 19#19: *30 lua entry thread aborted: runtime error: /usr/local/openresty/nginx/src/handle_access.lua:14: attempt to call global 'ngx_log' (a nil value)
+stack traceback:
+coroutine 0:
+	/usr/local/openresty/nginx/src/handle_access.lua: in function </usr/local/openresty/nginx/src/handle_access.lua:4>, client: 172.22.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost"
+2019/02/27 06:52:38 [error] 19#19: *34 lua entry thread aborted: runtime error: /usr/local/openresty/nginx/src/handle_access.lua:14: attempt to call global 'ngx_log' (a nil value)
+stack traceback:
+coroutine 0:
+	/usr/local/openresty/nginx/src/handle_access.lua: in function </usr/local/openresty/nginx/src/handle_access.lua:4>, client: 172.22.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
+2019/02/27 06:52:45 [error] 19#19: *35 lua entry thread aborted: runtime error: /usr/local/openresty/nginx/src/handle_access.lua:29: bad argument #1 to 'connect' (string expected, got table)
+stack traceback:
+coroutine 0:
+	[C]: in function 'connect'
+	/usr/local/openresty/nginx/src/handle_access.lua:29: in function </usr/local/openresty/nginx/src/handle_access.lua:1>, client: 172.22.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost"
+2019/02/27 06:52:45 [error] 19#19: *36 lua entry thread aborted: runtime error: /usr/local/openresty/nginx/src/handle_access.lua:29: bad argument #1 to 'connect' (string expected, got table)
+stack traceback:
+coroutine 0:
+	[C]: in function 'connect'
+	/usr/local/openresty/nginx/src/handle_access.lua:29: in function </usr/local/openresty/nginx/src/handle_access.lua:1>, client: 172.22.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
+2019/02/27 06:53:09 [info] 19#19: *38 client closed connection while waiting for request, client: 172.22.0.1, server: 0.0.0.0:80
+2019/02/27 06:54:24 [warn] 19#19: *40 an upstream response is buffered to a temporary file /usr/local/openresty/nginx/fastcgi_temp/1/00/0000000001 while reading upstream, client: 172.22.0.1, server: localhost, request: "GET /admin HTTP/1.1", upstream: "fastcgi://172.22.0.13:9000", host: "localhost"
+2019/02/27 06:54:56 [info] 19#19: *41 client closed connection while waiting for request, client: 172.22.0.1, server: 0.0.0.0:80
+2019/02/27 06:56:16 [info] 19#19: *48 client closed connection while waiting for request, client: 172.22.0.1, server: 0.0.0.0:80
+2019/02/27 06:58:35 [error] 27#27: *51 lua entry thread aborted: runtime error: /usr/local/openresty/nginx/src/handle_access.lua:14: attempt to call global 'ngx_log' (a nil value)
+stack traceback:
+coroutine 0:
+	/usr/local/openresty/nginx/src/handle_access.lua: in function </usr/local/openresty/nginx/src/handle_access.lua:4>, client: 172.22.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost"
+2019/02/27 06:58:35 [error] 27#27: *52 lua entry thread aborted: runtime error: /usr/local/openresty/nginx/src/handle_access.lua:14: attempt to call global 'ngx_log' (a nil value)
+stack traceback:
+coroutine 0:
+	/usr/local/openresty/nginx/src/handle_access.lua: in function </usr/local/openresty/nginx/src/handle_access.lua:4>, client: 172.22.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
+2019/02/27 07:01:56 [info] 27#27: *63 client closed connection while waiting for request, client: 172.22.0.1, server: 0.0.0.0:80
+2019/02/27 07:13:14 [info] 36#36: *73 client closed connection while waiting for request, client: 172.22.0.1, server: 0.0.0.0:80
+2019/02/27 07:14:13 [info] 36#36: *87 client closed connection while waiting for request, client: 172.22.0.1, server: 0.0.0.0:80
+2019/02/27 07:14:26 [info] 36#36: *94 client closed connection while waiting for request, client: 172.22.0.1, server: 0.0.0.0:80
+2019/02/27 07:14:37 [info] 36#36: *105 client closed connection while waiting for request, client: 172.22.0.1, server: 0.0.0.0:80
+2019/02/27 07:15:37 [info] 36#36: *113 client timed out (110: Connection timed out) while waiting for request, client: 172.22.0.1, server: 0.0.0.0:80
