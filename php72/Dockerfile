@@ -2,6 +2,8 @@ FROM daocloud.io/php:7.2-fpm-alpine
 
 LABEL maintainer="lestat@lestat.me"
 
+COPY composer.phar /usr/local/bin/
+
 # 修改镜像源
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
 
@@ -26,6 +28,8 @@ RUN apk update && apk add --no-cache --virtual .build-deps \
         postgresql-libs \
         nodejs \
         nodejs-npm \
+        ffmpeg \
+	php7-bcmath \
     # 配置npm中国镜像
     && npm config set registry https://registry.npm.taobao.org \
     && pecl install imagick \
@@ -43,9 +47,10 @@ RUN apk update && apk add --no-cache --virtual .build-deps \
         tokenizer \
         xml \
         zip \
+        opcache \
 	&& docker-php-ext-install -j"$(getconf _NPROCESSORS_ONLN)" \
     iconv \
-    # mcrypt \
+    #mcrypt \
     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
     && docker-php-ext-install -j"$(getconf _NPROCESSORS_ONLN)" gd \
     && pecl install -o -f redis \
@@ -64,13 +69,16 @@ RUN apk add libmemcached libmemcached-dev \
 ENV COMPOSER_ALLOW_SUPERUSER=1
 ENV COMPOSER_NO_INTERACTION=1
 ENV COMPOSER_HOME=/usr/local/share/composer
+
 RUN mkdir -p /usr/local/share/composer \
-	&& curl -o /tmp/composer-setup.php https://getcomposer.org/installer \
-	&& php /tmp/composer-setup.php --no-ansi --install-dir=/usr/local/bin --filename=composer --snapshot \
-	&& rm -f /tmp/composer-setup.* \
+	&& mv /usr/local/bin/composer.phar /usr/local/bin/composer \
+	#&& curl -o /tmp/composer-setup.php https://getcomposer.org/installer \
+	#&& php /tmp/composer-setup.php --no-ansi --install-dir=/usr/local/bin --filename=composer --snapshot \
+	#&& rm -f /tmp/composer-setup.* \
     # 配置composer中国全量镜像
     && composer config -g repo.packagist composer https://packagist.phpcomposer.com
 
+# 工作目录,可与docker-compose.yml保持一致
 WORKDIR /data/www
 
 # 对其他容器开放9000端口

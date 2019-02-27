@@ -1,43 +1,22 @@
-## 基于docker的lnmp环境
+## 项目描述
+- 基于docker的开发环境
+- 主要由openresty+mysql+php构成
+- 包含了一些实用工具
 
 ### 支持的php版本(共存)
 5.5,5.6,7.0,7.1,7.2
 版本>=7.0支持memcached
 所有版本支持redis扩展
 
+### openresty
+lua脚本目录:../lua
+lua扩展目录:../openresty
+
 ### mysql版本
-5.7
+**5.7**  
+已默认配置好主从同步
 
 ### 其他包含如下服务
-redis,memcached,showdoc,phpmyadmin,phpredisadmin,ftpd
+redis,memcached,showdoc,phpmyadmin,phpredisadmin
 
 > 建议安装一个portainer进行更直观的管理
-
-### ftp相关
-默认根目录为当前目录的上级目录，可按需修改
-
-添加用户
-```
-pure-pw useradd bob -f /etc/pure-ftpd/passwd/pureftpd.passwd -m -u ftpuser -d /home/ftpusers/bob
-```
-
-修改密码
-```
-pure-pw passwd bob -f /etc/pure-ftpd/passwd/pureftpd.passwd -m
-```
-
-### svn相关
-权限配置文件:`svn\svn_conf\dav_svn.authz`  
-
-以下命令均在svn容器内运行  
-创建项目
-```
-svnadmin create $PATH_TO/project1
-```
-创建用户
-```
-htdigest /etc/apache2/dav_svn/dav_svn.passwd Subversion 用户名
-```
-
-示例:  
-> 项目名称为:project1,则路径为:http://ip:port/svn/project1
