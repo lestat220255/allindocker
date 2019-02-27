@@ -14,7 +14,8 @@ lua扩展目录:../openresty
 
 ### mysql版本
 **5.7**  
-已默认配置好主从同步
+已默认配置好主从同步  
+> 完整流程可参考[此处](https://blog.lestat.me/2019-02-19-mysql实现主从复制/)
 
 ### 其他包含如下服务
 redis,memcached,showdoc,phpmyadmin,phpredisadmin

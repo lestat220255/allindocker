@@ -218,3 +218,5 @@ coroutine 0:
 2019/02/27 07:14:26 [info] 36#36: *94 client closed connection while waiting for request, client: 172.22.0.1, server: 0.0.0.0:80
 2019/02/27 07:14:37 [info] 36#36: *105 client closed connection while waiting for request, client: 172.22.0.1, server: 0.0.0.0:80
 2019/02/27 07:15:37 [info] 36#36: *113 client timed out (110: Connection timed out) while waiting for request, client: 172.22.0.1, server: 0.0.0.0:80
+2019/02/27 07:44:16 [info] 6#6: *1 client closed connection while waiting for request, client: 172.23.0.1, server: 0.0.0.0:80
+2019/02/27 07:56:43 [info] 6#6: *2 client closed connection while waiting for request, client: 172.23.0.1, server: 0.0.0.0:80
