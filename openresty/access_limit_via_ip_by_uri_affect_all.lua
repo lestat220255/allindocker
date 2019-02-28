@@ -1,3 +1,7 @@
+--[[
+    防刷脚本
+]]
+
 local function close_redis(red)
     if not red then
         return
@@ -12,9 +16,20 @@ local function close_redis(red)
     end
 end
 
--- 最大频率
-local maxFreq = 50
--- 超过阈值后被ban时间
+--[[
+    table是否包含指定值
+]]
+local function has_value (tab, val)
+    for index, value in ipairs(tab) do
+        if value == val then
+            return true
+        end
+    end
+
+    return false
+end
+
+local maxFreq = 5
 local banExpire = 600
 
 --[[
@@ -23,9 +38,9 @@ local banExpire = 600
 local redis = require "resty.redis"
 local red = redis:new()
 red:set_timeout(1000)
-local host = 'redis'
+local ip = "192.168.0.251"
 local port = 6379
-local ok, err = red:connect(host,port)
+local ok, err = red:connect(ip,port)
 if not ok then
     return close_redis(red)
 end
@@ -41,7 +56,6 @@ if clientIP == nil then
    clientIP = ngx.var.remote_addr
 end
 
-
 local incrKey = "user:"..clientIP..":freq"
 local blockKey = "user:"..clientIP..":block"
 
@@ -55,23 +69,34 @@ if tonumber(is_block) == 1 then
 end
 
 --[[
+    当前策略:对指定uri进行请求频率限制,如果超出频率则限制该ip的所有请求
+]]
+
+-- 获取当前uri
+-- ngx.log(ngx.DEBUG, ngx.var.request_uri)
+
+local limited_paths = {'/asd', '/aaa'}
+
+if has_value(limited_paths, ngx.var.request_uri) == true then
+    --[[
     每秒访问频率+1
-]]
-res, err = red:incr(incrKey)
+    ]]
+    res, err = red:incr(incrKey)
 
---[[
-    上一步操作成功,则为当前key设置过期时间
-]]
-if res == 1 then
-   res, err = red:expire(incrKey,1)
-end
+    --[[
+        上一步操作成功,则为当前key设置过期时间
+    ]]
+    if res == 1 then
+    res, err = red:expire(incrKey,1)
+    end
 
---[[
-    每秒请求数大于阈值,屏蔽指定值(秒)
-]]
-if res > maxFreq then
-    res, err = red:set(blockKey,1)
-    res, err = red:expire(blockKey,banExpire)
+    --[[
+        每秒请求数大于阈值,屏蔽指定值(秒)
+    ]]
+    if res > maxFreq then
+        res, err = red:set(blockKey,1)
+        res, err = red:expire(blockKey,banExpire)
+    end
 end
 
 --[[

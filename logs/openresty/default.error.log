@@ -235,3 +235,316 @@ coroutine 0:
 2019/02/28 04:30:03 [info] 6#6: *2 client closed connection while waiting for request, client: 172.20.0.1, server: 0.0.0.0:80
 2019/02/28 08:07:17 [info] 7#7: *1 client closed connection while waiting for request, client: 172.22.0.1, server: 0.0.0.0:80
 2019/02/28 08:52:05 [info] 6#6: *1 client closed connection while waiting for request, client: 172.25.0.1, server: 0.0.0.0:80
+2019/02/28 08:57:26 [info] 6#6: *2 client closed connection while waiting for request, client: 172.26.0.1, server: 0.0.0.0:80
+2019/02/28 08:58:26 [info] 6#6: *4 client timed out (110: Connection timed out) while waiting for request, client: 172.26.0.1, server: 0.0.0.0:80
+2019/02/28 08:59:04 [info] 6#6: *9 client closed connection while waiting for request, client: 172.26.0.1, server: 0.0.0.0:80
+2019/02/28 09:00:15 [info] 13#13: *15 client timed out (110: Connection timed out) while waiting for request, client: 172.26.0.1, server: 0.0.0.0:80
+2019/02/28 09:01:38 [info] 13#13: *28 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:01:55 [info] 13#13: *41 client closed connection while waiting for request, client: 172.26.0.1, server: 0.0.0.0:80
+2019/02/28 09:14:23 [info] 13#13: *49 client closed connection while waiting for request, client: 172.26.0.1, server: 0.0.0.0:80
+2019/02/28 09:15:18 [info] 13#13: *55 client closed connection while waiting for request, client: 172.26.0.1, server: 0.0.0.0:80
+2019/02/28 09:15:28 [info] 13#13: *71 client closed connection while waiting for request, client: 172.26.0.1, server: 0.0.0.0:80
+2019/02/28 09:15:47 [info] 13#13: *79 client closed connection while waiting for request, client: 172.26.0.1, server: 0.0.0.0:80
+2019/02/28 09:16:17 [info] 13#13: *85 client closed connection while waiting for request, client: 172.26.0.1, server: 0.0.0.0:80
+2019/02/28 09:16:59 [info] 13#13: *91 client closed connection while waiting for request, client: 172.26.0.1, server: 0.0.0.0:80
+2019/02/28 09:17:05 [info] 13#13: *54 epoll_wait() reported that client prematurely closed connection, so upstream connection is closed too while sending request to upstream, client: 172.26.0.1, server: localhost, request: "GET /index.php HTTP/1.1", upstream: "fastcgi://172.26.0.12:9000", host: "localhost"
+2019/02/28 09:17:21 [info] 13#13: *124 client closed connection while waiting for request, client: 172.26.0.1, server: 0.0.0.0:80
+2019/02/28 09:17:28 [info] 13#13: *104 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:17:38 [info] 13#13: *164 client closed connection while waiting for request, client: 172.26.0.1, server: 0.0.0.0:80
+2019/02/28 09:17:53 [info] 13#13: *186 client closed connection while waiting for request, client: 172.26.0.1, server: 0.0.0.0:80
+2019/02/28 09:18:27 [info] 16#16: *191 writev() failed (32: Broken pipe) while sending to client, client: 172.26.0.1, server: localhost, request: "GET /asd HTTP/1.1", upstream: "fastcgi://172.26.0.12:9000", host: "localhost"
+2019/02/28 09:18:50 [info] 16#16: *216 client closed connection while waiting for request, client: 172.26.0.1, server: 0.0.0.0:80
+2019/02/28 09:19:47 [debug] 16#16: *254 [lua] access_limit.lua:20: /asd
+2019/02/28 09:19:47 [debug] 16#16: *254 [lua] access_limit.lua:20: /asd
+2019/02/28 09:19:47 [debug] 16#16: *254 [lua] access_limit.lua:20: /asd
+2019/02/28 09:19:47 [debug] 16#16: *254 [lua] access_limit.lua:20: /asd
+2019/02/28 09:19:47 [debug] 16#16: *254 [lua] access_limit.lua:20: /asd
+2019/02/28 09:19:47 [debug] 16#16: *254 [lua] access_limit.lua:20: /asd
+2019/02/28 09:19:49 [debug] 16#16: *254 [lua] access_limit.lua:20: /favicon.ico
+2019/02/28 09:19:49 [debug] 16#16: *254 [lua] access_limit.lua:20: /favicon.ico
+2019/02/28 09:20:05 [info] 16#16: *253 client closed connection while waiting for request, client: 172.26.0.1, server: 0.0.0.0:80
+2019/02/28 09:28:50 [info] 19#19: *267 client closed connection while waiting for request, client: 172.26.0.1, server: 0.0.0.0:80
+2019/02/28 09:30:25 [info] 19#19: *275 client closed connection while waiting for request, client: 172.26.0.1, server: 0.0.0.0:80
+2019/02/28 09:31:20 [info] 19#19: *328 client closed connection while waiting for request, client: 172.26.0.1, server: 0.0.0.0:80
+2019/02/28 09:31:42 [info] 19#19: *276 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:47:04 [info] 22#22: *435 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:49:53 [error] 22#22: *470 lua entry thread aborted: runtime error: ...y/nginx/src/access_limit_via_token_by_uri_affect_all.lua:54: attempt to concatenate global 'clientToken' (a nil value)
+stack traceback:
+coroutine 0:
+	...y/nginx/src/access_limit_via_token_by_uri_affect_all.lua: in function <...y/nginx/src/access_limit_via_token_by_uri_affect_all.lua:1>, client: 172.26.0.1, server: localhost, request: "GET /asd HTTP/1.1", host: "localhost"
+2019/02/28 09:49:53 [error] 22#22: *472 lua entry thread aborted: runtime error: ...y/nginx/src/access_limit_via_token_by_uri_affect_all.lua:54: attempt to concatenate global 'clientToken' (a nil value)
+stack traceback:
+coroutine 0:
+	...y/nginx/src/access_limit_via_token_by_uri_affect_all.lua: in function <...y/nginx/src/access_limit_via_token_by_uri_affect_all.lua:1>, client: 172.26.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/asd"
+2019/02/28 09:50:07 [error] 22#22: *474 lua entry thread aborted: runtime error: ...y/nginx/src/access_limit_via_token_by_uri_affect_all.lua:54: attempt to concatenate global 'clientToken' (a nil value)
+stack traceback:
+coroutine 0:
+	...y/nginx/src/access_limit_via_token_by_uri_affect_all.lua: in function <...y/nginx/src/access_limit_via_token_by_uri_affect_all.lua:1>, client: 172.26.0.1, server: localhost, request: "GET /admin HTTP/1.1", host: "localhost"
+2019/02/28 09:50:10 [error] 22#22: *476 lua entry thread aborted: runtime error: ...y/nginx/src/access_limit_via_token_by_uri_affect_all.lua:54: attempt to concatenate global 'clientToken' (a nil value)
+stack traceback:
+coroutine 0:
+	...y/nginx/src/access_limit_via_token_by_uri_affect_all.lua: in function <...y/nginx/src/access_limit_via_token_by_uri_affect_all.lua:1>, client: 172.26.0.1, server: localhost, request: "GET /aaaaa HTTP/1.1", host: "localhost"
+2019/02/28 09:50:10 [error] 22#22: *478 lua entry thread aborted: runtime error: ...y/nginx/src/access_limit_via_token_by_uri_affect_all.lua:54: attempt to concatenate global 'clientToken' (a nil value)
+stack traceback:
+coroutine 0:
+	...y/nginx/src/access_limit_via_token_by_uri_affect_all.lua: in function <...y/nginx/src/access_limit_via_token_by_uri_affect_all.lua:1>, client: 172.26.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/aaaaa"
+2019/02/28 09:50:21 [error] 22#22: *480 lua entry thread aborted: runtime error: ...y/nginx/src/access_limit_via_token_by_uri_affect_all.lua:54: attempt to concatenate global 'clientToken' (a nil value)
+stack traceback:
+coroutine 0:
+	...y/nginx/src/access_limit_via_token_by_uri_affect_all.lua: in function <...y/nginx/src/access_limit_via_token_by_uri_affect_all.lua:1>, client: 172.26.0.1, server: localhost, request: "GET /aaaaa HTTP/1.1", host: "localhost"
+2019/02/28 09:50:22 [error] 22#22: *482 lua entry thread aborted: runtime error: ...y/nginx/src/access_limit_via_token_by_uri_affect_all.lua:54: attempt to concatenate global 'clientToken' (a nil value)
+stack traceback:
+coroutine 0:
+	...y/nginx/src/access_limit_via_token_by_uri_affect_all.lua: in function <...y/nginx/src/access_limit_via_token_by_uri_affect_all.lua:1>, client: 172.26.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/aaaaa"
+2019/02/28 09:52:24 [info] 22#22: *484 client closed connection while waiting for request, client: 172.26.0.1, server: 0.0.0.0:80
+2019/02/28 09:52:24 [error] 22#22: *485 lua entry thread aborted: runtime error: ...y/nginx/src/access_limit_via_token_by_uri_affect_all.lua:54: attempt to concatenate global 'clientToken' (a nil value)
+stack traceback:
+coroutine 0:
+	...y/nginx/src/access_limit_via_token_by_uri_affect_all.lua: in function <...y/nginx/src/access_limit_via_token_by_uri_affect_all.lua:1>, client: 172.26.0.1, server: localhost, request: "GET /test HTTP/1.1", host: "localhost"
+2019/02/28 09:52:36 [info] 22#22: *487 client closed connection while waiting for request, client: 172.26.0.1, server: 0.0.0.0:80
+2019/02/28 09:53:20 [error] 22#22: *543 lua entry thread aborted: runtime error: ...y/nginx/src/access_limit_via_token_by_uri_affect_all.lua:54: attempt to concatenate global 'clientToken' (a nil value)
+stack traceback:
+coroutine 0:
+	...y/nginx/src/access_limit_via_token_by_uri_affect_all.lua: in function <...y/nginx/src/access_limit_via_token_by_uri_affect_all.lua:1>, client: 172.26.0.1, server: localhost, request: "HEAD /asd HTTP/1.1", host: "localhost"
+2019/02/28 09:56:05 [info] 22#22: *545 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:56:10 [info] 22#22: *549 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:56:12 [info] 22#22: *553 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:56:12 [info] 22#22: *557 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:56:12 [info] 22#22: *561 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:56:12 [info] 22#22: *565 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:56:12 [info] 22#22: *569 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:56:13 [info] 22#22: *573 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:56:13 [info] 22#22: *577 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:56:13 [info] 22#22: *581 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:56:13 [info] 22#22: *585 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:56:13 [info] 22#22: *589 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:56:14 [info] 22#22: *593 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:56:18 [info] 22#22: *597 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:56:19 [info] 22#22: *601 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:56:19 [info] 22#22: *605 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:56:19 [info] 22#22: *607 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:56:19 [info] 22#22: *609 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:56:19 [info] 22#22: *611 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:56:21 [info] 22#22: *613 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:56:25 [info] 22#22: *615 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:56:26 [info] 22#22: *619 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:56:26 [info] 22#22: *623 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:56:27 [info] 22#22: *627 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:56:27 [info] 22#22: *631 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:56:27 [info] 22#22: *635 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:56:27 [info] 22#22: *639 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:56:27 [info] 22#22: *643 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:56:28 [info] 22#22: *647 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:56:28 [info] 22#22: *651 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:56:28 [info] 22#22: *655 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:56:29 [info] 22#22: *659 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:56:33 [info] 22#22: *663 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:56:33 [info] 22#22: *667 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:56:34 [info] 22#22: *671 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:56:34 [info] 22#22: *675 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:56:34 [info] 22#22: *679 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:56:34 [info] 22#22: *683 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:56:34 [info] 22#22: *687 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:56:35 [info] 22#22: *691 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:56:35 [info] 22#22: *695 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:56:46 [info] 22#22: *699 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:56:47 [info] 22#22: *703 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:56:47 [info] 22#22: *707 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:56:47 [info] 22#22: *709 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:56:47 [info] 22#22: *711 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:56:47 [info] 22#22: *713 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:56:48 [info] 22#22: *715 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:59:28 [info] 22#22: *717 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:59:29 [info] 22#22: *719 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:59:29 [info] 22#22: *721 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:59:30 [info] 22#22: *723 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:59:31 [info] 22#22: *725 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:59:31 [info] 22#22: *727 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:59:31 [info] 22#22: *729 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:59:33 [info] 22#22: *731 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:59:36 [info] 22#22: *733 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:59:38 [info] 22#22: *737 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:59:38 [info] 22#22: *741 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:59:38 [info] 22#22: *745 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:59:38 [info] 22#22: *747 client 172.26.0.1 closed keepalive connection
+2019/02/28 09:59:39 [info] 22#22: *749 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:14:23 [info] 22#22: *751 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:14:24 [info] 22#22: *755 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:14:25 [info] 22#22: *759 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:14:25 [info] 22#22: *763 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:14:25 [info] 22#22: *765 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:14:28 [info] 22#22: *767 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:14:30 [info] 22#22: *769 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:15:11 [info] 25#25: *771 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:15:12 [info] 25#25: *775 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:15:12 [info] 25#25: *779 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:15:13 [info] 25#25: *783 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:15:13 [info] 25#25: *785 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:15:13 [info] 25#25: *787 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:15:15 [info] 25#25: *789 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:15:17 [info] 25#25: *793 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:15:17 [info] 25#25: *797 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:15:17 [info] 25#25: *801 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:15:17 [info] 25#25: *803 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:15:21 [info] 25#25: *805 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:15:22 [info] 25#25: *809 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:15:22 [info] 25#25: *813 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:15:22 [info] 25#25: *817 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:15:23 [info] 25#25: *821 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:15:23 [info] 25#25: *825 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:15:23 [info] 25#25: *829 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:15:23 [info] 25#25: *833 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:15:23 [info] 25#25: *837 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:15:24 [info] 25#25: *841 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:15:24 [info] 25#25: *845 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:15:24 [info] 25#25: *849 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:15:24 [info] 25#25: *853 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:15:25 [info] 25#25: *857 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:16:27 [error] 25#25: *861 lua entry thread aborted: runtime error: ...y/nginx/src/access_limit_via_token_by_uri_affect_uri.lua:64: attempt to concatenate global 'clientToken' (a nil value)
+stack traceback:
+coroutine 0:
+	...y/nginx/src/access_limit_via_token_by_uri_affect_uri.lua: in function <...y/nginx/src/access_limit_via_token_by_uri_affect_uri.lua:1>, client: 172.26.0.1, server: localhost, request: "GET /aaaaa HTTP/1.1", host: "localhost"
+2019/02/28 10:16:28 [error] 25#25: *863 lua entry thread aborted: runtime error: ...y/nginx/src/access_limit_via_token_by_uri_affect_uri.lua:64: attempt to concatenate global 'clientToken' (a nil value)
+stack traceback:
+coroutine 0:
+	...y/nginx/src/access_limit_via_token_by_uri_affect_uri.lua: in function <...y/nginx/src/access_limit_via_token_by_uri_affect_uri.lua:1>, client: 172.26.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/aaaaa"
+2019/02/28 10:19:07 [error] 27#27: *865 failed to load external Lua file "/usr/local/openresty/nginx/src/access_limit_via_ip_by_uri_affect_uri.lua": ...esty/nginx/src/access_limit_via_ip_by_uri_affect_uri.lua:59: unexpected symbol near '...', client: 172.26.0.1, server: localhost, request: "HEAD /aaaaaa HTTP/1.1", host: "localhost"
+2019/02/28 10:19:35 [info] 27#27: *866 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:19:36 [info] 27#27: *870 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:19:36 [info] 27#27: *874 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:19:37 [info] 27#27: *878 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:19:37 [info] 27#27: *882 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:19:37 [info] 27#27: *886 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:19:37 [info] 27#27: *890 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:19:38 [info] 27#27: *894 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:19:38 [info] 27#27: *898 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:19:38 [info] 27#27: *902 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:19:41 [info] 27#27: *906 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:19:42 [info] 27#27: *910 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:19:42 [info] 27#27: *914 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:19:43 [info] 27#27: *918 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:19:43 [info] 27#27: *922 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:19:43 [info] 27#27: *926 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:19:43 [info] 27#27: *928 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:19:44 [info] 27#27: *930 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:19:44 [info] 27#27: *932 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:19:47 [info] 27#27: *934 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:19:48 [info] 27#27: *938 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:19:48 [info] 27#27: *942 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:19:49 [info] 27#27: *946 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:19:49 [info] 27#27: *950 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:19:49 [info] 27#27: *954 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:19:49 [info] 27#27: *956 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:40:32 [info] 27#27: *1033 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:40:34 [info] 27#27: *1037 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:40:34 [info] 27#27: *1041 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:40:34 [info] 27#27: *1045 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:40:34 [info] 27#27: *1049 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:40:35 [info] 27#27: *1051 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:40:35 [info] 27#27: *1053 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:40:39 [info] 27#27: *1055 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:40:40 [info] 27#27: *1059 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:40:40 [info] 27#27: *1063 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:40:41 [info] 27#27: *1067 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:40:41 [info] 27#27: *1071 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:40:41 [info] 27#27: *1075 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:40:41 [info] 27#27: *1079 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:40:42 [info] 27#27: *1083 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:40:42 [info] 27#27: *1087 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:40:42 [info] 27#27: *1091 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:41:08 [info] 27#27: *1095 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:41:08 [info] 27#27: *1099 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:41:08 [info] 27#27: *1103 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:41:09 [info] 27#27: *1107 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:41:09 [info] 27#27: *1111 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:41:09 [info] 27#27: *1115 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:41:09 [info] 27#27: *1119 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:41:09 [info] 27#27: *1123 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:41:10 [info] 27#27: *1127 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:41:10 [info] 27#27: *1131 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:44:21 [error] 29#29: *1135 lua entry thread aborted: runtime error: ...l/openresty/nginx/src/access_limit_by_specific_rules.lua:61: attempt to call global 'has_value' (a nil value)
+stack traceback:
+coroutine 0:
+	...l/openresty/nginx/src/access_limit_by_specific_rules.lua: in function <...l/openresty/nginx/src/access_limit_by_specific_rules.lua:1>, client: 172.26.0.1, server: localhost, request: "HEAD /asda HTTP/1.1", host: "localhost"
+2019/02/28 10:44:48 [error] 29#29: *1138 lua entry thread aborted: runtime error: ...l/openresty/nginx/src/access_limit_by_specific_rules.lua:61: attempt to call global 'has_value' (a nil value)
+stack traceback:
+coroutine 0:
+	...l/openresty/nginx/src/access_limit_by_specific_rules.lua: in function <...l/openresty/nginx/src/access_limit_by_specific_rules.lua:1>, client: 172.26.0.1, server: localhost, request: "HEAD /asda HTTP/1.1", host: "localhost"
+2019/02/28 10:45:21 [info] 29#29: *1140 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:45:22 [info] 29#29: *1144 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:45:23 [info] 29#29: *1148 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:45:23 [info] 29#29: *1152 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:45:23 [info] 29#29: *1156 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:45:23 [info] 29#29: *1160 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:45:23 [info] 29#29: *1164 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:45:24 [info] 29#29: *1168 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:45:24 [info] 29#29: *1172 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:45:24 [info] 29#29: *1176 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:45:28 [info] 29#29: *1180 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:45:29 [info] 29#29: *1184 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:45:29 [info] 29#29: *1188 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:45:29 [info] 29#29: *1190 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:45:29 [info] 29#29: *1192 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:45:29 [info] 29#29: *1194 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:45:30 [info] 29#29: *1196 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:45:30 [info] 29#29: *1198 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:45:35 [info] 29#29: *1200 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:45:36 [info] 29#29: *1204 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:45:36 [info] 29#29: *1208 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:45:36 [info] 29#29: *1210 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:45:36 [info] 29#29: *1212 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:45:36 [info] 29#29: *1214 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:45:37 [info] 29#29: *1216 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:45:40 [info] 29#29: *1218 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:45:42 [info] 29#29: *1220 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:45:44 [info] 29#29: *1224 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:45:44 [info] 29#29: *1228 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:45:44 [info] 29#29: *1232 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:45:44 [info] 29#29: *1236 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:45:45 [info] 29#29: *1240 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:45:54 [info] 29#29: *1244 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:45:56 [info] 29#29: *1248 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:45:56 [info] 29#29: *1252 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:45:56 [info] 29#29: *1256 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:45:56 [info] 29#29: *1258 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:45:57 [info] 29#29: *1260 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:45:57 [info] 29#29: *1262 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:45:57 [info] 29#29: *1264 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:45:57 [info] 29#29: *1266 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:45:57 [info] 29#29: *1268 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:46:09 [info] 29#29: *1270 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:46:11 [info] 29#29: *1274 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:46:42 [info] 29#29: *1276 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:46:42 [info] 29#29: *1280 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:46:42 [info] 29#29: *1284 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:46:42 [info] 29#29: *1286 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:46:42 [info] 29#29: *1288 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:46:44 [info] 29#29: *1290 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:46:45 [info] 29#29: *1294 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:46:45 [info] 29#29: *1296 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:46:45 [info] 29#29: *1298 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:46:45 [info] 29#29: *1300 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:46:46 [info] 29#29: *1302 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:46:47 [info] 29#29: *1304 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:46:47 [info] 29#29: *1308 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:46:47 [info] 29#29: *1312 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:46:48 [info] 29#29: *1316 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:46:48 [info] 29#29: *1320 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:46:48 [info] 29#29: *1324 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:46:48 [info] 29#29: *1328 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:46:52 [info] 29#29: *1332 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:46:52 [info] 29#29: *1336 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:46:53 [info] 29#29: *1340 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:46:53 [info] 29#29: *1342 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:46:53 [info] 29#29: *1344 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:46:53 [info] 29#29: *1346 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:46:53 [info] 29#29: *1348 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:46:53 [info] 29#29: *1350 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:46:53 [info] 29#29: *1352 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:46:54 [info] 29#29: *1354 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:46:59 [info] 29#29: *1356 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:46:59 [info] 29#29: *1360 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:46:59 [info] 29#29: *1364 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:46:59 [info] 29#29: *1366 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:47:00 [info] 29#29: *1368 client 172.26.0.1 closed keepalive connection
+2019/02/28 10:47:00 [info] 29#29: *1370 client 172.26.0.1 closed keepalive connection

@@ -1,7 +1,3 @@
---[[
-    防刷脚本
-]]
-
 local function close_redis(red)
     if not red then
         return
@@ -16,7 +12,9 @@ local function close_redis(red)
     end
 end
 
+-- 最大频率
 local maxFreq = 3
+-- 超过阈值后被ban时间
 local banExpire = 600
 
 --[[
@@ -25,9 +23,9 @@ local banExpire = 600
 local redis = require "resty.redis"
 local red = redis:new()
 red:set_timeout(1000)
-local ip = "192.168.0.251"
+local host = 'redis'
 local port = 6379
-local ok, err = red:connect(ip,port)
+local ok, err = red:connect(host,port)
 if not ok then
     return close_redis(red)
 end
