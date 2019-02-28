@@ -233,3 +233,5 @@ coroutine 0:
 2019/02/28 01:53:29 [info] 6#6: *22 client 172.18.0.1 closed keepalive connection
 2019/02/28 01:53:33 [info] 6#6: *24 client 172.18.0.1 closed keepalive connection
 2019/02/28 04:30:03 [info] 6#6: *2 client closed connection while waiting for request, client: 172.20.0.1, server: 0.0.0.0:80
+2019/02/28 08:07:17 [info] 7#7: *1 client closed connection while waiting for request, client: 172.22.0.1, server: 0.0.0.0:80
+2019/02/28 08:52:05 [info] 6#6: *1 client closed connection while waiting for request, client: 172.25.0.1, server: 0.0.0.0:80

@@ -9,7 +9,7 @@ services:
             #- MYSQL_PASSWORD=password
         volumes:
             #配置文件
-            - ../conf/mysql/my.cnf:/etc/mysql/my.cnf:ro
+            - ./src/mysql/my.cnf:/etc/mysql/my.cnf:ro
             #数据目录
             #- ../mysql/:/var/lib/mysql/:rw
             #查询日志文件
@@ -30,7 +30,7 @@ services:
             #- MYSQL_PASSWORD=password
         volumes:
             #配置文件
-            - ../conf/mysql-slave/my.cnf:/etc/mysql/my.cnf:ro
+            - ./src/mysql-slave/my.cnf:/etc/mysql/my.cnf:ro
             #数据目录
             #- ../mysql-slave/:/var/lib/mysql/:rw
             #查询日志文件
@@ -54,11 +54,11 @@ services:
         depends_on:
             - mysql57
             - redis
-        build: ./php72
+        build: ./src/php72
         restart: always
         volumes:
-            - ./php72/www.conf:/usr/local/etc/php-fpm.d/www.conf:ro
-            - ../www/:/data/www/:rw
+            - ./src/php72/www.conf:/usr/local/etc/php-fpm.d/www.conf:ro
+            - ./www/:/data/www/:rw
             #- ../logs/php72/fpm-php.www.log:/var/log/fpm-php.www.log:rw
         expose:
             - "9000"
@@ -67,11 +67,11 @@ services:
         depends_on:
             - mysql57
             - redis
-        build: ./php71
+        build: ./src/php71
         restart: always
         volumes:
-            - ./php71/www.conf:/usr/local/etc/php-fpm.d/www.conf:ro
-            - ../www/:/data/www/:rw
+            - ./src/php71/www.conf:/usr/local/etc/php-fpm.d/www.conf:ro
+            - ./www/:/data/www/:rw
             #- ../logs/php71/fpm-php.www.log:/var/log/fpm-php.www.log:rw
         expose:
             - "9000"
@@ -80,11 +80,11 @@ services:
         depends_on:
             - mysql57
             - redis
-        build: ./php70
+        build: ./src/php70
         restart: always
         volumes:
-            - ./php70/www.conf:/usr/local/etc/php-fpm.d/www.conf:ro
-            - ../www/:/data/www/:rw
+            - ./src/php70/www.conf:/usr/local/etc/php-fpm.d/www.conf:ro
+            - ./www/:/data/www/:rw
             #- ../logs/php70/fpm-php.www.log:/var/log/fpm-php.www.log:rw
         expose:
             - "9000"
@@ -93,11 +93,11 @@ services:
         depends_on:
             - mysql57
             - redis
-        build: ./php56
+        build: ./src/php56
         restart: always
         volumes:
-            - ./php56/www.conf:/usr/local/etc/php-fpm.d/www.conf:ro
-            - ../www/:/data/www/:rw
+            - ./src/php56/www.conf:/usr/local/etc/php-fpm.d/www.conf:ro
+            - ./www/:/data/www/:rw
             #- ../logs/php56/fpm-php.www.log:/var/log/fpm-php.www.log:rw
         expose:
             - "9000"
@@ -106,11 +106,11 @@ services:
         depends_on:
             - mysql57
             - redis
-        build: ./php55
+        build: ./src/php55
         restart: always
         volumes:
-            - ./php55/www.conf:/usr/local/etc/php-fpm.d/www.conf:ro
-            - ../www/:/data/www/:rw
+            - ./src/php55/www.conf:/usr/local/etc/php-fpm.d/www.conf:ro
+            - ./www/:/data/www/:rw
             #- ../logs/php55/fpm-php.www.log:/var/log/fpm-php.www.log:rw
         expose:
             - "9000"
@@ -123,19 +123,17 @@ services:
             - '443:443'
         volumes:
         #主配置
-            - ../conf/openresty/nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf:ro
+            - ./src/openresty/nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf:ro
         #虚拟主机配置
-            - ../conf/openresty/conf.d/:/etc/nginx/conf.d/:rw
+            - ./src/openresty/conf.d/:/etc/nginx/conf.d/:rw
         #lua脚本目录
-            - ../openresty/:/usr/local/openresty/nginx/src/:ro
-        #lua库目录
-            - ../lua/:/usr/local/openresty/nginx/lua/:ro
+            - ./openresty/:/usr/local/openresty/nginx/src/:ro
         #web目录
-            - ../www/:/data/www/:rw
+            - ./www/:/data/www/:rw
         #证书目录
             - ./certificates/:/etc/letsencrypt/:ro
         #日志目录
-            - ../logs/openresty/:/var/log/nginx/:rw
+            - ./logs/openresty/:/var/log/nginx/:rw
         restart: always
         container_name: openresty
     #mysql管理
@@ -150,7 +148,7 @@ services:
         container_name: phpmyadmin
     #redis管理
     phpredisadmin:
-        build: ./phpRedisAdmin
+        build: ./src/phpRedisAdmin
         environment:
             # - ADMIN_USER=admin
             # - ADMIN_PASS=admin
@@ -163,7 +161,7 @@ services:
         container_name: phpredisadmin
     #文档系统
     showdoc:
-        build: ./showdoc
+        build: ./src/showdoc
         volumes:
         #项目文件
             - ./showdoc/:/var/www/html/:rw
@@ -172,28 +170,28 @@ services:
         container_name: showdoc
     #下载工具
     you-get:
-        build: ./you-get
+        build: ./src/you-get
         container_name: you-get
         stdin_open: true
         tty: true
         #下载目录
         volumes:
-            - "../Downloads:/data/download:rw"
+            - "./Downloads:/data/download:rw"
     #代理ip池
     proxy_pool:
         volumes:
-            - ./proxy_pool:/usr/src/app
+            - ./src/proxy_pool:/usr/src/app
         # ports:
         #     - "5010:5010"
         links:
             - redis
-        build: ./proxy_pool/Docker
+        build: ./src/proxy_pool/Docker
         container_name: proxy_pool
     #下载器
     h5ai:
         image: bixidock/h5ai
         volumes:
-            - ../Downloads:/var/www:rw
+            - ./Downloads:/var/www:rw
         restart: always
         container_name: h5ai
     aria2:
@@ -203,7 +201,7 @@ services:
             - "9443:443"
             - "6800:6800"
         volumes:
-            - ../Downloads:/var/www:rw
+            - ./Downloads:/var/www:rw
         # volumes:
         #   - /some_folder:/root/conf/key
         #   - ~/test/aria2.conf:/root/conf/aria2.conf
