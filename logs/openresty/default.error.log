@@ -548,3 +548,324 @@ coroutine 0:
 2019/02/28 10:46:59 [info] 29#29: *1366 client 172.26.0.1 closed keepalive connection
 2019/02/28 10:47:00 [info] 29#29: *1368 client 172.26.0.1 closed keepalive connection
 2019/02/28 10:47:00 [info] 29#29: *1370 client 172.26.0.1 closed keepalive connection
+2019/03/01 02:08:55 [info] 6#6: *1 client closed connection while waiting for request, client: 172.18.0.1, server: 0.0.0.0:80
+2019/03/01 06:12:44 [info] 6#6: *2 client closed connection while waiting for request, client: 172.20.0.1, server: 0.0.0.0:80
+2019/03/01 06:13:36 [info] 6#6: *7 client closed connection while waiting for request, client: 172.20.0.1, server: 0.0.0.0:80
+2019/03/01 06:13:44 [error] 6#6: *1 lua entry thread aborted: runtime error: ...l/openresty/nginx/src/access_limit_by_specific_rules.lua:136: attempt to compare nil with number
+stack traceback:
+coroutine 0:
+	...l/openresty/nginx/src/access_limit_by_specific_rules.lua: in function <...l/openresty/nginx/src/access_limit_by_specific_rules.lua:1>, client: 172.20.0.1, server: localhost, request: "GET /test HTTP/1.1", host: "localhost"
+2019/03/01 06:13:45 [error] 6#6: *17 lua entry thread aborted: runtime error: ...l/openresty/nginx/src/access_limit_by_specific_rules.lua:136: attempt to compare nil with number
+stack traceback:
+coroutine 0:
+	...l/openresty/nginx/src/access_limit_by_specific_rules.lua: in function <...l/openresty/nginx/src/access_limit_by_specific_rules.lua:1>, client: 172.20.0.1, server: localhost, request: "GET /test HTTP/1.1", host: "localhost"
+2019/03/01 06:13:45 [error] 6#6: *19 lua entry thread aborted: runtime error: ...l/openresty/nginx/src/access_limit_by_specific_rules.lua:136: attempt to compare nil with number
+stack traceback:
+coroutine 0:
+	...l/openresty/nginx/src/access_limit_by_specific_rules.lua: in function <...l/openresty/nginx/src/access_limit_by_specific_rules.lua:1>, client: 172.20.0.1, server: localhost, request: "GET /test HTTP/1.1", host: "localhost"
+2019/03/01 06:13:45 [error] 6#6: *21 lua entry thread aborted: runtime error: ...l/openresty/nginx/src/access_limit_by_specific_rules.lua:136: attempt to compare nil with number
+stack traceback:
+coroutine 0:
+	...l/openresty/nginx/src/access_limit_by_specific_rules.lua: in function <...l/openresty/nginx/src/access_limit_by_specific_rules.lua:1>, client: 172.20.0.1, server: localhost, request: "GET /test HTTP/1.1", host: "localhost"
+2019/03/01 06:13:46 [error] 6#6: *23 lua entry thread aborted: runtime error: ...l/openresty/nginx/src/access_limit_by_specific_rules.lua:136: attempt to compare nil with number
+stack traceback:
+coroutine 0:
+	...l/openresty/nginx/src/access_limit_by_specific_rules.lua: in function <...l/openresty/nginx/src/access_limit_by_specific_rules.lua:1>, client: 172.20.0.1, server: localhost, request: "GET /test HTTP/1.1", host: "localhost"
+2019/03/01 06:13:46 [error] 6#6: *25 lua entry thread aborted: runtime error: ...l/openresty/nginx/src/access_limit_by_specific_rules.lua:136: attempt to compare nil with number
+stack traceback:
+coroutine 0:
+	...l/openresty/nginx/src/access_limit_by_specific_rules.lua: in function <...l/openresty/nginx/src/access_limit_by_specific_rules.lua:1>, client: 172.20.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/test"
+2019/03/01 06:14:28 [info] 6#6: *28 client 172.20.0.1 closed keepalive connection
+2019/03/01 06:14:46 [info] 6#6: *56 client closed connection while waiting for request, client: 172.20.0.1, server: 0.0.0.0:80
+2019/03/01 06:14:59 [info] 6#6: *63 client closed connection while waiting for request, client: 172.20.0.1, server: 0.0.0.0:80
+2019/03/01 06:15:13 [info] 6#6: *130 client closed connection while waiting for request, client: 172.20.0.1, server: 0.0.0.0:80
+2019/03/01 06:15:14 [info] 6#6: *29 epoll_wait() reported that client prematurely closed connection, so upstream connection is closed too while sending request to upstream, client: 172.20.0.1, server: localhost, request: "GET /test HTTP/1.1", upstream: "fastcgi://172.20.0.17:9000", host: "localhost"
+2019/03/01 06:15:56 [info] 6#6: *170 client closed connection while waiting for request, client: 172.20.0.1, server: 0.0.0.0:80
+2019/03/01 06:16:36 [info] 14#14: *175 client closed connection while waiting for request, client: 172.20.0.1, server: 0.0.0.0:80
+2019/03/01 06:16:49 [info] 17#17: *210 client closed connection while waiting for request, client: 172.20.0.1, server: 0.0.0.0:80
+2019/03/01 06:17:42 [info] 19#19: *231 client closed connection while waiting for request, client: 172.20.0.1, server: 0.0.0.0:80
+2019/03/01 06:17:56 [info] 21#21: *270 client 172.20.0.1 closed keepalive connection
+2019/03/01 06:17:57 [info] 21#21: *307 writev() failed (32: Broken pipe) while sending to client, client: 172.20.0.1, server: localhost, request: "GET /test HTTP/1.1", upstream: "fastcgi://172.20.0.17:9000", host: "localhost"
+2019/03/01 06:17:58 [info] 21#21: *326 client 172.20.0.1 closed keepalive connection
+2019/03/01 06:18:12 [info] 21#21: *357 writev() failed (32: Broken pipe) while sending to client, client: 172.20.0.1, server: localhost, request: "GET /test HTTP/1.1", upstream: "fastcgi://172.20.0.17:9000", host: "localhost"
+2019/03/01 06:18:15 [info] 21#21: *418 epoll_wait() reported that client prematurely closed connection, so upstream connection is closed too while sending request to upstream, client: 172.20.0.1, server: localhost, request: "GET /test HTTP/1.1", upstream: "fastcgi://172.20.0.17:9000", host: "localhost"
+2019/03/01 06:18:32 [info] 21#21: *491 epoll_wait() reported that client prematurely closed connection, so upstream connection is closed too while sending request to upstream, client: 172.20.0.1, server: localhost, request: "GET /test HTTP/1.1", upstream: "fastcgi://172.20.0.17:9000", host: "localhost"
+2019/03/01 06:19:36 [info] 21#21: *642 epoll_wait() reported that client prematurely closed connection, so upstream connection is closed too while sending request to upstream, client: 172.20.0.1, server: localhost, request: "GET /test HTTP/1.1", upstream: "fastcgi://172.20.0.17:9000", host: "localhost"
+2019/03/01 06:34:00 [error] 21#21: *952 attempt to send data on a closed socket: u:0000000040A1E7E0, c:0000000000000000, ft:0 eof:0, client: 172.20.0.1, server: localhost, request: "GET /test HTTP/1.1", host: "localhost"
+2019/03/01 06:34:00 [error] 21#21: *952 attempt to send data on a closed socket: u:0000000040A1E7E0, c:0000000000000000, ft:0 eof:0, client: 172.20.0.1, server: localhost, request: "GET /test HTTP/1.1", host: "localhost"
+2019/03/01 06:34:00 [error] 21#21: *952 lua entry thread aborted: runtime error: ...l/openresty/nginx/src/access_limit_by_specific_rules.lua:142: attempt to compare number with nil
+stack traceback:
+coroutine 0:
+	...l/openresty/nginx/src/access_limit_by_specific_rules.lua: in function <...l/openresty/nginx/src/access_limit_by_specific_rules.lua:1>, client: 172.20.0.1, server: localhost, request: "GET /test HTTP/1.1", host: "localhost"
+2019/03/01 06:34:00 [error] 21#21: *954 attempt to send data on a closed socket: u:000000004069F7E0, c:0000000000000000, ft:0 eof:0, client: 172.20.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/test"
+2019/03/01 06:34:00 [error] 21#21: *954 attempt to send data on a closed socket: u:000000004069F7E0, c:0000000000000000, ft:0 eof:0, client: 172.20.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/test"
+2019/03/01 06:34:00 [error] 21#21: *954 lua entry thread aborted: runtime error: ...l/openresty/nginx/src/access_limit_by_specific_rules.lua:142: attempt to compare number with nil
+stack traceback:
+coroutine 0:
+	...l/openresty/nginx/src/access_limit_by_specific_rules.lua: in function <...l/openresty/nginx/src/access_limit_by_specific_rules.lua:1>, client: 172.20.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/test"
+2019/03/01 06:34:06 [error] 21#21: *956 attempt to send data on a closed socket: u:00000000417597E0, c:0000000000000000, ft:0 eof:0, client: 172.20.0.1, server: localhost, request: "GET /test HTTP/1.1", host: "localhost"
+2019/03/01 06:34:06 [error] 21#21: *956 attempt to send data on a closed socket: u:00000000417597E0, c:0000000000000000, ft:0 eof:0, client: 172.20.0.1, server: localhost, request: "GET /test HTTP/1.1", host: "localhost"
+2019/03/01 06:34:06 [error] 21#21: *956 lua entry thread aborted: runtime error: ...l/openresty/nginx/src/access_limit_by_specific_rules.lua:142: attempt to compare number with nil
+stack traceback:
+coroutine 0:
+	...l/openresty/nginx/src/access_limit_by_specific_rules.lua: in function <...l/openresty/nginx/src/access_limit_by_specific_rules.lua:1>, client: 172.20.0.1, server: localhost, request: "GET /test HTTP/1.1", host: "localhost"
+2019/03/01 06:34:06 [error] 21#21: *958 attempt to send data on a closed socket: u:00000000410827E0, c:0000000000000000, ft:0 eof:0, client: 172.20.0.1, server: localhost, request: "GET /test HTTP/1.1", host: "localhost"
+2019/03/01 06:34:06 [error] 21#21: *958 attempt to send data on a closed socket: u:00000000410827E0, c:0000000000000000, ft:0 eof:0, client: 172.20.0.1, server: localhost, request: "GET /test HTTP/1.1", host: "localhost"
+2019/03/01 06:34:06 [error] 21#21: *958 lua entry thread aborted: runtime error: ...l/openresty/nginx/src/access_limit_by_specific_rules.lua:142: attempt to compare number with nil
+stack traceback:
+coroutine 0:
+	...l/openresty/nginx/src/access_limit_by_specific_rules.lua: in function <...l/openresty/nginx/src/access_limit_by_specific_rules.lua:1>, client: 172.20.0.1, server: localhost, request: "GET /test HTTP/1.1", host: "localhost"
+2019/03/01 06:34:07 [error] 21#21: *960 attempt to send data on a closed socket: u:000000004129A7E0, c:0000000000000000, ft:0 eof:0, client: 172.20.0.1, server: localhost, request: "GET /test HTTP/1.1", host: "localhost"
+2019/03/01 06:34:07 [error] 21#21: *960 attempt to send data on a closed socket: u:000000004129A7E0, c:0000000000000000, ft:0 eof:0, client: 172.20.0.1, server: localhost, request: "GET /test HTTP/1.1", host: "localhost"
+2019/03/01 06:34:07 [error] 21#21: *960 lua entry thread aborted: runtime error: ...l/openresty/nginx/src/access_limit_by_specific_rules.lua:142: attempt to compare number with nil
+stack traceback:
+coroutine 0:
+	...l/openresty/nginx/src/access_limit_by_specific_rules.lua: in function <...l/openresty/nginx/src/access_limit_by_specific_rules.lua:1>, client: 172.20.0.1, server: localhost, request: "GET /test HTTP/1.1", host: "localhost"
+2019/03/01 06:34:07 [error] 21#21: *962 attempt to send data on a closed socket: u:00000000405097E0, c:0000000000000000, ft:0 eof:0, client: 172.20.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/test"
+2019/03/01 06:34:07 [error] 21#21: *962 attempt to send data on a closed socket: u:00000000405097E0, c:0000000000000000, ft:0 eof:0, client: 172.20.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/test"
+2019/03/01 06:34:07 [error] 21#21: *962 lua entry thread aborted: runtime error: ...l/openresty/nginx/src/access_limit_by_specific_rules.lua:142: attempt to compare number with nil
+stack traceback:
+coroutine 0:
+	...l/openresty/nginx/src/access_limit_by_specific_rules.lua: in function <...l/openresty/nginx/src/access_limit_by_specific_rules.lua:1>, client: 172.20.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/test"
+2019/03/01 06:46:04 [info] 28#28: *1365 writev() failed (32: Broken pipe) while sending to client, client: 172.20.0.1, server: localhost, request: "GET /test HTTP/1.1", upstream: "fastcgi://172.20.0.17:9000", host: "localhost"
+2019/03/01 06:48:58 [info] 30#30: *1621 client 172.20.0.1 closed keepalive connection
+2019/03/01 06:55:53 [debug] 17#17: *229 [lua] access_limit_by_specific_rules.lua:125: incuser:172.20.0.1:freq
+2019/03/01 06:55:53 [debug] 17#17: *229 [lua] access_limit_by_specific_rules.lua:125: incuser:172.20.0.1:freq
+2019/03/01 06:55:54 [debug] 17#17: *229 [lua] access_limit_by_specific_rules.lua:125: incuser:172.20.0.1:freq
+2019/03/01 06:55:58 [debug] 17#17: *229 [lua] access_limit_by_specific_rules.lua:125: incuser:172.20.0.1:freq
+2019/03/01 06:55:58 [debug] 17#17: *229 [lua] access_limit_by_specific_rules.lua:125: incuser:172.20.0.1:freq
+2019/03/01 06:55:58 [debug] 17#17: *229 [lua] access_limit_by_specific_rules.lua:125: incuser:172.20.0.1:freq
+2019/03/01 06:56:08 [debug] 17#17: *229 [lua] access_limit_by_specific_rules.lua:125: incuser:172.20.0.1:freq
+2019/03/01 06:56:08 [debug] 17#17: *229 [lua] access_limit_by_specific_rules.lua:125: incuser:172.20.0.1:freq
+2019/03/01 06:56:09 [debug] 17#17: *229 [lua] access_limit_by_specific_rules.lua:125: incuser:172.20.0.1:freq
+2019/03/01 06:56:14 [debug] 17#17: *229 [lua] access_limit_by_specific_rules.lua:125: incuser:172.20.0.1:freq
+2019/03/01 06:56:14 [debug] 17#17: *229 [lua] access_limit_by_specific_rules.lua:125: incuser:172.20.0.1:freq
+2019/03/01 06:56:14 [debug] 17#17: *229 [lua] access_limit_by_specific_rules.lua:125: incuser:172.20.0.1:freq
+2019/03/01 06:56:14 [debug] 17#17: *229 [lua] access_limit_by_specific_rules.lua:125: incuser:172.20.0.1:freq
+2019/03/01 06:56:38 [debug] 17#17: *229 [lua] access_limit_by_specific_rules.lua:125: incuser:172.20.0.1:freq
+2019/03/01 06:56:44 [debug] 17#17: *229 [lua] access_limit_by_specific_rules.lua:125: incuser:172.20.0.1:freq
+2019/03/01 06:56:49 [debug] 17#17: *229 [lua] access_limit_by_specific_rules.lua:125: incuser:172.20.0.1:freq
+2019/03/01 06:56:49 [debug] 17#17: *229 [lua] access_limit_by_specific_rules.lua:125: incuser:172.20.0.1:freq
+2019/03/01 06:56:49 [debug] 17#17: *229 [lua] access_limit_by_specific_rules.lua:125: incuser:172.20.0.1:freq
+2019/03/01 06:56:53 [debug] 17#17: *229 [lua] access_limit_by_specific_rules.lua:125: incuser:172.20.0.1:freq
+2019/03/01 06:56:53 [debug] 17#17: *229 [lua] access_limit_by_specific_rules.lua:125: incuser:172.20.0.1:freq
+2019/03/01 06:56:53 [debug] 17#17: *229 [lua] access_limit_by_specific_rules.lua:125: incuser:172.20.0.1:freq
+2019/03/01 06:57:01 [debug] 17#17: *229 [lua] access_limit_by_specific_rules.lua:125: incuser:172.20.0.1:freq
+2019/03/01 06:57:01 [debug] 17#17: *229 [lua] access_limit_by_specific_rules.lua:125: incuser:172.20.0.1:freq
+2019/03/01 06:57:02 [debug] 17#17: *229 [lua] access_limit_by_specific_rules.lua:125: incuser:172.20.0.1:freq
+2019/03/01 06:57:06 [debug] 17#17: *229 [lua] access_limit_by_specific_rules.lua:125: incuser:172.20.0.1:freq
+2019/03/01 06:57:06 [debug] 17#17: *229 [lua] access_limit_by_specific_rules.lua:125: incuser:172.20.0.1:freq
+2019/03/01 06:57:15 [debug] 17#17: *229 [lua] access_limit_by_specific_rules.lua:125: incuser:172.20.0.1:freq
+2019/03/01 06:57:15 [debug] 17#17: *229 [lua] access_limit_by_specific_rules.lua:125: incuser:172.20.0.1:freq
+2019/03/01 06:57:24 [debug] 17#17: *229 [lua] access_limit_by_specific_rules.lua:125: incuser:172.20.0.1:freq
+2019/03/01 06:57:24 [debug] 17#17: *229 [lua] access_limit_by_specific_rules.lua:125: incuser:172.20.0.1:freq
+2019/03/01 06:57:29 [debug] 17#17: *229 [lua] access_limit_by_specific_rules.lua:125: incuser:172.20.0.1:freq
+2019/03/01 06:57:29 [debug] 17#17: *229 [lua] access_limit_by_specific_rules.lua:125: incuser:172.20.0.1:freq
+2019/03/01 06:59:12 [debug] 17#17: *284 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 06:59:13 [debug] 17#17: *284 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 06:59:17 [debug] 17#17: *284 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 06:59:17 [debug] 17#17: *284 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 06:59:32 [debug] 17#17: *284 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 06:59:33 [debug] 17#17: *284 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 06:59:33 [debug] 17#17: *284 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 06:59:33 [debug] 17#17: *284 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 06:59:34 [debug] 17#17: *284 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 06:59:34 [debug] 17#17: *284 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 06:59:34 [debug] 17#17: *284 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 06:59:34 [debug] 17#17: *284 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:01:22 [debug] 24#24: *300 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:01:27 [debug] 24#24: *300 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:01:29 [debug] 24#24: *300 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:01:47 [debug] 24#24: *300 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:01:55 [debug] 24#24: *300 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:02:06 [debug] 24#24: *300 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:02:14 [debug] 24#24: *314 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:02:17 [info] 24#24: *314 client 172.20.0.1 closed keepalive connection
+2019/03/01 07:02:34 [debug] 24#24: *300 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:02:35 [debug] 24#24: *300 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:02:43 [debug] 24#24: *300 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:02:45 [debug] 24#24: *300 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:02:47 [debug] 24#24: *300 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:02:49 [debug] 24#24: *300 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:02:52 [debug] 24#24: *300 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:02:56 [debug] 24#24: *300 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:02:57 [debug] 24#24: *300 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:03:03 [debug] 24#24: *300 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:03:06 [debug] 24#24: *300 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:03:09 [debug] 24#24: *300 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:03:10 [debug] 24#24: *300 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:03:14 [debug] 24#24: *300 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:03:15 [debug] 24#24: *300 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:03:16 [debug] 24#24: *300 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:03:17 [debug] 24#24: *300 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:03:17 [debug] 24#24: *300 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:03:18 [debug] 24#24: *300 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:03:19 [debug] 24#24: *300 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:03:19 [debug] 24#24: *300 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:03:20 [debug] 24#24: *300 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:03:20 [debug] 24#24: *300 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:03:21 [debug] 24#24: *300 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:03:22 [debug] 24#24: *300 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:03:22 [debug] 24#24: *300 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:03:22 [debug] 24#24: *300 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:03:23 [debug] 24#24: *300 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:03:23 [debug] 24#24: *300 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:03:23 [info] 24#24: *300 epoll_wait() reported that client prematurely closed connection, so upstream connection is closed too while sending request to upstream, client: 172.20.0.1, server: localhost, request: "GET /index.php HTTP/1.1", upstream: "fastcgi://172.20.0.17:9000", host: "localhost"
+2019/03/01 07:03:23 [debug] 24#24: *375 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:03:24 [debug] 24#24: *375 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:03:25 [debug] 24#24: *375 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:03:41 [debug] 24#24: *375 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:03:42 [debug] 24#24: *375 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:03:46 [debug] 24#24: *375 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:03:47 [debug] 24#24: *375 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:03:48 [debug] 24#24: *375 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:03:48 [debug] 24#24: *375 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:03:50 [debug] 24#24: *375 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:03:50 [debug] 24#24: *375 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:03:50 [debug] 24#24: *375 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:03:51 [debug] 24#24: *375 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:03:52 [debug] 24#24: *375 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:03:52 [debug] 24#24: *375 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:03:53 [debug] 24#24: *375 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:03:54 [debug] 24#24: *375 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:03:54 [debug] 24#24: *375 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:03:55 [debug] 24#24: *375 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:03:56 [debug] 24#24: *375 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:03:56 [debug] 24#24: *375 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:03:57 [debug] 24#24: *375 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:03:57 [debug] 24#24: *375 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:03:57 [debug] 24#24: *375 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:03:58 [debug] 24#24: *375 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:03:58 [debug] 24#24: *375 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:03:58 [debug] 24#24: *375 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:03:59 [debug] 24#24: *375 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:04:01 [debug] 24#24: *375 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:04:07 [debug] 24#24: *375 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:04:08 [debug] 24#24: *375 [lua] access_limit_by_specific_rules.lua:59: times:0
+2019/03/01 07:06:12 [debug] 24#24: *430 [lua] access_limit_by_specific_rules.lua:30: {}
+2019/03/01 07:06:12 [debug] 24#24: *430 [lua] access_limit_by_specific_rules.lua:62: times:0
+2019/03/01 07:06:13 [debug] 24#24: *430 [lua] access_limit_by_specific_rules.lua:30: {}
+2019/03/01 07:06:13 [debug] 24#24: *430 [lua] access_limit_by_specific_rules.lua:62: times:0
+2019/03/01 07:06:17 [debug] 24#24: *430 [lua] access_limit_by_specific_rules.lua:30: {}
+2019/03/01 07:06:17 [debug] 24#24: *430 [lua] access_limit_by_specific_rules.lua:62: times:0
+2019/03/01 07:06:19 [debug] 24#24: *430 [lua] access_limit_by_specific_rules.lua:30: {}
+2019/03/01 07:06:19 [debug] 24#24: *430 [lua] access_limit_by_specific_rules.lua:62: times:0
+2019/03/01 07:06:22 [debug] 24#24: *430 [lua] access_limit_by_specific_rules.lua:30: {}
+2019/03/01 07:06:22 [debug] 24#24: *430 [lua] access_limit_by_specific_rules.lua:62: times:0
+2019/03/01 07:06:23 [debug] 24#24: *430 [lua] access_limit_by_specific_rules.lua:30: {}
+2019/03/01 07:06:23 [debug] 24#24: *430 [lua] access_limit_by_specific_rules.lua:62: times:0
+2019/03/01 07:06:31 [debug] 24#24: *430 [lua] access_limit_by_specific_rules.lua:30: {}
+2019/03/01 07:06:31 [debug] 24#24: *430 [lua] access_limit_by_specific_rules.lua:62: times:0
+2019/03/01 07:06:32 [debug] 24#24: *430 [lua] access_limit_by_specific_rules.lua:30: {}
+2019/03/01 07:06:32 [debug] 24#24: *430 [lua] access_limit_by_specific_rules.lua:62: times:0
+2019/03/01 07:06:34 [debug] 24#24: *430 [lua] access_limit_by_specific_rules.lua:30: {}
+2019/03/01 07:06:34 [debug] 24#24: *430 [lua] access_limit_by_specific_rules.lua:62: times:0
+2019/03/01 07:06:36 [debug] 24#24: *430 [lua] access_limit_by_specific_rules.lua:30: {}
+2019/03/01 07:06:36 [debug] 24#24: *430 [lua] access_limit_by_specific_rules.lua:62: times:0
+2019/03/01 07:06:47 [debug] 24#24: *430 [lua] access_limit_by_specific_rules.lua:30: {}
+2019/03/01 07:06:47 [debug] 24#24: *430 [lua] access_limit_by_specific_rules.lua:62: times:0
+2019/03/01 07:06:54 [debug] 24#24: *430 [lua] access_limit_by_specific_rules.lua:30: {}
+2019/03/01 07:06:54 [debug] 24#24: *430 [lua] access_limit_by_specific_rules.lua:62: times:0
+2019/03/01 07:06:58 [debug] 24#24: *430 [lua] access_limit_by_specific_rules.lua:30: {}
+2019/03/01 07:06:58 [debug] 24#24: *430 [lua] access_limit_by_specific_rules.lua:62: times:0
+2019/03/01 07:07:01 [debug] 24#24: *430 [lua] access_limit_by_specific_rules.lua:30: {}
+2019/03/01 07:07:01 [debug] 24#24: *430 [lua] access_limit_by_specific_rules.lua:62: times:0
+2019/03/01 07:07:02 [debug] 24#24: *430 [lua] access_limit_by_specific_rules.lua:30: {}
+2019/03/01 07:07:02 [debug] 24#24: *430 [lua] access_limit_by_specific_rules.lua:62: times:0
+2019/03/01 07:07:09 [debug] 24#24: *430 [lua] access_limit_by_specific_rules.lua:30: {}
+2019/03/01 07:07:09 [debug] 24#24: *430 [lua] access_limit_by_specific_rules.lua:62: times:0
+2019/03/01 07:07:10 [debug] 24#24: *430 [lua] access_limit_by_specific_rules.lua:30: {}
+2019/03/01 07:07:10 [debug] 24#24: *430 [lua] access_limit_by_specific_rules.lua:62: times:0
+2019/03/01 07:07:12 [debug] 24#24: *430 [lua] access_limit_by_specific_rules.lua:30: {}
+2019/03/01 07:07:12 [debug] 24#24: *430 [lua] access_limit_by_specific_rules.lua:62: times:0
+2019/03/01 07:07:13 [debug] 24#24: *430 [lua] access_limit_by_specific_rules.lua:30: {}
+2019/03/01 07:07:13 [debug] 24#24: *430 [lua] access_limit_by_specific_rules.lua:62: times:0
+2019/03/01 07:33:42 [info] 32#32: *471 client 172.20.0.1 closed keepalive connection
+2019/03/01 07:34:23 [error] 36#36: *473 open() "/usr/local/openresty/nginx/html/index.php" failed (2: No such file or directory), client: 172.20.0.1, server: localhost, request: "GET /index.php HTTP/1.1", host: "localhost"
+2019/03/01 07:34:24 [error] 36#36: *473 open() "/usr/local/openresty/nginx/html/favicon.ico" failed (2: No such file or directory), client: 172.20.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/index.php"
+2019/03/01 07:38:35 [debug] 40#40: *475 [lua] access_limit_by_specific_rules.lua:30: {}
+2019/03/01 07:38:35 [debug] 40#40: *475 [lua] access_limit_by_specific_rules.lua:62: times:0
+2019/03/01 07:38:36 [debug] 40#40: *475 [lua] access_limit_by_specific_rules.lua:30: {}
+2019/03/01 07:38:36 [debug] 40#40: *475 [lua] access_limit_by_specific_rules.lua:62: times:0
+2019/03/01 07:38:45 [error] 42#42: *481 open() "/data/www/asd" failed (2: No such file or directory), client: 172.20.0.1, server: localhost, request: "GET /asd HTTP/1.1", host: "localhost"
+2019/03/01 07:39:03 [error] 42#42: *481 open() "/data/www/asd" failed (2: No such file or directory), client: 172.20.0.1, server: localhost, request: "GET /asd HTTP/1.1", host: "localhost"
+2019/03/01 07:39:05 [error] 42#42: *481 open() "/data/www/asd" failed (2: No such file or directory), client: 172.20.0.1, server: localhost, request: "GET /asd HTTP/1.1", host: "localhost"
+2019/03/01 07:41:24 [error] 42#42: *482 open() "/data/www/asd" failed (2: No such file or directory), client: 172.20.0.1, server: localhost, request: "GET /asd HTTP/1.1", host: "localhost"
+2019/03/01 07:41:35 [debug] 45#45: *483 [lua] access_limit_by_specific_rules.lua:30: {}
+2019/03/01 07:41:35 [debug] 45#45: *483 [lua] access_limit_by_specific_rules.lua:62: times:0
+2019/03/01 08:47:30 [debug] 71#71: *500 [lua] access_limit_by_specific_rules.lua:30: 1
+2019/03/01 08:47:30 [debug] 71#71: *500 [lua] access_limit_by_specific_rules.lua:62: times:0
+2019/03/01 08:47:38 [debug] 71#71: *500 [lua] access_limit_by_specific_rules.lua:30: 1
+2019/03/01 08:47:38 [debug] 71#71: *500 [lua] access_limit_by_specific_rules.lua:62: times:0
+2019/03/01 08:47:44 [debug] 71#71: *500 [lua] access_limit_by_specific_rules.lua:30: 1
+2019/03/01 08:47:44 [debug] 71#71: *500 [lua] access_limit_by_specific_rules.lua:62: times:0
+2019/03/01 08:47:50 [debug] 71#71: *500 [lua] access_limit_by_specific_rules.lua:30: 1
+2019/03/01 08:47:50 [debug] 71#71: *500 [lua] access_limit_by_specific_rules.lua:62: times:0
+2019/03/01 08:47:53 [debug] 71#71: *500 [lua] access_limit_by_specific_rules.lua:30: 1
+2019/03/01 08:47:53 [debug] 71#71: *500 [lua] access_limit_by_specific_rules.lua:62: times:0
+2019/03/01 08:48:06 [debug] 71#71: *500 [lua] access_limit_by_specific_rules.lua:30: 1
+2019/03/01 08:48:06 [debug] 71#71: *500 [lua] access_limit_by_specific_rules.lua:62: times:0
+2019/03/01 08:48:13 [debug] 74#74: *508 [lua] access_limit_by_specific_rules.lua:30: 1
+2019/03/01 08:48:13 [debug] 74#74: *508 [lua] access_limit_by_specific_rules.lua:62: times:0
+2019/03/01 08:48:15 [debug] 74#74: *508 [lua] access_limit_by_specific_rules.lua:30: 1
+2019/03/01 08:48:15 [debug] 74#74: *508 [lua] access_limit_by_specific_rules.lua:62: times:0
+2019/03/01 08:48:19 [debug] 74#74: *508 [lua] access_limit_by_specific_rules.lua:30: 1
+2019/03/01 08:48:19 [debug] 74#74: *508 [lua] access_limit_by_specific_rules.lua:62: times:0
+2019/03/01 08:48:22 [debug] 74#74: *508 [lua] access_limit_by_specific_rules.lua:30: 1
+2019/03/01 08:48:22 [debug] 74#74: *508 [lua] access_limit_by_specific_rules.lua:62: times:0
+2019/03/01 08:48:25 [debug] 74#74: *508 [lua] access_limit_by_specific_rules.lua:30: 1
+2019/03/01 08:48:25 [debug] 74#74: *508 [lua] access_limit_by_specific_rules.lua:62: times:0
+2019/03/01 09:05:29 [debug] 77#77: *517 [lua] access_limit_by_specific_rules.lua:30: 1
+2019/03/01 09:05:29 [debug] 77#77: *517 [lua] access_limit_by_specific_rules.lua:62: times:0
+2019/03/01 09:05:29 [debug] 77#77: *517 [lua] access_limit_by_specific_rules.lua:30: 1
+2019/03/01 09:05:29 [debug] 77#77: *517 [lua] access_limit_by_specific_rules.lua:62: times:0
+2019/03/01 09:08:02 [debug] 85#85: *522 [lua] access_limit_by_specific_rules.lua:30: 1
+2019/03/01 09:08:02 [debug] 85#85: *522 [lua] access_limit_by_specific_rules.lua:62: times:0
+2019/03/01 09:08:05 [debug] 85#85: *522 [lua] access_limit_by_specific_rules.lua:30: 1
+2019/03/01 09:08:05 [debug] 85#85: *522 [lua] access_limit_by_specific_rules.lua:62: times:0
+2019/03/01 09:08:11 [debug] 85#85: *522 [lua] access_limit_by_specific_rules.lua:30: 1
+2019/03/01 09:08:11 [debug] 85#85: *522 [lua] access_limit_by_specific_rules.lua:62: times:0
+2019/03/01 09:12:08 [debug] 91#91: *533 [lua] access_limit_by_specific_rules.lua:30: 1
+2019/03/01 09:12:08 [debug] 91#91: *533 [lua] access_limit_by_specific_rules.lua:62: times:0
+2019/03/01 09:12:18 [debug] 91#91: *533 [lua] access_limit_by_specific_rules.lua:30: 1
+2019/03/01 09:12:18 [debug] 91#91: *533 [lua] access_limit_by_specific_rules.lua:62: times:0
+2019/03/01 09:12:18 [info] 91#91: *533 epoll_wait() reported that client prematurely closed connection, so upstream connection is closed too while sending request to upstream, client: 172.20.0.1, server: localhost, request: "GET /admin HTTP/1.1", upstream: "fastcgi://172.20.0.17:9000", host: "localhost"
+2019/03/01 09:12:19 [debug] 91#91: *539 [lua] access_limit_by_specific_rules.lua:30: 1
+2019/03/01 09:12:19 [debug] 91#91: *539 [lua] access_limit_by_specific_rules.lua:62: times:0
+2019/03/01 09:12:27 [debug] 91#91: *539 [lua] access_limit_by_specific_rules.lua:30: 1
+2019/03/01 09:12:27 [debug] 91#91: *539 [lua] access_limit_by_specific_rules.lua:62: times:0
+2019/03/01 09:12:58 [debug] 95#95: *544 [lua] access_limit_by_specific_rules.lua:30: 1
+2019/03/01 09:12:58 [debug] 95#95: *544 [lua] access_limit_by_specific_rules.lua:62: times:0
+2019/03/01 09:13:00 [debug] 95#95: *544 [lua] access_limit_by_specific_rules.lua:30: 1
+2019/03/01 09:13:00 [debug] 95#95: *544 [lua] access_limit_by_specific_rules.lua:62: times:0
+2019/03/01 09:13:10 [debug] 95#95: *544 [lua] access_limit_by_specific_rules.lua:30: 1
+2019/03/01 09:13:10 [debug] 95#95: *544 [lua] access_limit_by_specific_rules.lua:62: times:0
+2019/03/01 09:13:10 [debug] 95#95: *544 [lua] access_limit_by_specific_rules.lua:30: 1
+2019/03/01 09:13:10 [debug] 95#95: *544 [lua] access_limit_by_specific_rules.lua:62: times:0
+2019/03/01 09:13:11 [debug] 95#95: *544 [lua] access_limit_by_specific_rules.lua:30: 1
+2019/03/01 09:13:11 [debug] 95#95: *544 [lua] access_limit_by_specific_rules.lua:62: times:0
+2019/03/01 09:13:12 [debug] 95#95: *544 [lua] access_limit_by_specific_rules.lua:30: 1
+2019/03/01 09:13:12 [debug] 95#95: *544 [lua] access_limit_by_specific_rules.lua:62: times:0
+2019/03/01 09:13:13 [debug] 95#95: *544 [lua] access_limit_by_specific_rules.lua:30: 1
+2019/03/01 09:13:13 [debug] 95#95: *544 [lua] access_limit_by_specific_rules.lua:62: times:0
+2019/03/01 09:13:14 [debug] 95#95: *544 [lua] access_limit_by_specific_rules.lua:30: 1
+2019/03/01 09:13:14 [debug] 95#95: *544 [lua] access_limit_by_specific_rules.lua:62: times:0
+2019/03/01 09:13:14 [debug] 95#95: *544 [lua] access_limit_by_specific_rules.lua:30: 1
+2019/03/01 09:13:14 [debug] 95#95: *544 [lua] access_limit_by_specific_rules.lua:62: times:0
+2019/03/01 09:13:15 [debug] 95#95: *544 [lua] access_limit_by_specific_rules.lua:30: 1
+2019/03/01 09:13:15 [debug] 95#95: *544 [lua] access_limit_by_specific_rules.lua:62: times:0
+2019/03/01 09:13:16 [debug] 95#95: *544 [lua] access_limit_by_specific_rules.lua:30: 1
+2019/03/01 09:13:16 [debug] 95#95: *544 [lua] access_limit_by_specific_rules.lua:62: times:0
+2019/03/01 09:13:16 [debug] 95#95: *544 [lua] access_limit_by_specific_rules.lua:30: 1
+2019/03/01 09:13:16 [debug] 95#95: *544 [lua] access_limit_by_specific_rules.lua:62: times:0
+2019/03/01 09:13:16 [debug] 95#95: *544 [lua] access_limit_by_specific_rules.lua:30: 1
+2019/03/01 09:13:16 [debug] 95#95: *544 [lua] access_limit_by_specific_rules.lua:62: times:0
+2019/03/01 09:13:16 [info] 95#95: *544 epoll_wait() reported that client prematurely closed connection, so upstream connection is closed too while connecting to upstream, client: 172.20.0.1, server: localhost, request: "GET /asd HTTP/1.1", upstream: "fastcgi://172.20.0.17:9000", host: "localhost"
+2019/03/01 09:13:17 [debug] 95#95: *572 [lua] access_limit_by_specific_rules.lua:30: 1
+2019/03/01 09:13:17 [debug] 95#95: *572 [lua] access_limit_by_specific_rules.lua:62: times:0
+2019/03/01 09:13:17 [debug] 95#95: *572 [lua] access_limit_by_specific_rules.lua:30: 1
+2019/03/01 09:13:17 [debug] 95#95: *572 [lua] access_limit_by_specific_rules.lua:62: times:0
+2019/03/01 09:13:18 [debug] 95#95: *572 [lua] access_limit_by_specific_rules.lua:30: 1
+2019/03/01 09:13:18 [debug] 95#95: *572 [lua] access_limit_by_specific_rules.lua:62: times:0
+2019/03/01 09:13:28 [debug] 95#95: *572 [lua] access_limit_by_specific_rules.lua:30: 1
+2019/03/01 09:13:28 [debug] 95#95: *572 [lua] access_limit_by_specific_rules.lua:62: times:0

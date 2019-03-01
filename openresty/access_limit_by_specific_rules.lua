@@ -25,13 +25,18 @@ local function has_value (tab, val)
     return false
 end
 
+local cjson = require 'cjson'
+
+ngx.log(ngx.DEBUG, '1')
+
 --[[
     当前策略:
     请求可能携带token或直接访问;对直接访问的请求通过ip识别身份,配置一个较高的每秒频率,超过频率后对ip进行全局封锁至指定时间;对携带token访问的请求通过token识别身份,设置一个较低的频率,超过频率后对当前所请求的uri进行限制访问至指定时间
 ]]
-
--- 最大频率
-local maxFreq = 3
+-- ip最大频率
+local ipMaxFreq = 50
+-- token最大频率
+local tokenMaxFreq = 10
 -- 超过阈值后被ban时间
 local banExpire = 600
 
@@ -46,6 +51,15 @@ local port = 6379
 local ok, err = red:connect(host,port)
 if not ok then
     return close_redis(red)
+end
+
+--[[
+    reused times
+]]
+local times, err = red:get_reused_times()
+
+if times ~= nil then
+    ngx.log(ngx.DEBUG, 'times:'..times)
 end
 
 --[[
@@ -87,7 +101,7 @@ if clientToken ~= nil then
         --[[
             每秒请求数大于阈值,屏蔽指定值(秒)
         ]]
-        if res > maxFreq then
+        if res > tokenMaxFreq then
             res, err = red:set(blockKey,1)
             res, err = red:expire(blockKey,banExpire)
         end
@@ -125,13 +139,13 @@ else
         上一步操作成功,则为当前key设置过期时间
     ]]
     if res == 1 then
-    res, err = red:expire(incrKey,1)
+        res, err = red:expire(incrKey,1)
     end
 
     --[[
         每秒请求数大于阈值,屏蔽指定值(秒)
     ]]
-    if res > maxFreq then
+    if res > ipMaxFreq then
         res, err = red:set(blockKey,1)
         res, err = red:expire(blockKey,banExpire)
     end
