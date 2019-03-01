@@ -1,6 +1,13 @@
 # allindocker
 Environment for web develop
 
+---
+
+## 简介
+一个胶水项目,用来快速搭建php的开发环境,各个容器版本,默认端口映射关系可在docker-compose.yml文件里查看
+
+---
+
 ## 目录结构
 ```bash
 ├── certificates #证书
@@ -27,8 +34,7 @@ Environment for web develop
     └── index.php #demo
 ```
 
-## 简介
-一个胶水项目,用来快速搭建php的开发环境,各个容器版本,默认端口映射关系可在docker-compose.yml文件里查看
+---
 
 ## 使用
 推荐使用`portainer`进行管理
@@ -43,18 +49,24 @@ cd allindocker
 sudo docker-compose up -d
 ```
 
+---
+
 ## 默认端口说明
-openresty: `80`:`80`,`443`:`443`
-mysql57: `9006`:`3306`
-mysql57-slave: `9007`:`3306`
-redis: `6379`:`6379`
-phpmyadmin: `9906`:`80`
-phpredisadmin: `9379`:`80`
-showdoc: `9015`:`80`
-aria2: `9080`:`80`,`9443`:`443`,`6800`:`6800`
+openresty: `80`:`80`,`443`:`443`  
+mysql57: `9006`:`3306`  
+mysql57-slave: `9007`:`3306`  
+redis: `6379`:`6379`  
+phpmyadmin: `9906`:`80`  
+phpredisadmin: `9379`:`80`  
+showdoc: `9015`:`80`  
+aria2: `9080`:`80`,`9443`:`443`,`6800`:`6800`  
+
+---
 
 ## 默认网络模式
 `bridge`
+
+---
 
 ## 其他
 待完善...
