@@ -11,11 +11,11 @@ services:
             #配置文件
             - ./src/mysql/my.cnf:/etc/mysql/my.cnf:ro
             #数据目录
-            #- ../mysql/:/var/lib/mysql/:rw
+            #- ./mysql/:/var/lib/mysql/:rw
             #查询日志文件
-            #- ../logs/mysql/query_mysql.log:/var/logs/mysql/query.mysql.log:rw
+            #- ./logs/mysql/query_mysql.log:/var/logs/mysql/query.mysql.log:rw
             #慢查询日志文件
-            #- ../logs/mysql/slow_mysql.log:/var/logs/mysql/slow.mysql.log:rw
+            #- ./logs/mysql/slow_mysql.log:/var/logs/mysql/slow.mysql.log:rw
         ports:
             - "9006:3306"
         container_name: mysql57
@@ -32,11 +32,11 @@ services:
             #配置文件
             - ./src/mysql-slave/my.cnf:/etc/mysql/my.cnf:ro
             #数据目录
-            #- ../mysql-slave/:/var/lib/mysql/:rw
+            #- ./mysql-slave/:/var/lib/mysql/:rw
             #查询日志文件
-            #- ../logs/mysql/query_mysql.log:/var/logs/mysql/query.mysql.log:rw
+            #- ./logs/mysql/query_mysql.log:/var/logs/mysql/query.mysql.log:rw
             #慢查询日志文件
-            #- ../logs/mysql/slow_mysql.log:/var/logs/mysql/slow.mysql.log:rw
+            #- ./logs/mysql/slow_mysql.log:/var/logs/mysql/slow.mysql.log:rw
         ports:
             - "9007:3306"
         container_name: mysql57-slave
@@ -59,7 +59,7 @@ services:
         volumes:
             - ./src/php72/www.conf:/usr/local/etc/php-fpm.d/www.conf:ro
             - ./www/:/data/www/:rw
-            #- ../logs/php72/fpm-php.www.log:/var/log/fpm-php.www.log:rw
+            #- ./logs/php72/fpm-php.www.log:/var/log/fpm-php.www.log:rw
         expose:
             - "9000"
         container_name: php72
@@ -72,7 +72,7 @@ services:
         volumes:
             - ./src/php71/www.conf:/usr/local/etc/php-fpm.d/www.conf:ro
             - ./www/:/data/www/:rw
-            #- ../logs/php71/fpm-php.www.log:/var/log/fpm-php.www.log:rw
+            #- ./logs/php71/fpm-php.www.log:/var/log/fpm-php.www.log:rw
         expose:
             - "9000"
         container_name: php71
@@ -85,7 +85,7 @@ services:
         volumes:
             - ./src/php70/www.conf:/usr/local/etc/php-fpm.d/www.conf:ro
             - ./www/:/data/www/:rw
-            #- ../logs/php70/fpm-php.www.log:/var/log/fpm-php.www.log:rw
+            #- ./logs/php70/fpm-php.www.log:/var/log/fpm-php.www.log:rw
         expose:
             - "9000"
         container_name: php70
@@ -98,7 +98,7 @@ services:
         volumes:
             - ./src/php56/www.conf:/usr/local/etc/php-fpm.d/www.conf:ro
             - ./www/:/data/www/:rw
-            #- ../logs/php56/fpm-php.www.log:/var/log/fpm-php.www.log:rw
+            #- ./logs/php56/fpm-php.www.log:/var/log/fpm-php.www.log:rw
         expose:
             - "9000"
         container_name: php56
@@ -111,7 +111,7 @@ services:
         volumes:
             - ./src/php55/www.conf:/usr/local/etc/php-fpm.d/www.conf:ro
             - ./www/:/data/www/:rw
-            #- ../logs/php55/fpm-php.www.log:/var/log/fpm-php.www.log:rw
+            #- ./logs/php55/fpm-php.www.log:/var/log/fpm-php.www.log:rw
         expose:
             - "9000"
         container_name: php55
