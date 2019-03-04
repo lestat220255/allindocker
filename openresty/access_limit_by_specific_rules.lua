@@ -36,6 +36,20 @@ if not ok then
     return close_redis(red)
 end
 
+-- 请注意这里 auth 的调用过程
+-- local count
+-- count, err = red:get_reused_times()
+-- if 0 == count then
+--     ok, err = red:auth("password")
+--     if not ok then
+--         ngx.say("failed to auth: ", err)
+--         return
+--     end
+-- elseif err then
+--     ngx.say("failed to get reused times: ", err)
+--     return
+-- end
+
 --[[
     优先判断是否存在token
 ]]
