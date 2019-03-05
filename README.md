@@ -29,6 +29,8 @@ Environment for web develop
 │   ├── proxy_pool
 │   ├── showdoc
 │   └── you-get
+├── tools
+│   └── mysql_backup_from_docker.sh #mysql备份脚本(sudo chmod +x ./mysql_backup_from_docker.sh)
 └── www #web项目目录(在src/openresty/conf.d/目录下进行配置)
     ├── index.html #demo
     └── index.php #demo
@@ -64,15 +66,7 @@ aria2: `9080`:`80`,`9443`:`443`,`6800`:`6800`
 ---
 
 ## 默认网络模式
-`bridge`
+bridge
 
----
-
-## 其他
-`nginx.conf`中默认关闭了lua代码缓存,生产环境需要设置为`on`
-
-```
-lua_code_cache on;
-```
-
-dns解析默认为`127.0.0.11`
+## openresty中的dns resolver
+默认为`127.0.0.11`
