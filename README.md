@@ -70,3 +70,34 @@ bridge
 
 ## openresty中的dns resolver
 默认为`127.0.0.11`
+
+## mysql主从快速启动
+1. 在`mysql57`中新增同步用户
+   ```sql
+    CREATE USER 'slave'@'%' IDENTIFIED BY 'password';
+    GRANT REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'slave'@'%';
+    SHOW MASTER STATUS \G;
+    *************************** 1. row ***************************
+    File: community-mysql-bin.000003
+    Position: 617
+    Binlog_Do_DB:
+    Binlog_Ignore_DB: mysql
+    Executed_Gtid_Set:
+    1 row in set (0.00 sec)
+
+    ERROR:
+    No query specified
+   ```
+
+2. 在`mysql57-slave`连接主库
+   ```sql
+    CHANGE MASTER TO master_host='mysql57',master_user='slave',master_password='password',master_port=port,master_log_file='master库的master_log_file文件(上面通过`SHOW MASTER STATUS \G;`得到的File字段)',master_log_pos=0;
+   ```
+
+3. `mysql57-slave`同步
+   ```sql
+    -- 开启同步
+    START SLAVE;
+    -- 查看状态
+    SHOW SLAVE STATUS \G;
+   ```
