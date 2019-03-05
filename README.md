@@ -68,10 +68,14 @@ aria2: `9080`:`80`,`9443`:`443`,`6800`:`6800`
 ## 默认网络模式
 bridge
 
-## openresty中的dns resolver
-默认为`127.0.0.11`
+## openresty
+比原生nginx更为灵活,包含nginx内核,支持lua脚本在请求的不同阶段挂载,在其中执行自定义应用逻辑,目前在项目上已经用它取代了nginx  
+dns resolver默认为`127.0.0.11`
 
 ## mysql主从快速启动
+
+> 已完成mysql的主从复制配置,按照以下步骤可直接开启同步
+
 1. 在`mysql57`中新增同步用户
    ```sql
     CREATE USER 'slave'@'%' IDENTIFIED BY 'password';
@@ -101,3 +105,6 @@ bridge
     -- 查看状态
     SHOW SLAVE STATUS \G;
    ```
+
+## License
+[MIT](https://opensource.org/licenses/MIT)
