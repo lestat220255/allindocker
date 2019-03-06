@@ -13694,3 +13694,4 @@ coroutine 0:
 2019/03/05 07:50:25 [info] 6#6: *10 client closed connection while waiting for request, client: 172.19.0.1, server: 0.0.0.0:80
 2019/03/05 07:51:25 [info] 6#6: *15 client timed out (110: Connection timed out) while waiting for request, client: 172.19.0.1, server: 0.0.0.0:80
 2019/03/05 08:20:26 [info] 6#6: *1 client closed connection while waiting for request, client: 172.22.0.1, server: 0.0.0.0:80
+2019/03/05 08:54:42 [info] 6#6: *2 client 172.22.0.1 closed keepalive connection
