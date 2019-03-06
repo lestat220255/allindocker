@@ -1,5 +1,12 @@
 #!/usr/bin/bash
 
+#=================================================
+#	System Required: CentOS/Debian/Ubuntu
+#	Author: Lestat
+#   Email: lestat@lestat.me
+#	Blog: https://blog.lestat.me/
+#=================================================
+
 if [ "$1" ]; then
     mysql_alias="$1"
     database="$2"
