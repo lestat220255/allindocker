@@ -1,5 +1,8 @@
 # allindocker
-Environment for web develop
+
+[![Github](https://img.shields.io/github/license/lestat220255/allindocker.svg)](https://github.com/lestat220255/allindocker/blob/master/LICENSE)
+
+
 
 ---
 
@@ -107,6 +110,8 @@ dns resolver默认为`127.0.0.11`
     SHOW SLAVE STATUS \G;
    ```
 
+---
+
 ## Tools
 1. 数据库备份
    ```bash
@@ -128,6 +133,8 @@ dns resolver默认为`127.0.0.11`
     正在备份容器:container_id中的数据库:ifttt...
     备份完成:/data/allindocker_backup/ifttt--2019-03-06-14:02:31.sql
    ```
+
+---
 
 ## License
 [MIT](https://opensource.org/licenses/MIT)
