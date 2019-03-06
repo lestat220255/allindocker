@@ -30,7 +30,8 @@ Environment for web develop
 │   ├── showdoc
 │   └── you-get
 ├── tools
-│   └── mysql_backup_from_docker.sh #mysql备份脚本(sudo chmod +x ./mysql_backup_from_docker.sh)
+│   ├── mysql_backup_from_docker.sh #mysql备份脚本(sudo chmod +x ./mysql_backup_from_docker.sh)
+│   └── mysql_restore_to_docker.sh #mysql还原脚本(sudo chmod +x ./mysql_restore_to_docker.sh)
 └── www #web项目目录(在src/openresty/conf.d/目录下进行配置)
     ├── index.html #demo
     └── index.php #demo
@@ -105,6 +106,9 @@ dns resolver默认为`127.0.0.11`
     -- 查看状态
     SHOW SLAVE STATUS \G;
    ```
+
+## Tools
+
 
 ## License
 [MIT](https://opensource.org/licenses/MIT)
