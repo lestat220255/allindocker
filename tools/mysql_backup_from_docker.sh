@@ -10,6 +10,7 @@ export PATH
 #	Blog: https://blog.lestat.me/
 #=================================================
 
+
 if [ "$1" ]; then
     mysql_alias="$1"
     database="$2"
