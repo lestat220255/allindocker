@@ -13639,3 +13639,60 @@ coroutine 0:
 2019/03/02 07:29:47 [error] 36#36: *71945 [lua] access_limit_by_specific_rules.lua:11: set redis keepalive error : closed, client: 172.27.0.1, server: localhost, request: "GET /index.php HTTP/1.0", host: "localhost"
 2019/03/02 07:29:47 [error] 36#36: *71947 [lua] access_limit_by_specific_rules.lua:11: set redis keepalive error : closed, client: 172.27.0.1, server: localhost, request: "GET /index.php HTTP/1.0", host: "localhost"
 2019/03/02 07:29:47 [error] 36#36: *71949 [lua] access_limit_by_specific_rules.lua:11: set redis keepalive error : closed, client: 172.27.0.1, server: localhost, request: "GET /index.php HTTP/1.0", host: "localhost"
+2019/03/04 07:45:37 [error] 6#6: *1 lua entry thread aborted: runtime error: ...l/openresty/nginx/src/access_limit_by_specific_rules.lua:1: module 'resty.cjson' not found:
+	no field package.preload['resty.cjson']
+	no file '/usr/local/openresty/site/lualib/resty/cjson.ljbc'
+	no file '/usr/local/openresty/site/lualib/resty/cjson/init.ljbc'
+	no file '/usr/local/openresty/lualib/resty/cjson.ljbc'
+	no file '/usr/local/openresty/lualib/resty/cjson/init.ljbc'
+	no file '/usr/local/openresty/site/lualib/resty/cjson.lua'
+	no file '/usr/local/openresty/site/lualib/resty/cjson/init.lua'
+	no file '/usr/local/openresty/lualib/resty/cjson.lua'
+	no file '/usr/local/openresty/lualib/resty/cjson/init.lua'
+	no file './resty/cjson.lua'
+	no file '/usr/local/openresty/luajit/share/luajit-2.1.0-beta3/resty/cjson.lua'
+	no file '/usr/local/share/lua/5.1/resty/cjson.lua'
+	no file '/usr/local/share/lua/5.1/resty/cjson/init.lua'
+	no file '/usr/local/openresty/luajit/share/lua/5.1/resty/cjson.lua'
+	no file '/usr/local/openresty/luajit/share/lua/5.1/resty/cjson/init.lua'
+	no file '/usr/local/openresty/site/lualib/resty/cjson.so'
+	no file '/usr/local/openresty/lualib/resty/cjson.so'
+	no file './resty/cjson.so'
+	no file '/usr/local/lib/lua/5.1/resty/cjson.so'
+	no file '/usr/local/openresty/luajit/lib/lua/5.1/resty/cjson.so'
+	no file '/usr/local/lib/lua/5.1/loadall.so'
+	no file '/usr/local/openresty/site/lualib/resty.so'
+	no file '/usr/local/openresty/lualib/resty.so'
+	no file './resty.so'
+	no file '/usr/local/lib/lua/5.1/resty.so'
+	no file '/usr/local/openresty/luajit/lib/lua/5.1/resty.so'
+	no file '/usr/local/lib/lua/5.1/loadall.so'
+stack traceback:
+coroutine 0:
+	[C]: in function 'require'
+	...l/openresty/nginx/src/access_limit_by_specific_rules.lua:1: in function <...l/openresty/nginx/src/access_limit_by_specific_rules.lua:1>, client: 172.19.0.1, server: localhost, request: "GET /test HTTP/1.1", host: "localhost"
+2019/03/04 07:45:52 [error] 6#6: *2 [lua] access_limit_by_specific_rules.lua:79: "eyJpdiI6IlNob0F0eFQxQUM0RGpIV2cwXC9DdFwvZz09IiwidmFsdWUiOiI4TEwyRzNKeVdPSCt2NTBXVWxyTGRmZWdVbXh0RUN2RWhiWmwydFY5NUtOYTgwYU50NFlnenl4bmFLb01SRGlzIiwibWFjIjoiYTZiMDc0YTQyYTNhOWVhNjI5M2RiZDY5ZWI5YzUwZmFkODU3OTk0MzFiM2M1NzkxMjY4YmUyMTIyNzYxNDE2ZCJ9", client: 172.19.0.1, server: localhost, request: "GET /test HTTP/1.1", host: "localhost"
+2019/03/04 07:45:52 [info] 6#6: *2 client 172.19.0.1 closed keepalive connection
+2019/03/04 07:47:08 [error] 6#6: *6 [lua] access_limit_by_specific_rules.lua:79: _session:"eyJpdiI6IlNob0F0eFQxQUM0RGpIV2cwXC9DdFwvZz09IiwidmFsdWUiOiI4TEwyRzNKeVdPSCt2NTBXVWxyTGRmZWdVbXh0RUN2RWhiWmwydFY5NUtOYTgwYU50NFlnenl4bmFLb01SRGlzIiwibWFjIjoiYTZiMDc0YTQyYTNhOWVhNjI5M2RiZDY5ZWI5YzUwZmFkODU3OTk0MzFiM2M1NzkxMjY4YmUyMTIyNzYxNDE2ZCJ9", client: 172.19.0.1, server: localhost, request: "GET /test HTTP/1.1", host: "localhost"
+2019/03/04 07:47:08 [error] 6#6: *6 [lua] access_limit_by_specific_rules.lua:80: all:"_session=eyJpdiI6IlNob0F0eFQxQUM0RGpIV2cwXC9DdFwvZz09IiwidmFsdWUiOiI4TEwyRzNKeVdPSCt2NTBXVWxyTGRmZWdVbXh0RUN2RWhiWmwydFY5NUtOYTgwYU50NFlnenl4bmFLb01SRGlzIiwibWFjIjoiYTZiMDc0YTQyYTNhOWVhNjI5M2RiZDY5ZWI5YzUwZmFkODU3OTk0MzFiM2M1NzkxMjY4YmUyMTIyNzYxNDE2ZCJ9; expires=Mon, 04-Mar-2019 09:24:55 GMT; Max-Age=7200; path=\/; httponly", client: 172.19.0.1, server: localhost, request: "GET /test HTTP/1.1", host: "localhost"
+2019/03/04 07:47:08 [info] 6#6: *6 client 172.19.0.1 closed keepalive connection
+2019/03/04 07:49:54 [info] 6#6: *9 client 172.19.0.1 closed keepalive connection
+2019/03/04 07:49:57 [info] 6#6: *12 client 172.19.0.1 closed keepalive connection
+2019/03/04 07:50:38 [info] 6#6: *15 client 172.19.0.1 closed keepalive connection
+2019/03/04 07:51:02 [info] 6#6: *18 client 172.19.0.1 closed keepalive connection
+2019/03/04 07:51:10 [info] 6#6: *21 client 172.19.0.1 closed keepalive connection
+2019/03/04 07:51:14 [info] 6#6: *24 client 172.19.0.1 closed keepalive connection
+2019/03/04 07:51:56 [info] 6#6: *27 client 172.19.0.1 closed keepalive connection
+2019/03/04 07:55:07 [error] 6#6: *30 failed to load external Lua file "/usr/local/openresty/nginx/src/access_limit_by_specific_rules.lua": ...l/openresty/nginx/src/access_limit_by_specific_rules.lua:129: unexpected symbol near 'else', client: 172.19.0.1, server: localhost, request: "GET /test HTTP/1.1", host: "localhost"
+2019/03/04 07:55:26 [info] 6#6: *31 client 172.19.0.1 closed keepalive connection
+2019/03/04 07:55:33 [info] 6#6: *34 client 172.19.0.1 closed keepalive connection
+2019/03/04 08:12:24 [info] 15#15: *20051 client 172.19.0.1 closed keepalive connection
+2019/03/04 08:12:43 [info] 15#15: *20054 client 172.19.0.1 closed keepalive connection
+2019/03/04 08:12:58 [info] 15#15: *20056 client 172.19.0.1 closed keepalive connection
+2019/03/04 08:13:16 [info] 15#15: *20053 client closed connection while waiting for request, client: 172.19.0.1, server: 0.0.0.0:80
+2019/03/05 07:49:57 [info] 6#6: *2 client closed connection while waiting for request, client: 172.19.0.1, server: 0.0.0.0:80
+2019/03/05 07:50:25 [info] 6#6: *10 client closed connection while waiting for request, client: 172.19.0.1, server: 0.0.0.0:80
+2019/03/05 07:51:25 [info] 6#6: *15 client timed out (110: Connection timed out) while waiting for request, client: 172.19.0.1, server: 0.0.0.0:80
+2019/03/05 08:20:26 [info] 6#6: *1 client closed connection while waiting for request, client: 172.22.0.1, server: 0.0.0.0:80
+2019/03/05 08:54:42 [info] 6#6: *2 client 172.22.0.1 closed keepalive connection
+2019/03/06 02:26:44 [info] 6#6: *2 client closed connection while waiting for request, client: 192.168.0.98, server: 0.0.0.0:80
