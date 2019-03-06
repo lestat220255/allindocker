@@ -1,5 +1,8 @@
 #!/usr/bin/bash
 
+PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/usr/java/jre/bin:~/bin
+export PATH
+
 #=================================================
 #	System Required: CentOS/Debian/Ubuntu
 #	Author: Lestat
