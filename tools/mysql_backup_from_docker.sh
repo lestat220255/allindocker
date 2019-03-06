@@ -6,7 +6,7 @@ export PATH
 #=================================================
 #	System Required: CentOS/Debian/Ubuntu
 #	Author: Lestat
-#   Email: lestat@lestat.me
+#	Email: lestat@lestat.me
 #	Blog: https://blog.lestat.me/
 #=================================================
 
