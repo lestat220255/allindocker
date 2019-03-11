@@ -68,9 +68,13 @@ services:
         volumes:
             - ${PHP72_WWW_CONF}:/usr/local/etc/php-fpm.d/www.conf:ro
             - ${WEB_ROOT}:/data/www/:rw
+            - ${PHP72_CONF}:/usr/local/etc/php/php.ini:ro
+            - /etc/localtime:/etc/localtime:ro
             #- ./logs/php72/fpm-php.www.log:/var/log/fpm-php.www.log:rw
         expose:
             - "9000"
+        cap_add:
+            - SYS_PTRACE
         container_name: php72
     php71:
         depends_on:
@@ -81,9 +85,13 @@ services:
         volumes:
             - ${PHP71_WWW_CONF}:/usr/local/etc/php-fpm.d/www.conf:ro
             - ${WEB_ROOT}:/data/www/:rw
+            - ${PHP71_CONF}:/usr/local/etc/php/php.ini:ro
+            - /etc/localtime:/etc/localtime:ro
             #- ./logs/php71/fpm-php.www.log:/var/log/fpm-php.www.log:rw
         expose:
             - "9000"
+        cap_add:
+            - SYS_PTRACE
         container_name: php71
     php70:
         depends_on:
@@ -94,9 +102,13 @@ services:
         volumes:
             - ${PHP70_WWW_CONF}:/usr/local/etc/php-fpm.d/www.conf:ro
             - ${WEB_ROOT}:/data/www/:rw
+            - ${PHP70_CONF}:/usr/local/etc/php/php.ini:ro
+            - /etc/localtime:/etc/localtime:ro
             #- ./logs/php70/fpm-php.www.log:/var/log/fpm-php.www.log:rw
         expose:
             - "9000"
+        cap_add:
+            - SYS_PTRACE
         container_name: php70
     php56:
         depends_on:
@@ -107,9 +119,13 @@ services:
         volumes:
             - ${PHP56_WWW_CONF}:/usr/local/etc/php-fpm.d/www.conf:ro
             - ${WEB_ROOT}:/data/www/:rw
+            - ${PHP56_CONF}:/usr/local/etc/php/php.ini:ro
+            - /etc/localtime:/etc/localtime:ro
             #- ./logs/php56/fpm-php.www.log:/var/log/fpm-php.www.log:rw
         expose:
             - "9000"
+        cap_add:
+            - SYS_PTRACE
         container_name: php56
     php55:
         depends_on:
@@ -120,9 +136,13 @@ services:
         volumes:
             - ${PHP55_WWW_CONF}:/usr/local/etc/php-fpm.d/www.conf:ro
             - ${WEB_ROOT}:/data/www/:rw
+            - ${PHP55_CONF}:/usr/local/etc/php/php.ini:ro
+            - /etc/localtime:/etc/localtime:ro
             #- ./logs/php55/fpm-php.www.log:/var/log/fpm-php.www.log:rw
         expose:
             - "9000"
+        cap_add:
+            - SYS_PTRACE
         container_name: php55
     #服务器nginx(openresty)
     openresty:

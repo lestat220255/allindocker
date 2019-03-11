@@ -17,6 +17,8 @@
 ├── docker-compose.yml #配置文件
 ├── Downloads #下载目录
 ├── logs #日志目录
+├── mysql #mysql数据目录
+├── mysql-slave #mysql-slave数据目录
 ├── openresty #自定义lua脚本目录(openresty配置文件可直接读取)
 ├── README.md
 ├── src #docker容器目录(包含[Dockerfile/配置文件])
