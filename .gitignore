@@ -1,6 +1,2 @@
 logs/*
 Downloads/*
-!mysql/
-!mysql-slave/
-mysql/*
-mysql-slave/*
