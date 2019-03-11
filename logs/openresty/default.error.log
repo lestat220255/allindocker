@@ -13696,3 +13696,8 @@ coroutine 0:
 2019/03/05 08:20:26 [info] 6#6: *1 client closed connection while waiting for request, client: 172.22.0.1, server: 0.0.0.0:80
 2019/03/05 08:54:42 [info] 6#6: *2 client 172.22.0.1 closed keepalive connection
 2019/03/06 02:26:44 [info] 6#6: *2 client closed connection while waiting for request, client: 192.168.0.98, server: 0.0.0.0:80
+2019/03/11 02:12:31 [info] 6#6: *1 client closed connection while waiting for request, client: 172.18.0.1, server: 0.0.0.0:80
+2019/03/11 02:12:31 [error] 6#6: *2 [lua] access_limit_by_specific_rules.lua:18: set redis keepalive error : closed, client: 172.18.0.1, server: localhost, request: "GET /party/posts HTTP/1.1", host: "localhost"
+2019/03/11 05:42:16 [info] 6#6: *2 client closed connection while waiting for request, client: 172.20.0.1, server: 0.0.0.0:80
+2019/03/11 05:42:52 [error] 14#14: *4 open() "/data/www/favicon.ico" failed (2: No such file or directory), client: 172.20.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
+2019/03/11 05:43:52 [info] 14#14: *3 client timed out (110: Connection timed out) while waiting for request, client: 172.20.0.1, server: 0.0.0.0:80

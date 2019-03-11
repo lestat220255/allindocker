@@ -136,5 +136,11 @@ dns resolver默认为`127.0.0.11`
 
 ---
 
+## 其他说明
+- php各版本的Dockerfile内包含的主要是国内镜像(ali和daocloud),如果在国外云服务器上部署建议修改这些镜像为默认
+
+
+---
+
 ## License
 [MIT](https://opensource.org/licenses/MIT)

@@ -11,7 +11,7 @@ services:
             #配置文件
             - ./src/mysql/my.cnf:/etc/mysql/my.cnf:ro
             #数据目录
-            #- ./mysql/:/var/lib/mysql/:rw
+            - ./mysql/:/var/lib/mysql/:rw
             #查询日志文件
             #- ./logs/mysql/query_mysql.log:/var/logs/mysql/query.mysql.log:rw
             #慢查询日志文件
@@ -32,7 +32,7 @@ services:
             #配置文件
             - ./src/mysql-slave/my.cnf:/etc/mysql/my.cnf:ro
             #数据目录
-            #- ./mysql-slave/:/var/lib/mysql/:rw
+            - ./mysql-slave/:/var/lib/mysql/:rw
             #查询日志文件
             #- ./logs/mysql/query_mysql.log:/var/logs/mysql/query.mysql.log:rw
             #慢查询日志文件
@@ -44,7 +44,16 @@ services:
         image: daocloud.io/library/redis:5.0-rc4-alpine3.8
         ports:
             - "6379:6379"
+        volumes:
+            - ./src/redis/conf/redis.conf:/etc/redis.conf:ro
+            - ./src/redis/data:/data:rw
+        #entrypoint: ["redis-server", "/etc/redis.conf"]
         container_name: redis
+    # redis-slave:
+    #     image: daocloud.io/library/redis:5.0-rc4-alpine3.8
+    #     ports:
+    #         - "6380:6379"
+    #     container_name: redis-slave
     memcached:
         image: memcached:1.5.12-alpine
         expose:
@@ -58,7 +67,7 @@ services:
         restart: always
         volumes:
             - ./src/php72/www.conf:/usr/local/etc/php-fpm.d/www.conf:ro
-            - ./www/:/data/www/:rw
+            - ${WEB_ROOT}:/data/www/:rw
             #- ./logs/php72/fpm-php.www.log:/var/log/fpm-php.www.log:rw
         expose:
             - "9000"
@@ -71,7 +80,7 @@ services:
         restart: always
         volumes:
             - ./src/php71/www.conf:/usr/local/etc/php-fpm.d/www.conf:ro
-            - ./www/:/data/www/:rw
+            - ${WEB_ROOT}:/data/www/:rw
             #- ./logs/php71/fpm-php.www.log:/var/log/fpm-php.www.log:rw
         expose:
             - "9000"
@@ -84,7 +93,7 @@ services:
         restart: always
         volumes:
             - ./src/php70/www.conf:/usr/local/etc/php-fpm.d/www.conf:ro
-            - ./www/:/data/www/:rw
+            - ${WEB_ROOT}:/data/www/:rw
             #- ./logs/php70/fpm-php.www.log:/var/log/fpm-php.www.log:rw
         expose:
             - "9000"
@@ -97,7 +106,7 @@ services:
         restart: always
         volumes:
             - ./src/php56/www.conf:/usr/local/etc/php-fpm.d/www.conf:ro
-            - ./www/:/data/www/:rw
+            - ${WEB_ROOT}:/data/www/:rw
             #- ./logs/php56/fpm-php.www.log:/var/log/fpm-php.www.log:rw
         expose:
             - "9000"
@@ -110,7 +119,7 @@ services:
         restart: always
         volumes:
             - ./src/php55/www.conf:/usr/local/etc/php-fpm.d/www.conf:ro
-            - ./www/:/data/www/:rw
+            - ${WEB_ROOT}:/data/www/:rw
             #- ./logs/php55/fpm-php.www.log:/var/log/fpm-php.www.log:rw
         expose:
             - "9000"
@@ -128,8 +137,10 @@ services:
             - ./src/openresty/conf.d/:/etc/nginx/conf.d/:rw
         #lua脚本目录
             - ./openresty/:/usr/local/openresty/nginx/src/:ro
+        #公共配置目录
+            - ./src/openresty/general/:/usr/local/openresty/nginx/general/:ro
         #web目录
-            - ./www/:/data/www/:rw
+            - ${WEB_ROOT}:/data/www/:rw
         #证书目录
             - ./certificates/:/etc/letsencrypt/:ro
         #日志目录
@@ -181,8 +192,8 @@ services:
     proxy_pool:
         volumes:
             - ./src/proxy_pool:/usr/src/app
-        # ports:
-        #     - "5010:5010"
+        ports:
+            - "5010:5010"
         links:
             - redis
         build: ./src/proxy_pool/Docker
