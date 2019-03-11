@@ -2,51 +2,51 @@ version: '3'
 services:
     #数据库-master
     mysql57:
-        image: mysql:5.7
+        image: ${MYSQL_IMAGE}
         environment:
-            - MYSQL_ROOT_PASSWORD=password
+            - MYSQL_ROOT_PASSWORD=${MYSQL_MASTER_ROOT_PASSWORD}
             #- MYSQL_USER=user
             #- MYSQL_PASSWORD=password
         volumes:
             #配置文件
-            - ./src/mysql/my.cnf:/etc/mysql/my.cnf:ro
+            - ${MYSQL_MASTER_CONF}:/etc/mysql/my.cnf:ro
             #数据目录
-            - ./mysql/:/var/lib/mysql/:rw
+            - ${MYSQL_MASTER_DATA}:/var/lib/mysql/:rw
             #查询日志文件
             #- ./logs/mysql/query_mysql.log:/var/logs/mysql/query.mysql.log:rw
             #慢查询日志文件
             #- ./logs/mysql/slow_mysql.log:/var/logs/mysql/slow.mysql.log:rw
         ports:
-            - "9006:3306"
+            - "${MYSQL_MASTER_PORT}:3306"
         container_name: mysql57
     #数据库-slave
     mysql57-slave:
         depends_on:
             - mysql57
-        image: mysql:5.7
+        image: ${MYSQL_IMAGE}
         environment:
-            - MYSQL_ROOT_PASSWORD=password
+            - MYSQL_ROOT_PASSWORD=${MYSQL_SLAVE_ROOT_PASSWORD}
             #- MYSQL_USER=user
             #- MYSQL_PASSWORD=password
         volumes:
             #配置文件
-            - ./src/mysql-slave/my.cnf:/etc/mysql/my.cnf:ro
+            - ${MYSQL_SLAVE_CONF}:/etc/mysql/my.cnf:ro
             #数据目录
-            - ./mysql-slave/:/var/lib/mysql/:rw
+            - ${MYSQL_SLAVE_DATA}:/var/lib/mysql/:rw
             #查询日志文件
             #- ./logs/mysql/query_mysql.log:/var/logs/mysql/query.mysql.log:rw
             #慢查询日志文件
             #- ./logs/mysql/slow_mysql.log:/var/logs/mysql/slow.mysql.log:rw
         ports:
-            - "9007:3306"
+            - "${MYSQL_SLAVE_PORT}:3306"
         container_name: mysql57-slave
     redis:
-        image: daocloud.io/library/redis:5.0-rc4-alpine3.8
+        image: ${REDIS_IMAGE}
         ports:
-            - "6379:6379"
+            - "${REDIS_PORT}:6379"
         volumes:
-            - ./src/redis/conf/redis.conf:/etc/redis.conf:ro
-            - ./src/redis/data:/data:rw
+            - ${REDIS_CONF}:/etc/redis.conf:ro
+            - ${REDIS_DATA}:/data:rw
         #entrypoint: ["redis-server", "/etc/redis.conf"]
         container_name: redis
     # redis-slave:
@@ -55,7 +55,7 @@ services:
     #         - "6380:6379"
     #     container_name: redis-slave
     memcached:
-        image: memcached:1.5.12-alpine
+        image: ${MEMCACHED_IMAGE}
         expose:
             - "11211"
         container_name: memcached
@@ -63,10 +63,10 @@ services:
         depends_on:
             - mysql57
             - redis
-        build: ./src/php72
+        build: ${PHP72_DOCKERFILE_DIR}
         restart: always
         volumes:
-            - ./src/php72/www.conf:/usr/local/etc/php-fpm.d/www.conf:ro
+            - ${PHP72_WWW_CONF}:/usr/local/etc/php-fpm.d/www.conf:ro
             - ${WEB_ROOT}:/data/www/:rw
             #- ./logs/php72/fpm-php.www.log:/var/log/fpm-php.www.log:rw
         expose:
@@ -76,10 +76,10 @@ services:
         depends_on:
             - mysql57
             - redis
-        build: ./src/php71
+        build: ${PHP71_DOCKERFILE_DIR}
         restart: always
         volumes:
-            - ./src/php71/www.conf:/usr/local/etc/php-fpm.d/www.conf:ro
+            - ${PHP71_WWW_CONF}:/usr/local/etc/php-fpm.d/www.conf:ro
             - ${WEB_ROOT}:/data/www/:rw
             #- ./logs/php71/fpm-php.www.log:/var/log/fpm-php.www.log:rw
         expose:
@@ -89,10 +89,10 @@ services:
         depends_on:
             - mysql57
             - redis
-        build: ./src/php70
+        build: ${PHP70_DOCKERFILE_DIR}
         restart: always
         volumes:
-            - ./src/php70/www.conf:/usr/local/etc/php-fpm.d/www.conf:ro
+            - ${PHP70_WWW_CONF}:/usr/local/etc/php-fpm.d/www.conf:ro
             - ${WEB_ROOT}:/data/www/:rw
             #- ./logs/php70/fpm-php.www.log:/var/log/fpm-php.www.log:rw
         expose:
@@ -102,10 +102,10 @@ services:
         depends_on:
             - mysql57
             - redis
-        build: ./src/php56
+        build: ${PHP56_DOCKERFILE_DIR}
         restart: always
         volumes:
-            - ./src/php56/www.conf:/usr/local/etc/php-fpm.d/www.conf:ro
+            - ${PHP56_WWW_CONF}:/usr/local/etc/php-fpm.d/www.conf:ro
             - ${WEB_ROOT}:/data/www/:rw
             #- ./logs/php56/fpm-php.www.log:/var/log/fpm-php.www.log:rw
         expose:
@@ -115,10 +115,10 @@ services:
         depends_on:
             - mysql57
             - redis
-        build: ./src/php55
+        build: ${PHP55_DOCKERFILE_DIR}
         restart: always
         volumes:
-            - ./src/php55/www.conf:/usr/local/etc/php-fpm.d/www.conf:ro
+            - ${PHP55_WWW_CONF}:/usr/local/etc/php-fpm.d/www.conf:ro
             - ${WEB_ROOT}:/data/www/:rw
             #- ./logs/php55/fpm-php.www.log:/var/log/fpm-php.www.log:rw
         expose:
@@ -126,49 +126,49 @@ services:
         container_name: php55
     #服务器nginx(openresty)
     openresty:
-        image: openresty/openresty
+        image: ${OPENRESTY_IMAGE}
         ports:
-            - '80:80'
-            - '443:443'
+            - "${OPENRESTY_HTTP_PORT}:80"
+            - "${OPENRESTY_HTTPS_PORT}:443"
         volumes:
-        #主配置
-            - ./src/openresty/nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf:ro
-        #虚拟主机配置
-            - ./src/openresty/conf.d/:/etc/nginx/conf.d/:rw
-        #lua脚本目录
-            - ./openresty/:/usr/local/openresty/nginx/src/:ro
-        #公共配置目录
-            - ./src/openresty/general/:/usr/local/openresty/nginx/general/:ro
-        #web目录
+            #主配置
+            - ${OPENRESTY_NGINX_CONF}:/usr/local/openresty/nginx/conf/nginx.conf:ro
+            #虚拟主机配置
+            - ${OPENRESTY_CONF_DIR}:/etc/nginx/conf.d/:rw
+            #lua脚本目录
+            - ${OPENRESTY_SCRIPTS}:/usr/local/openresty/nginx/src/:ro
+            #公共配置目录
+            - ${OPENRESTY_GENERAL_CONF_DIR}:/usr/local/openresty/nginx/general/:ro
+            #web目录
             - ${WEB_ROOT}:/data/www/:rw
-        #证书目录
-            - ./certificates/:/etc/letsencrypt/:ro
-        #日志目录
-            - ./logs/openresty/:/var/log/nginx/:rw
+            #证书目录
+            - ${OPENRESTY_CERTS_DIR}:/etc/letsencrypt/:ro
+            #日志目录
+            - ${OPENRESTY_LOGS_DIR}:/var/log/nginx/:rw
         restart: always
         container_name: openresty
     #mysql管理
     phpmyadmin:
         depends_on:
             - mysql57
-        image: phpmyadmin/phpmyadmin
+        image: ${PMA_IMAGE}
         environment:
             - PMA_HOST=mysql57
         ports:
-            - "9906:80"
+            - "${PMA_PORT}:80"
         container_name: phpmyadmin
     #redis管理
     phpredisadmin:
-        build: ./src/phpRedisAdmin
+        build: ${PRA_DOCKERFILE_DIR}
         environment:
             # - ADMIN_USER=admin
             # - ADMIN_PASS=admin
             - REDIS_1_HOST=redis
-            - REDIS_1_PORT=6379
+            - REDIS_1_PORT=${PRA_REDIS_PORT}
         links:
             - redis
         ports:
-            - "9379:80"
+            - "${PRA_PORT}:80"
         container_name: phpredisadmin
     #文档系统
     showdoc:
@@ -177,7 +177,7 @@ services:
         #项目文件
             - ./showdoc/:/var/www/html/:rw
         ports:
-            - "9015:80"
+            - "${SHOWDOC_PORT}:80"
         container_name: showdoc
     #下载工具
     you-get:
@@ -187,13 +187,13 @@ services:
         tty: true
         #下载目录
         volumes:
-            - "./Downloads:/data/download:rw"
+            - "${UGET_DOANLOAD_DIR}:/data/download:rw"
     #代理ip池
     proxy_pool:
         volumes:
             - ./src/proxy_pool:/usr/src/app
         ports:
-            - "5010:5010"
+            - "${PP_PORT}:5010"
         links:
             - redis
         build: ./src/proxy_pool/Docker
@@ -202,28 +202,28 @@ services:
     h5ai:
         image: bixidock/h5ai
         volumes:
-            - ./Downloads:/var/www:rw
+            - ${H5AI_DOWNLOAD_DIR}:/var/www:rw
         restart: always
         container_name: h5ai
     aria2:
         image: wahyd4/aria2-ui:h5ai
         ports:
-            - "9080:80"
-            - "9443:443"
-            - "6800:6800"
+            - "${ARIA2_HTTP_PORT}:80"
+            - "${ARIA2_HTTPS_PORT}:443"
+            - "${ARIA2_RPC_PORT}:6800"
         volumes:
-            - ./Downloads:/var/www:rw
+            - ${ARIA2_DOWNLOAD_DIR}:/var/www:rw
         # volumes:
         #   - /some_folder:/root/conf/key
         #   - ~/test/aria2.conf:/root/conf/aria2.conf
         environment:
-            - DOMAIN=:80
-            - PLEX_CLAIM=claim-KpMm8oqWA6a1rFV3zFqS
+            - DOMAIN=${ARIA2_DOMAIN}
+            - PLEX_CLAIM=${ARIA2_PLEX_CLAIM}
             # - SSL=true
             # - RPC_SECRET=Hello
-            - ARIA2_USER=lestat
-            - ARIA2_PWD=123123
-            - ENABLE_AUTH=true
+            - ARIA2_USER=${ARIA2_USER}
+            - ARIA2_PWD=${ARIA2_PWD}
+            - ENABLE_AUTH=${ARIA2_ENABLE_AUTH}
         links:
             - h5ai:file-manager
         restart: always
