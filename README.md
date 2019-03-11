@@ -2,12 +2,10 @@
 
 [![Github](https://img.shields.io/github/license/lestat220255/allindocker.svg)](https://github.com/lestat220255/allindocker/blob/master/LICENSE)
 
-
-
 ---
 
 ## 简介
-一个胶水项目,用来快速搭建php的开发环境,各个容器版本,默认端口映射关系可在docker-compose.yml文件里查看
+一个胶水项目(openresty+php+redis+mysql),用来快速搭建php的开发环境,各个容器版本,默认端口映射关系可在`docker-compose.yml`文件里查看,通过`.env`文件配置环境变量
 
 ---
 
@@ -15,7 +13,8 @@
 ```bash
 ├── certificates #证书
 ├── docker-compose.yml #配置文件
-├── Downloads #下载目录
+├── downloads
+├── .env #环境变量
 ├── logs #日志目录
 ├── mysql #mysql数据目录
 ├── mysql-slave #mysql-slave数据目录
