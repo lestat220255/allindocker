@@ -47,7 +47,7 @@ services:
         volumes:
             - ${REDIS_CONF}:/etc/redis.conf:ro
             - ${REDIS_DATA}:/data:rw
-        #entrypoint: ["redis-server", "/etc/redis.conf"]
+        command: redis-server --appendonly ${REDIS_AOF_ON}
         container_name: redis
     # redis-slave:
     #     image: daocloud.io/library/redis:5.0-rc4-alpine3.8
@@ -70,7 +70,7 @@ services:
             - ${WEB_ROOT}:/data/www/:rw
             - ${PHP72_CONF}:/usr/local/etc/php/php.ini:ro
             - /etc/localtime:/etc/localtime:ro
-            #- ./logs/php72/fpm-php.www.log:/var/log/fpm-php.www.log:rw
+            - ./logs/php72/:/var/log/fpm-php.www.log:rw
         expose:
             - "9000"
         cap_add:
@@ -87,7 +87,6 @@ services:
             - ${WEB_ROOT}:/data/www/:rw
             - ${PHP71_CONF}:/usr/local/etc/php/php.ini:ro
             - /etc/localtime:/etc/localtime:ro
-            #- ./logs/php71/fpm-php.www.log:/var/log/fpm-php.www.log:rw
         expose:
             - "9000"
         cap_add:
@@ -104,7 +103,6 @@ services:
             - ${WEB_ROOT}:/data/www/:rw
             - ${PHP70_CONF}:/usr/local/etc/php/php.ini:ro
             - /etc/localtime:/etc/localtime:ro
-            #- ./logs/php70/fpm-php.www.log:/var/log/fpm-php.www.log:rw
         expose:
             - "9000"
         cap_add:
@@ -121,7 +119,6 @@ services:
             - ${WEB_ROOT}:/data/www/:rw
             - ${PHP56_CONF}:/usr/local/etc/php/php.ini:ro
             - /etc/localtime:/etc/localtime:ro
-            #- ./logs/php56/fpm-php.www.log:/var/log/fpm-php.www.log:rw
         expose:
             - "9000"
         cap_add:
@@ -138,7 +135,6 @@ services:
             - ${WEB_ROOT}:/data/www/:rw
             - ${PHP55_CONF}:/usr/local/etc/php/php.ini:ro
             - /etc/localtime:/etc/localtime:ro
-            #- ./logs/php55/fpm-php.www.log:/var/log/fpm-php.www.log:rw
         expose:
             - "9000"
         cap_add:
@@ -207,7 +203,7 @@ services:
         tty: true
         #下载目录
         volumes:
-            - "${UGET_DOANLOAD_DIR}:/data/download:rw"
+            - "${DOWNLOAD_DIR}:/data/download:rw"
     #代理ip池
     proxy_pool:
         volumes:
@@ -222,7 +218,7 @@ services:
     h5ai:
         image: bixidock/h5ai
         volumes:
-            - ${H5AI_DOWNLOAD_DIR}:/var/www:rw
+            - ${DOWNLOAD_DIR}:/var/www:rw
         restart: always
         container_name: h5ai
     aria2:
@@ -232,7 +228,7 @@ services:
             - "${ARIA2_HTTPS_PORT}:443"
             - "${ARIA2_RPC_PORT}:6800"
         volumes:
-            - ${ARIA2_DOWNLOAD_DIR}:/var/www:rw
+            - ${DOWNLOAD_DIR}:/var/www:rw
         # volumes:
         #   - /some_folder:/root/conf/key
         #   - ~/test/aria2.conf:/root/conf/aria2.conf
