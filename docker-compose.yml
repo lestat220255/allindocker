@@ -41,23 +41,21 @@ services:
             - "${MYSQL_SLAVE_PORT}:3306"
         container_name: mysql57-slave
     redis:
-        build: ${REDIS_DOCKERFILE_DIR}
+        image: redis:5.0
         ports:
             - "${REDIS_PORT}:6379"
         volumes:
-            - ${REDIS_CONF}:/usr/local/etc/redis/redis.conf:ro
             - ${REDIS_DATA}:/data:rw
-        command: redis-server --appendonly ${REDIS_AOF_ON}
         container_name: redis
-    redis-slave:
-        build: ${REDIS_SLAVE_DOCKERFILE_DIR}
-        ports:
-            - "${REDIS_SLAVE_PORT}:6379"
-        volumes:
-            - ${REDIS_SLAVE_CONF}:/usr/local/etc/redis/redis.conf:ro
-            - ${REDIS_SLAVE_DATA}:/data:rw
-        command: redis-server --appendonly ${REDIS_SLAVE_AOF_ON}
-        container_name: redis-slave
+    # redis-slave:
+    #     build: ${REDIS_SLAVE_DOCKERFILE_DIR}
+    #     ports:
+    #         - "${REDIS_SLAVE_PORT}:6379"
+    #     volumes:
+    #         - ${REDIS_SLAVE_CONF}:/usr/local/etc/redis/redis.conf:ro
+    #         - ${REDIS_SLAVE_DATA}:/data:rw
+    #     command: redis-server --appendonly ${REDIS_SLAVE_AOF_ON}
+    #     container_name: redis-slave
     memcached:
         image: ${MEMCACHED_IMAGE}
         expose:

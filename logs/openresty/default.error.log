@@ -10,3 +10,170 @@
 2019/03/11 08:53:09 [info] 6#6: *45 client timed out (110: Connection timed out) while waiting for request, client: 172.22.0.1, server: 0.0.0.0:80
 2019/03/11 08:56:27 [info] 6#6: *46 client closed connection while waiting for request, client: 172.22.0.1, server: 0.0.0.0:80
 2019/03/11 08:57:30 [info] 6#6: *47 client timed out (110: Connection timed out) while waiting for request, client: 172.22.0.1, server: 0.0.0.0:80
+2019/03/12 01:43:16 [info] 6#6: *1 client closed connection while waiting for request, client: 192.168.0.89, server: 0.0.0.0:80
+2019/03/12 01:43:16 [error] 6#6: *2 [lua] access_limit_by_specific_rules.lua:18: set redis keepalive error : closed, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 01:43:16 [warn] 6#6: *2 a client request body is buffered to a temporary file /usr/local/openresty/nginx/client_body_temp/0000000001, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 01:43:16 [info] 6#6: *2 client 192.168.0.89 closed keepalive connection
+2019/03/12 01:43:16 [info] 6#6: *5 client closed connection while waiting for request, client: 192.168.0.89, server: 0.0.0.0:80
+2019/03/12 01:43:16 [error] 6#6: *6 [lua] access_limit_by_specific_rules.lua:18: set redis keepalive error : closed, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 01:43:16 [warn] 6#6: *6 a client request body is buffered to a temporary file /usr/local/openresty/nginx/client_body_temp/0000000002, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 01:43:16 [info] 6#6: *6 client 192.168.0.89 closed keepalive connection
+2019/03/12 01:43:16 [info] 6#6: *8 client closed connection while waiting for request, client: 192.168.0.89, server: 0.0.0.0:80
+2019/03/12 01:43:16 [error] 6#6: *9 [lua] access_limit_by_specific_rules.lua:18: set redis keepalive error : closed, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 01:43:16 [warn] 6#6: *9 a client request body is buffered to a temporary file /usr/local/openresty/nginx/client_body_temp/0000000003, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 01:43:16 [info] 6#6: *9 client 192.168.0.89 closed keepalive connection
+2019/03/12 01:43:16 [info] 6#6: *11 client closed connection while waiting for request, client: 192.168.0.89, server: 0.0.0.0:80
+2019/03/12 01:43:16 [error] 6#6: *12 [lua] access_limit_by_specific_rules.lua:18: set redis keepalive error : closed, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 01:43:16 [warn] 6#6: *12 a client request body is buffered to a temporary file /usr/local/openresty/nginx/client_body_temp/0000000004, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 01:43:16 [info] 6#6: *12 client 192.168.0.89 closed keepalive connection
+2019/03/12 01:43:16 [info] 6#6: *14 client closed connection while waiting for request, client: 192.168.0.89, server: 0.0.0.0:80
+2019/03/12 01:43:16 [error] 6#6: *15 [lua] access_limit_by_specific_rules.lua:18: set redis keepalive error : closed, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 01:43:16 [warn] 6#6: *15 a client request body is buffered to a temporary file /usr/local/openresty/nginx/client_body_temp/0000000005, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 01:43:16 [info] 6#6: *15 client 192.168.0.89 closed keepalive connection
+2019/03/12 01:43:16 [info] 6#6: *17 client closed connection while waiting for request, client: 192.168.0.89, server: 0.0.0.0:80
+2019/03/12 01:43:16 [error] 6#6: *18 [lua] access_limit_by_specific_rules.lua:18: set redis keepalive error : closed, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 01:43:16 [warn] 6#6: *18 a client request body is buffered to a temporary file /usr/local/openresty/nginx/client_body_temp/0000000006, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 01:43:16 [info] 6#6: *18 client 192.168.0.89 closed keepalive connection
+2019/03/12 01:43:16 [info] 6#6: *20 client closed connection while waiting for request, client: 192.168.0.89, server: 0.0.0.0:80
+2019/03/12 01:43:16 [error] 6#6: *21 [lua] access_limit_by_specific_rules.lua:18: set redis keepalive error : closed, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 01:43:16 [warn] 6#6: *21 a client request body is buffered to a temporary file /usr/local/openresty/nginx/client_body_temp/0000000007, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 01:43:16 [info] 6#6: *21 client 192.168.0.89 closed keepalive connection
+2019/03/12 01:43:16 [info] 6#6: *23 client closed connection while waiting for request, client: 192.168.0.89, server: 0.0.0.0:80
+2019/03/12 01:43:16 [error] 6#6: *24 [lua] access_limit_by_specific_rules.lua:18: set redis keepalive error : closed, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 01:43:16 [warn] 6#6: *24 a client request body is buffered to a temporary file /usr/local/openresty/nginx/client_body_temp/0000000008, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 01:43:16 [info] 6#6: *24 client 192.168.0.89 closed keepalive connection
+2019/03/12 01:43:16 [info] 6#6: *26 client closed connection while waiting for request, client: 192.168.0.89, server: 0.0.0.0:80
+2019/03/12 01:43:16 [error] 6#6: *27 [lua] access_limit_by_specific_rules.lua:18: set redis keepalive error : closed, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 01:43:16 [warn] 6#6: *27 a client request body is buffered to a temporary file /usr/local/openresty/nginx/client_body_temp/0000000009, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 01:43:16 [info] 6#6: *27 client 192.168.0.89 closed keepalive connection
+2019/03/12 01:43:16 [info] 6#6: *29 client closed connection while waiting for request, client: 192.168.0.89, server: 0.0.0.0:80
+2019/03/12 01:43:16 [error] 6#6: *30 [lua] access_limit_by_specific_rules.lua:18: set redis keepalive error : closed, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 01:43:16 [warn] 6#6: *30 a client request body is buffered to a temporary file /usr/local/openresty/nginx/client_body_temp/0000000010, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 01:43:16 [info] 6#6: *30 client 192.168.0.89 closed keepalive connection
+2019/03/12 01:43:16 [info] 6#6: *32 client closed connection while waiting for request, client: 192.168.0.89, server: 0.0.0.0:80
+2019/03/12 01:43:16 [error] 6#6: *33 [lua] access_limit_by_specific_rules.lua:18: set redis keepalive error : closed, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 01:43:16 [warn] 6#6: *33 a client request body is buffered to a temporary file /usr/local/openresty/nginx/client_body_temp/0000000011, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 01:43:16 [info] 6#6: *33 client 192.168.0.89 closed keepalive connection
+2019/03/12 01:43:16 [info] 6#6: *35 client closed connection while waiting for request, client: 192.168.0.89, server: 0.0.0.0:80
+2019/03/12 01:43:16 [error] 6#6: *36 [lua] access_limit_by_specific_rules.lua:18: set redis keepalive error : closed, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 01:43:16 [warn] 6#6: *36 a client request body is buffered to a temporary file /usr/local/openresty/nginx/client_body_temp/0000000012, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 01:43:16 [info] 6#6: *36 client 192.168.0.89 closed keepalive connection
+2019/03/12 01:43:16 [info] 6#6: *38 client closed connection while waiting for request, client: 192.168.0.89, server: 0.0.0.0:80
+2019/03/12 01:43:16 [error] 6#6: *39 [lua] access_limit_by_specific_rules.lua:18: set redis keepalive error : closed, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 01:43:16 [warn] 6#6: *39 a client request body is buffered to a temporary file /usr/local/openresty/nginx/client_body_temp/0000000013, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 01:43:16 [info] 6#6: *39 client 192.168.0.89 closed keepalive connection
+2019/03/12 01:43:16 [info] 6#6: *41 client closed connection while waiting for request, client: 192.168.0.89, server: 0.0.0.0:80
+2019/03/12 01:43:16 [error] 6#6: *42 [lua] access_limit_by_specific_rules.lua:18: set redis keepalive error : closed, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 01:43:16 [warn] 6#6: *42 a client request body is buffered to a temporary file /usr/local/openresty/nginx/client_body_temp/0000000014, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 01:43:16 [info] 6#6: *42 client 192.168.0.89 closed keepalive connection
+2019/03/12 01:43:16 [info] 6#6: *44 client closed connection while waiting for request, client: 192.168.0.89, server: 0.0.0.0:80
+2019/03/12 01:43:17 [error] 6#6: *45 [lua] access_limit_by_specific_rules.lua:18: set redis keepalive error : closed, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 01:43:17 [warn] 6#6: *45 a client request body is buffered to a temporary file /usr/local/openresty/nginx/client_body_temp/0000000015, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 01:43:17 [info] 6#6: *45 client 192.168.0.89 closed keepalive connection
+2019/03/12 01:43:17 [info] 6#6: *47 client closed connection while waiting for request, client: 192.168.0.89, server: 0.0.0.0:80
+2019/03/12 01:43:17 [error] 6#6: *48 [lua] access_limit_by_specific_rules.lua:18: set redis keepalive error : closed, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 01:43:17 [warn] 6#6: *48 a client request body is buffered to a temporary file /usr/local/openresty/nginx/client_body_temp/0000000016, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 01:43:17 [info] 6#6: *48 client 192.168.0.89 closed keepalive connection
+2019/03/12 01:43:17 [info] 6#6: *50 client closed connection while waiting for request, client: 192.168.0.89, server: 0.0.0.0:80
+2019/03/12 01:43:17 [error] 6#6: *51 [lua] access_limit_by_specific_rules.lua:18: set redis keepalive error : closed, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 01:43:17 [warn] 6#6: *51 a client request body is buffered to a temporary file /usr/local/openresty/nginx/client_body_temp/0000000017, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 01:43:17 [info] 6#6: *51 client 192.168.0.89 closed keepalive connection
+2019/03/12 01:43:17 [info] 6#6: *53 client closed connection while waiting for request, client: 192.168.0.89, server: 0.0.0.0:80
+2019/03/12 01:43:17 [error] 6#6: *54 [lua] access_limit_by_specific_rules.lua:18: set redis keepalive error : closed, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 01:43:17 [warn] 6#6: *54 a client request body is buffered to a temporary file /usr/local/openresty/nginx/client_body_temp/0000000018, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 01:43:17 [info] 6#6: *54 client 192.168.0.89 closed keepalive connection
+2019/03/12 01:43:17 [info] 6#6: *56 client closed connection while waiting for request, client: 192.168.0.89, server: 0.0.0.0:80
+2019/03/12 01:43:17 [error] 6#6: *57 [lua] access_limit_by_specific_rules.lua:18: set redis keepalive error : closed, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 01:43:17 [warn] 6#6: *57 a client request body is buffered to a temporary file /usr/local/openresty/nginx/client_body_temp/0000000019, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 01:43:17 [info] 6#6: *57 client 192.168.0.89 closed keepalive connection
+2019/03/12 07:39:54 [info] 6#6: *1 client closed connection while waiting for request, client: 192.168.0.89, server: 0.0.0.0:80
+2019/03/12 07:39:54 [error] 6#6: *2 [lua] access_limit_by_specific_rules.lua:18: set redis keepalive error : closed, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 07:39:54 [warn] 6#6: *2 a client request body is buffered to a temporary file /usr/local/openresty/nginx/client_body_temp/0000000001, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 07:39:54 [info] 6#6: *2 client 192.168.0.89 closed keepalive connection
+2019/03/12 07:39:56 [info] 6#6: *5 client closed connection while waiting for request, client: 192.168.0.89, server: 0.0.0.0:80
+2019/03/12 07:39:56 [error] 6#6: *6 [lua] access_limit_by_specific_rules.lua:18: set redis keepalive error : closed, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 07:39:56 [warn] 6#6: *6 a client request body is buffered to a temporary file /usr/local/openresty/nginx/client_body_temp/0000000002, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 07:39:56 [info] 6#6: *6 client 192.168.0.89 closed keepalive connection
+2019/03/12 07:40:29 [info] 6#6: *8 client closed connection while waiting for request, client: 192.168.0.89, server: 0.0.0.0:80
+2019/03/12 07:40:29 [error] 6#6: *9 [lua] access_limit_by_specific_rules.lua:18: set redis keepalive error : closed, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 07:40:29 [warn] 6#6: *9 a client request body is buffered to a temporary file /usr/local/openresty/nginx/client_body_temp/0000000003, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 07:40:29 [info] 6#6: *9 client 192.168.0.89 closed keepalive connection
+2019/03/12 07:43:00 [info] 6#6: *11 client closed connection while waiting for request, client: 192.168.0.89, server: 0.0.0.0:80
+2019/03/12 07:43:01 [error] 6#6: *12 [lua] access_limit_by_specific_rules.lua:18: set redis keepalive error : closed, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 07:43:01 [warn] 6#6: *12 a client request body is buffered to a temporary file /usr/local/openresty/nginx/client_body_temp/0000000004, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 07:43:01 [info] 6#6: *12 client 192.168.0.89 closed keepalive connection
+2019/03/12 07:43:08 [info] 6#6: *14 client closed connection while waiting for request, client: 192.168.0.89, server: 0.0.0.0:80
+2019/03/12 07:43:09 [error] 6#6: *15 lua tcp socket connect timed out, when connecting to 172.19.0.18:6379, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 07:43:09 [error] 6#6: *15 [lua] access_limit_by_specific_rules.lua:18: set redis keepalive error : closed, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 07:43:09 [warn] 6#6: *15 a client request body is buffered to a temporary file /usr/local/openresty/nginx/client_body_temp/0000000005, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 07:43:09 [info] 6#6: *15 client 192.168.0.89 closed keepalive connection
+2019/03/12 07:44:32 [info] 6#6: *18 client closed connection while waiting for request, client: 192.168.0.89, server: 0.0.0.0:80
+2019/03/12 07:44:33 [error] 6#6: *19 lua tcp socket connect timed out, when connecting to 172.19.0.18:6379, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 07:44:33 [error] 6#6: *19 [lua] access_limit_by_specific_rules.lua:18: set redis keepalive error : closed, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 07:44:33 [warn] 6#6: *19 a client request body is buffered to a temporary file /usr/local/openresty/nginx/client_body_temp/0000000006, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 07:44:33 [info] 6#6: *19 client 192.168.0.89 closed keepalive connection
+2019/03/12 07:44:33 [info] 6#6: *22 client closed connection while waiting for request, client: 192.168.0.89, server: 0.0.0.0:80
+2019/03/12 07:44:34 [error] 6#6: *23 lua tcp socket connect timed out, when connecting to 172.19.0.18:6379, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 07:44:34 [error] 6#6: *23 [lua] access_limit_by_specific_rules.lua:18: set redis keepalive error : closed, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 07:44:34 [warn] 6#6: *23 a client request body is buffered to a temporary file /usr/local/openresty/nginx/client_body_temp/0000000007, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 07:44:34 [info] 6#6: *23 client 192.168.0.89 closed keepalive connection
+2019/03/12 07:44:43 [info] 6#6: *26 client closed connection while waiting for request, client: 192.168.0.89, server: 0.0.0.0:80
+2019/03/12 07:44:44 [error] 6#6: *27 lua tcp socket connect timed out, when connecting to 172.19.0.18:6379, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 07:44:44 [error] 6#6: *27 [lua] access_limit_by_specific_rules.lua:18: set redis keepalive error : closed, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 07:44:44 [warn] 6#6: *27 a client request body is buffered to a temporary file /usr/local/openresty/nginx/client_body_temp/0000000008, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 07:44:44 [info] 6#6: *27 client 192.168.0.89 closed keepalive connection
+2019/03/12 07:44:45 [info] 6#6: *30 client closed connection while waiting for request, client: 192.168.0.89, server: 0.0.0.0:80
+2019/03/12 07:44:46 [error] 6#6: *31 lua tcp socket connect timed out, when connecting to 172.19.0.18:6379, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 07:44:46 [error] 6#6: *31 [lua] access_limit_by_specific_rules.lua:18: set redis keepalive error : closed, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 07:44:46 [warn] 6#6: *31 a client request body is buffered to a temporary file /usr/local/openresty/nginx/client_body_temp/0000000009, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 07:44:46 [info] 6#6: *31 client 192.168.0.89 closed keepalive connection
+2019/03/12 07:44:46 [info] 6#6: *34 client closed connection while waiting for request, client: 192.168.0.89, server: 0.0.0.0:80
+2019/03/12 07:44:46 [error] 6#6: *35 connect() failed (113: No route to host), client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 07:44:46 [error] 6#6: *35 [lua] access_limit_by_specific_rules.lua:18: set redis keepalive error : closed, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 07:44:46 [warn] 6#6: *35 a client request body is buffered to a temporary file /usr/local/openresty/nginx/client_body_temp/0000000010, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 07:44:46 [info] 6#6: *35 client 192.168.0.89 closed keepalive connection
+2019/03/12 07:44:52 [info] 6#6: *38 client closed connection while waiting for request, client: 192.168.0.89, server: 0.0.0.0:80
+2019/03/12 07:44:53 [error] 6#6: *39 lua tcp socket connect timed out, when connecting to 172.19.0.18:6379, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 07:44:53 [error] 6#6: *39 [lua] access_limit_by_specific_rules.lua:18: set redis keepalive error : closed, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 07:44:53 [warn] 6#6: *39 a client request body is buffered to a temporary file /usr/local/openresty/nginx/client_body_temp/0000000011, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 07:44:53 [info] 6#6: *39 client 192.168.0.89 closed keepalive connection
+2019/03/12 07:45:07 [info] 6#6: *42 client closed connection while waiting for request, client: 192.168.0.89, server: 0.0.0.0:80
+2019/03/12 07:45:07 [warn] 6#6: *43 a client request body is buffered to a temporary file /usr/local/openresty/nginx/client_body_temp/0000000012, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 07:45:07 [info] 6#6: *43 client 192.168.0.89 closed keepalive connection
+2019/03/12 07:45:08 [info] 6#6: *46 client closed connection while waiting for request, client: 192.168.0.89, server: 0.0.0.0:80
+2019/03/12 07:45:08 [warn] 6#6: *47 a client request body is buffered to a temporary file /usr/local/openresty/nginx/client_body_temp/0000000013, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 07:45:08 [info] 6#6: *47 client 192.168.0.89 closed keepalive connection
+2019/03/12 07:48:37 [info] 6#6: *50 client closed connection while waiting for request, client: 192.168.0.89, server: 0.0.0.0:80
+2019/03/12 07:48:37 [warn] 6#6: *51 a client request body is buffered to a temporary file /usr/local/openresty/nginx/client_body_temp/0000000014, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 07:48:37 [info] 6#6: *51 client 192.168.0.89 closed keepalive connection
+2019/03/12 07:48:55 [info] 6#6: *54 client closed connection while waiting for request, client: 192.168.0.89, server: 0.0.0.0:80
+2019/03/12 07:48:55 [warn] 6#6: *55 a client request body is buffered to a temporary file /usr/local/openresty/nginx/client_body_temp/0000000015, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 07:48:55 [info] 6#6: *55 client 192.168.0.89 closed keepalive connection
+2019/03/12 07:48:56 [info] 6#6: *58 client closed connection while waiting for request, client: 192.168.0.89, server: 0.0.0.0:80
+2019/03/12 07:48:56 [warn] 6#6: *59 a client request body is buffered to a temporary file /usr/local/openresty/nginx/client_body_temp/0000000016, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 07:48:56 [info] 6#6: *59 client 192.168.0.89 closed keepalive connection
+2019/03/12 07:48:57 [info] 6#6: *62 client closed connection while waiting for request, client: 192.168.0.89, server: 0.0.0.0:80
+2019/03/12 07:48:57 [warn] 6#6: *63 a client request body is buffered to a temporary file /usr/local/openresty/nginx/client_body_temp/0000000017, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 07:48:57 [info] 6#6: *63 client 192.168.0.89 closed keepalive connection
+2019/03/12 08:01:51 [info] 6#6: *66 client closed connection while waiting for request, client: 192.168.0.89, server: 0.0.0.0:80
+2019/03/12 08:01:51 [warn] 6#6: *67 a client request body is buffered to a temporary file /usr/local/openresty/nginx/client_body_temp/0000000018, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 08:01:51 [info] 6#6: *67 client 192.168.0.89 closed keepalive connection
+2019/03/12 08:01:51 [info] 6#6: *70 client closed connection while waiting for request, client: 192.168.0.89, server: 0.0.0.0:80
+2019/03/12 08:01:51 [warn] 6#6: *71 a client request body is buffered to a temporary file /usr/local/openresty/nginx/client_body_temp/0000000019, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 08:01:51 [info] 6#6: *71 client 192.168.0.89 closed keepalive connection
+2019/03/12 08:04:04 [info] 6#6: *74 client closed connection while waiting for request, client: 192.168.0.89, server: 0.0.0.0:80
+2019/03/12 08:04:04 [warn] 6#6: *75 a client request body is buffered to a temporary file /usr/local/openresty/nginx/client_body_temp/0000000020, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 08:04:04 [info] 6#6: *75 client 192.168.0.89 closed keepalive connection
+2019/03/12 08:20:32 [info] 6#6: *78 client closed connection while waiting for request, client: 192.168.0.89, server: 0.0.0.0:80
+2019/03/12 08:20:32 [warn] 6#6: *79 a client request body is buffered to a temporary file /usr/local/openresty/nginx/client_body_temp/0000000021, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 08:20:32 [info] 6#6: *79 client 192.168.0.89 closed keepalive connection
+2019/03/12 08:30:03 [info] 6#6: *82 client closed connection while waiting for request, client: 192.168.0.89, server: 0.0.0.0:80
+2019/03/12 08:30:03 [warn] 6#6: *83 a client request body is buffered to a temporary file /usr/local/openresty/nginx/client_body_temp/0000000022, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 08:30:03 [info] 6#6: *83 client 192.168.0.89 closed keepalive connection
+2019/03/12 08:40:41 [info] 6#6: *86 client closed connection while waiting for request, client: 192.168.0.251, server: 0.0.0.0:80
+2019/03/12 09:01:10 [info] 6#6: *87 client closed connection while waiting for request, client: 192.168.0.89, server: 0.0.0.0:80
+2019/03/12 09:01:10 [warn] 6#6: *88 a client request body is buffered to a temporary file /usr/local/openresty/nginx/client_body_temp/0000000023, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 09:01:10 [info] 6#6: *88 client 192.168.0.89 closed keepalive connection
+2019/03/12 09:02:23 [info] 6#6: *91 client closed connection while waiting for request, client: 192.168.0.89, server: 0.0.0.0:80
+2019/03/12 09:02:23 [warn] 6#6: *92 a client request body is buffered to a temporary file /usr/local/openresty/nginx/client_body_temp/0000000024, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
+2019/03/12 09:02:23 [info] 6#6: *92 client 192.168.0.89 closed keepalive connection
