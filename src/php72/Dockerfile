@@ -33,6 +33,8 @@ RUN apk update && apk add --no-cache --virtual .build-deps \
     # 配置npm中国镜像
     && npm config set registry https://registry.npm.taobao.org \
     && pecl install imagick \
+    && pecl install inotify \
+    && pecl install swoole \
     && pecl install mcrypt-1.0.1 \
     && docker-php-ext-enable mcrypt \
     && docker-php-ext-enable imagick \
