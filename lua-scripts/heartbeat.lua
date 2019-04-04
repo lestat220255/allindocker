@@ -58,8 +58,8 @@ if obj.Name == "KeepAlive" then
     local redis = require "resty.redis"
     local red = redis:new()
     red:set_timeout(1000)
-    local host = '172.27.0.15'
-    local port = 6379
+    local host = 'ip'
+    local port = 'port' 
     local ok, err = red:connect(host,port)
     if not ok then
         return close_redis(red)
@@ -69,7 +69,7 @@ if obj.Name == "KeepAlive" then
     local count
     count, err = red:get_reused_times()
     if 0 == count then
-        ok, err = red:auth("zmartec2018@")
+        ok, err = red:auth("password")
         if not ok then
             ngx.say("failed to auth: ", err)
             return
