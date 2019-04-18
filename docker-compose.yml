@@ -61,6 +61,24 @@ services:
         expose:
             - "11211"
         container_name: memcached
+    php73:
+        depends_on:
+            - mysql57
+            - redis
+        build: ${PHP73_DOCKERFILE_DIR}
+        restart: always
+        volumes:
+            - ${PHP73_WWW_CONF}:/usr/local/etc/php-fpm.d/www.conf:ro
+            - ${WEB_ROOT}:/data/www/:rw
+            - ${PHP73_CONF}:/usr/local/etc/php/php.ini:ro
+            - /etc/localtime:/etc/localtime:ro
+            - ./logs/php73/:/var/log/fpm-php.www.log:rw
+        expose:
+            - "9000"
+        cap_add:
+            - SYS_PTRACE
+        container_name: php73
+
     php72:
         depends_on:
             - mysql57
