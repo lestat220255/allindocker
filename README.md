@@ -14,15 +14,20 @@
 ├── certificates #证书
 ├── docker-compose.yml #配置文件
 ├── downloads
-├── .env #环境变量
-├── logs #日志目录
-├── mysql #mysql数据目录
-├── mysql-slave #mysql-slave数据目录
-├── openresty #自定义lua脚本目录(openresty配置文件可直接读取)
+├── LICENSE
+├── logs #日志
+│   ├── openresty
+│   └── php72
+├── lua-scripts #自定义lua脚本目录(openresty配置文件可直接读取)
+│   ├── access_limit_by_specific_rules.lua
+│   ├── heartbeat.lua
+│   └── redis.lua
 ├── README.md
+├── redis
+│   └── dump.rdb
+├── redis-slave
+├── showdoc
 ├── src #docker容器目录(包含[Dockerfile/配置文件])
-│   ├── mysql
-│   ├── mysql-slave
 │   ├── openresty
 │   ├── php55
 │   ├── php56
@@ -31,14 +36,16 @@
 │   ├── php72
 │   ├── phpRedisAdmin
 │   ├── proxy_pool
+│   ├── redis
 │   ├── showdoc
 │   └── you-get
 ├── tools
-│   ├── mysql_backup_from_docker.sh #mysql备份脚本(sudo chmod +x ./mysql_backup_from_docker.sh)
-│   └── mysql_restore_to_docker.sh #mysql还原脚本(sudo chmod +x ./mysql_restore_to_docker.sh)
+│   ├── mysql_backup_from_docker.sh #mysql备份脚本(sudo chmod +x ./mysql_backup_from_docker.sh)
+│   ├── mysql_restore_to_docker.sh #mysql还原脚本(sudo chmod +x ./mysql_restore_to_docker.sh)
+│   └── terminal_ide.sh
 └── www #web项目目录(在src/openresty/conf.d/目录下进行配置)
-    ├── index.html #demo
-    └── index.php #demo
+    ├── index.html
+    └── index.php
 ```
 
 ---
