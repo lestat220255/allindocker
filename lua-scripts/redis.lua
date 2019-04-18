@@ -95,7 +95,7 @@ end
 -- change connect address as you need
 function _M.connect_mod( self, redis )    
     redis:set_timeout(self.timeout)
-    return redis:connect("172.27.0.15", 6379)
+    return redis:connect("127.0.0.1", 6379)
 end
 
 
