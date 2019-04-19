@@ -96,70 +96,70 @@ services:
         cap_add:
             - SYS_PTRACE
         container_name: php72
-    php71:
-        depends_on:
-            - mysql57
-            - redis
-        build: ${PHP71_DOCKERFILE_DIR}
-        restart: always
-        volumes:
-            - ${PHP71_WWW_CONF}:/usr/local/etc/php-fpm.d/www.conf:ro
-            - ${WEB_ROOT}:/data/www/:rw
-            - ${PHP71_CONF}:/usr/local/etc/php/php.ini:ro
-            - /etc/localtime:/etc/localtime:ro
-        expose:
-            - "9000"
-        cap_add:
-            - SYS_PTRACE
-        container_name: php71
-    php70:
-        depends_on:
-            - mysql57
-            - redis
-        build: ${PHP70_DOCKERFILE_DIR}
-        restart: always
-        volumes:
-            - ${PHP70_WWW_CONF}:/usr/local/etc/php-fpm.d/www.conf:ro
-            - ${WEB_ROOT}:/data/www/:rw
-            - ${PHP70_CONF}:/usr/local/etc/php/php.ini:ro
-            - /etc/localtime:/etc/localtime:ro
-        expose:
-            - "9000"
-        cap_add:
-            - SYS_PTRACE
-        container_name: php70
-    php56:
-        depends_on:
-            - mysql57
-            - redis
-        build: ${PHP56_DOCKERFILE_DIR}
-        restart: always
-        volumes:
-            - ${PHP56_WWW_CONF}:/usr/local/etc/php-fpm.d/www.conf:ro
-            - ${WEB_ROOT}:/data/www/:rw
-            - ${PHP56_CONF}:/usr/local/etc/php/php.ini:ro
-            - /etc/localtime:/etc/localtime:ro
-        expose:
-            - "9000"
-        cap_add:
-            - SYS_PTRACE
-        container_name: php56
-    php55:
-        depends_on:
-            - mysql57
-            - redis
-        build: ${PHP55_DOCKERFILE_DIR}
-        restart: always
-        volumes:
-            - ${PHP55_WWW_CONF}:/usr/local/etc/php-fpm.d/www.conf:ro
-            - ${WEB_ROOT}:/data/www/:rw
-            - ${PHP55_CONF}:/usr/local/etc/php/php.ini:ro
-            - /etc/localtime:/etc/localtime:ro
-        expose:
-            - "9000"
-        cap_add:
-            - SYS_PTRACE
-        container_name: php55
+#    php71:
+#        depends_on:
+#            - mysql57
+#            - redis
+#        build: ${PHP71_DOCKERFILE_DIR}
+#        restart: always
+#        volumes:
+#            - ${PHP71_WWW_CONF}:/usr/local/etc/php-fpm.d/www.conf:ro
+#            - ${WEB_ROOT}:/data/www/:rw
+#            - ${PHP71_CONF}:/usr/local/etc/php/php.ini:ro
+#            - /etc/localtime:/etc/localtime:ro
+#        expose:
+#            - "9000"
+#        cap_add:
+#            - SYS_PTRACE
+#        container_name: php71
+#    php70:
+#        depends_on:
+#            - mysql57
+#            - redis
+#        build: ${PHP70_DOCKERFILE_DIR}
+#        restart: always
+#        volumes:
+#            - ${PHP70_WWW_CONF}:/usr/local/etc/php-fpm.d/www.conf:ro
+#            - ${WEB_ROOT}:/data/www/:rw
+#            - ${PHP70_CONF}:/usr/local/etc/php/php.ini:ro
+#            - /etc/localtime:/etc/localtime:ro
+#        expose:
+#            - "9000"
+#        cap_add:
+#            - SYS_PTRACE
+#        container_name: php70
+#    php56:
+#        depends_on:
+#            - mysql57
+#            - redis
+#        build: ${PHP56_DOCKERFILE_DIR}
+#        restart: always
+#        volumes:
+#            - ${PHP56_WWW_CONF}:/usr/local/etc/php-fpm.d/www.conf:ro
+#            - ${WEB_ROOT}:/data/www/:rw
+#            - ${PHP56_CONF}:/usr/local/etc/php/php.ini:ro
+#            - /etc/localtime:/etc/localtime:ro
+#        expose:
+#            - "9000"
+#        cap_add:
+#            - SYS_PTRACE
+#        container_name: php56
+#    php55:
+#        depends_on:
+#            - mysql57
+#            - redis
+#        build: ${PHP55_DOCKERFILE_DIR}
+#        restart: always
+#        volumes:
+#            - ${PHP55_WWW_CONF}:/usr/local/etc/php-fpm.d/www.conf:ro
+#            - ${WEB_ROOT}:/data/www/:rw
+#            - ${PHP55_CONF}:/usr/local/etc/php/php.ini:ro
+#            - /etc/localtime:/etc/localtime:ro
+#        expose:
+#            - "9000"
+#        cap_add:
+#            - SYS_PTRACE
+#        container_name: php55
     #服务器nginx(openresty)
     openresty:
         image: ${OPENRESTY_IMAGE}
@@ -207,63 +207,109 @@ services:
             - "${PRA_PORT}:80"
         container_name: phpredisadmin
     #文档系统
-    showdoc:
-        build: ./src/showdoc
-        volumes:
-        #项目文件
-            - ./showdoc/:/var/www/html/:rw
-        ports:
-            - "${SHOWDOC_PORT}:80"
-        container_name: showdoc
-    #下载工具
-    you-get:
-        build: ./src/you-get
-        container_name: you-get
-        stdin_open: true
-        tty: true
-        #下载目录
-        volumes:
-            - "${DOWNLOAD_DIR}:/data/download:rw"
-    #代理ip池
-    proxy_pool:
-        volumes:
-            - ./src/proxy_pool:/usr/src/app
-        ports:
-            - "${PP_PORT}:5010"
-        links:
-            - redis
-        build: ./src/proxy_pool/Docker
-        container_name: proxy_pool
-    #下载器
-    h5ai:
-        image: bixidock/h5ai
-        volumes:
-            - ${DOWNLOAD_DIR}:/var/www:rw
-        restart: always
-        container_name: h5ai
-    aria2:
-        image: wahyd4/aria2-ui:h5ai
-        ports:
-            - "${ARIA2_HTTP_PORT}:80"
-            - "${ARIA2_HTTPS_PORT}:443"
-            - "${ARIA2_RPC_PORT}:6800"
-        volumes:
-            - ${DOWNLOAD_DIR}:/var/www:rw
-        # volumes:
-        #   - /some_folder:/root/conf/key
-        #   - ~/test/aria2.conf:/root/conf/aria2.conf
+#    showdoc:
+#        build: ./src/showdoc
+#        volumes:
+#        #项目文件
+#            - ./showdoc/:/var/www/html/:rw
+#        ports:
+#            - "${SHOWDOC_PORT}:80"
+#        container_name: showdoc
+#    #下载工具
+#    you-get:
+#        build: ./src/you-get
+#        container_name: you-get
+#        stdin_open: true
+#        tty: true
+#        #下载目录
+#        volumes:
+#            - "${DOWNLOAD_DIR}:/data/download:rw"
+#    #代理ip池
+#    proxy_pool:
+#        volumes:
+#            - ./src/proxy_pool:/usr/src/app
+#        ports:
+#            - "${PP_PORT}:5010"
+#        links:
+#            - redis
+#        build: ./src/proxy_pool/Docker
+#        container_name: proxy_pool
+#    #下载器
+#    h5ai:
+#        image: bixidock/h5ai
+#        volumes:
+#            - ${DOWNLOAD_DIR}:/var/www:rw
+#        restart: always
+#        container_name: h5ai
+#    aria2:
+#        image: wahyd4/aria2-ui:h5ai
+#        ports:
+#            - "${ARIA2_HTTP_PORT}:80"
+#            - "${ARIA2_HTTPS_PORT}:443"
+#            - "${ARIA2_RPC_PORT}:6800"
+#        volumes:
+#            - ${DOWNLOAD_DIR}:/var/www:rw
+#        # volumes:
+#        #   - /some_folder:/root/conf/key
+#        #   - ~/test/aria2.conf:/root/conf/aria2.conf
+#        environment:
+#            - DOMAIN=${ARIA2_DOMAIN}
+#            - PLEX_CLAIM=${ARIA2_PLEX_CLAIM}
+#            # - SSL=true
+#            # - RPC_SECRET=Hello
+#            - ARIA2_USER=${ARIA2_USER}
+#            - ARIA2_PWD=${ARIA2_PWD}
+#            - ENABLE_AUTH=${ARIA2_ENABLE_AUTH}
+#        links:
+#            - h5ai:file-manager
+#        restart: always
+#        container_name: aria2
+    es:
+        image: elasticsearch:7.0.0 
         environment:
-            - DOMAIN=${ARIA2_DOMAIN}
-            - PLEX_CLAIM=${ARIA2_PLEX_CLAIM}
-            # - SSL=true
-            # - RPC_SECRET=Hello
-            - ARIA2_USER=${ARIA2_USER}
-            - ARIA2_PWD=${ARIA2_PWD}
-            - ENABLE_AUTH=${ARIA2_ENABLE_AUTH}
-        links:
-            - h5ai:file-manager
-        restart: always
-        container_name: aria2
+            - node.name=es01
+            - cluster.initial_master_nodes=es01
+            - cluster.name=docker-cluster
+            - bootstrap.memory_lock=true
+            - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+        ulimits:
+            memlock:
+                soft: -1
+                hard: -1
+        volumes:
+            - ${ES_DATA_DIR}:/usr/share/elasticsearch/data/:rw 
+            - ${ES_CONF_DIR}:/usr/share/elasticsearch/config/
+            - /etc/localtime:/etc/localtime:ro
+        ports:
+            - "${ES_HTTP_PORT}:9200"
+        container_name: es
+    fb:
+        image: docker.elastic.co/beats/filebeat:7.0.0
+        volumes:
+            - ${FB_CONF}:/usr/share/filebeat/filebeat.yml:ro
+            - ${OPENRESTY_LOGS_DIR}:/var/log/nginx/:ro
+            - /etc/localtime:/etc/localtime:ro
+        container_name: fb
+    logstash:
+        image: docker.elastic.co/logstash/logstash:7.0.0
+        volumes:
+            - ${LS_CONF}:/usr/share/logstash/config:ro
+            - /etc/localtime:/etc/localtime:ro
+        ports:
+            - "${LS_PORT}:5044"
+            - "${LS_HTTP_PORT}:9600"
+        container_name: logstash
+    kibana:
+        image: docker.elastic.co/kibana/kibana:6.0.0
+        environment:
+#            SERVER_NAME: kibana.example.org
+            ELASTICSEARCH_URL: http://es:9200
+        ports:
+            - "${KIBANA_PORT}:5601"
+        volumes:
+            - /etc/localtime:/etc/localtime:ro
+            - ${KIBANA_CONF}:/usr/share/kibana:ro
+        container_name: kibana
 
 networks:
   default:

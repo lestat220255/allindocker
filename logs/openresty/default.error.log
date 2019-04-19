@@ -177,3 +177,19 @@
 2019/03/12 09:02:23 [info] 6#6: *91 client closed connection while waiting for request, client: 192.168.0.89, server: 0.0.0.0:80
 2019/03/12 09:02:23 [warn] 6#6: *92 a client request body is buffered to a temporary file /usr/local/openresty/nginx/client_body_temp/0000000024, client: 192.168.0.89, server: localhost, request: "POST /device/snapshot HTTP/1.1", host: "192.168.0.251:80"
 2019/03/12 09:02:23 [info] 6#6: *92 client 192.168.0.89 closed keepalive connection
+2019/04/19 08:38:07 [error] 6#6: *2 open() "/data/www/favicon.ico" failed (2: No such file or directory), client: 172.18.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
+2019/04/19 08:38:16 [info] 6#6: *1 client closed connection while waiting for request, client: 172.18.0.1, server: 0.0.0.0:80
+2019/04/19 08:51:02 [info] 6#6: *3 client closed connection while waiting for request, client: 172.18.0.1, server: 0.0.0.0:80
+2019/04/19 08:51:02 [info] 6#6: *4 client closed connection while waiting for request, client: 172.18.0.1, server: 0.0.0.0:80
+2019/04/19 08:53:36 [info] 6#6: *7 client 172.18.0.1 closed keepalive connection
+2019/04/19 08:57:44 [info] 6#6: *9 client 172.18.0.1 closed keepalive connection
+2019/04/19 08:57:58 [info] 6#6: *10 client 172.18.0.1 closed keepalive connection
+2019/04/19 08:59:26 [info] 6#6: *11 client 172.18.0.1 closed keepalive connection
+2019/04/19 09:00:35 [info] 6#6: *12 client 172.18.0.1 closed keepalive connection
+2019/04/19 09:07:42 [info] 6#6: *15 client 172.18.0.1 closed keepalive connection
+2019/04/19 09:24:14 [info] 6#6: *19 client closed connection while waiting for request, client: 172.18.0.1, server: 0.0.0.0:80
+2019/04/19 10:43:39 [info] 6#6: *23 client 172.18.0.1 closed keepalive connection
+2019/04/19 10:53:02 [info] 6#6: *25 client 172.18.0.1 closed keepalive connection
+2019/04/19 11:11:41 [error] 6#6: *2 open() "/data/www/favicon.ico" failed (2: No such file or directory), client: 172.18.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
+2019/04/19 11:11:52 [info] 6#6: *1 client closed connection while waiting for request, client: 172.18.0.1, server: 0.0.0.0:80
+2019/04/19 11:12:20 [info] 6#6: *2 client 172.18.0.1 closed keepalive connection
