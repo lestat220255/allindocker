@@ -204,3 +204,20 @@
 2019/04/22 07:23:18 [error] 6#6: *19 open() "/data/www/favicon.ico" failed (2: No such file or directory), client: 172.19.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
 2019/04/22 07:54:31 [error] 6#6: *22 open() "/data/www/favicon.ico" failed (2: No such file or directory), client: 172.19.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
 2019/04/22 08:03:55 [error] 6#6: *23 open() "/data/www/favicon.ico" failed (2: No such file or directory), client: 172.19.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/?asd=dsa"
+2019/04/22 08:51:48 [info] 6#6: *29 client 172.19.0.1 closed keepalive connection
+2019/04/22 08:53:57 [info] 6#6: *1031 client closed connection while waiting for request, client: 172.19.0.1, server: 0.0.0.0:80
+2019/04/22 08:53:57 [info] 6#6: *1033 client closed connection while waiting for request, client: 172.19.0.1, server: 0.0.0.0:80
+2019/04/22 08:53:57 [info] 6#6: *1035 client closed connection while waiting for request, client: 172.19.0.1, server: 0.0.0.0:80
+2019/04/22 08:53:57 [info] 6#6: *1040 client closed connection while waiting for request, client: 172.19.0.1, server: 0.0.0.0:80
+2019/04/22 08:53:57 [info] 6#6: *1042 client closed connection while waiting for request, client: 172.19.0.1, server: 0.0.0.0:80
+2019/04/22 08:53:57 [info] 6#6: *1034 client closed connection while waiting for request, client: 172.19.0.1, server: 0.0.0.0:80
+2019/04/22 08:53:57 [info] 6#6: *1028 client closed connection while waiting for request, client: 172.19.0.1, server: 0.0.0.0:80
+2019/04/22 08:53:57 [info] 6#6: *1030 client closed connection while waiting for request, client: 172.19.0.1, server: 0.0.0.0:80
+2019/04/22 08:53:57 [info] 6#6: *1036 client closed connection while waiting for request, client: 172.19.0.1, server: 0.0.0.0:80
+2019/04/22 08:53:57 [info] 6#6: *1039 client closed connection while waiting for request, client: 172.19.0.1, server: 0.0.0.0:80
+2019/04/22 08:53:57 [info] 6#6: *1037 client closed connection while waiting for request, client: 172.19.0.1, server: 0.0.0.0:80
+2019/04/22 08:53:57 [info] 6#6: *1043 client closed connection while waiting for request, client: 172.19.0.1, server: 0.0.0.0:80
+2019/04/22 08:53:57 [info] 6#6: *1038 client closed connection while waiting for request, client: 172.19.0.1, server: 0.0.0.0:80
+2019/04/22 08:53:57 [info] 6#6: *1029 client closed connection while waiting for request, client: 172.19.0.1, server: 0.0.0.0:80
+2019/04/22 08:53:57 [info] 6#6: *1032 client closed connection while waiting for request, client: 172.19.0.1, server: 0.0.0.0:80
+2019/04/22 08:53:57 [info] 6#6: *1041 client closed connection while waiting for request, client: 172.19.0.1, server: 0.0.0.0:80
