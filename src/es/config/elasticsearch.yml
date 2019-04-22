@@ -1,4 +1,3 @@
 cluster.name: "elasticsearch_production"
 node.name: "elasticsearch_001_data"
 network.host: 0.0.0.0
-xpack.security.enabled: false

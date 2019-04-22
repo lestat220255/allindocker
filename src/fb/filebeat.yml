@@ -8,8 +8,6 @@ processors:
 
 output.logstash:
   hosts: ["logstash:5044"]
-  #username: '${ELASTICSEARCH_USERNAME:}'
-  #password: '${ELASTICSEARCH_PASSWORD:}'
 
 filebeat.inputs:
   # 采集系统日志
