@@ -193,3 +193,5 @@
 2019/04/19 11:11:41 [error] 6#6: *2 open() "/data/www/favicon.ico" failed (2: No such file or directory), client: 172.18.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
 2019/04/19 11:11:52 [info] 6#6: *1 client closed connection while waiting for request, client: 172.18.0.1, server: 0.0.0.0:80
 2019/04/19 11:12:20 [info] 6#6: *2 client 172.18.0.1 closed keepalive connection
+2019/04/22 01:19:36 [error] 6#6: *1 open() "/data/www/favicon.ico" failed (2: No such file or directory), client: 172.18.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
+2019/04/22 01:25:20 [info] 6#6: *3 client 172.18.0.1 closed keepalive connection

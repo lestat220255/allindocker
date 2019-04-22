@@ -308,7 +308,7 @@ services:
             - "${KIBANA_PORT}:5601"
         volumes:
             - /etc/localtime:/etc/localtime:ro
-            - ${KIBANA_CONF}:/usr/share/kibana:ro
+            - ${KIBANA_CONF}:/usr/share/kibana/config:ro
         container_name: kibana
 
 networks:

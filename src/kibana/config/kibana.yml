@@ -3,7 +3,12 @@
 
 server.name: kibana
 server.host: "0"
-elasticsearch.url: http://elasticsearch:9200
+elasticsearch.url: http://es:9200
 elasticsearch.username: elastic
 elasticsearch.password: changeme
 xpack.monitoring.ui.container.elasticsearch.enabled: true
+
+# Enables you specify a file where Kibana stores log output.
+logging.dest: stdout
+
+xpack.security.enabled: false
