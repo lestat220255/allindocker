@@ -274,7 +274,7 @@ services:
             - /etc/localtime:/etc/localtime:ro
         ports:
             - "${ES_HTTP_PORT}:9200"
-            - "9300:9300"
+            - "${ES_CLUSTER_PORT}:9300"
         container_name: es
     fb:
         image: docker.elastic.co/beats/filebeat:6.7.0
