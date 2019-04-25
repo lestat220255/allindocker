@@ -315,9 +315,6 @@ services:
         container_name: kibana
         depends_on:
             - es
-#    supervisor:
-#        build: ./src/supervisor
-#        container_name: supervisor
 
 networks:
   default:
