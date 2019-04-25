@@ -5,7 +5,7 @@
 ---
 
 ## 简介
-一个胶水项目(openresty+php+redis+mysql),用来快速搭建php的开发环境,各个容器版本,默认端口映射关系可在`docker-compose.yml`文件里查看,通过`.env`文件配置环境变量
+一个快速搭建开发环境的脚手架(openresty+php+redis+mysql+elk日志管理系统),用来快速搭建php的开发环境,各个容器版本,默认端口映射关系可在`docker-compose.yml`文件里查看,通过`.env`文件配置环境变量
 
 ---
 
@@ -16,24 +16,30 @@
 ├── downloads
 ├── LICENSE
 ├── logs #日志
+│   ├── mysql
 │   ├── openresty
 │   └── php72
+│   └── php73
 ├── lua-scripts #自定义lua脚本目录(openresty配置文件可直接读取)
 │   ├── access_limit_by_specific_rules.lua
 │   ├── heartbeat.lua
 │   └── redis.lua
 ├── README.md
 ├── redis
-│   └── dump.rdb
 ├── redis-slave
 ├── showdoc
 ├── src #docker容器目录(包含[Dockerfile/配置文件])
+│   ├── es
+│   ├── fb
+│   ├── kibana
+│   ├── logstash
 │   ├── openresty
 │   ├── php55
 │   ├── php56
 │   ├── php70
 │   ├── php71
 │   ├── php72
+│   ├── php73
 │   ├── phpRedisAdmin
 │   ├── proxy_pool
 │   ├── redis
@@ -145,8 +151,8 @@ dns resolver默认为`127.0.0.11`
 ---
 
 ## 其他说明
-- php各版本的Dockerfile内包含的主要是国内镜像(ali和daocloud),如果在国外云服务器上部署建议修改这些镜像为默认
-
+- php各版本的Dockerfile内包含的主要是国内镜像(ali和daocloud),如果在国外云服务器上部署建议修改这些镜像为默认  
+- 如果elasticsearch启动报错类似:`[1]: max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]`,则需要设置`sudo sysctl -w vm.max_map_count=262144`  
 
 ---
 
