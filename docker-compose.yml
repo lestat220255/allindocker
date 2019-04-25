@@ -181,6 +181,8 @@ services:
             - ${OPENRESTY_CERTS_DIR}:/etc/letsencrypt/:ro
             #日志目录
             - ${OPENRESTY_LOGS_DIR}:/var/log/nginx/:rw
+            #可用于简单身份认证的auth_basic密码文件(默认:password)
+            - ${OPENRESTY_PASSWD}:/etc/openresty/.htpasswd:ro
         restart: always
         container_name: openresty
     #mysql管理
@@ -313,6 +315,9 @@ services:
         container_name: kibana
         depends_on:
             - es
+    supervisor:
+        build: ./src/supervisor
+        container_name: supervisor
 
 networks:
   default:
