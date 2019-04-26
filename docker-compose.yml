@@ -315,6 +315,14 @@ services:
         container_name: kibana
         depends_on:
             - es
+    metricbeat:
+        image: docker.elastic.co/beats/metricbeat:6.7.0
+        depends_on:
+            - logstash
+        volumes:
+            - /etc/localtime:/etc/localtime:ro
+            - ./src/metricbeat/metricbeat.yml:/usr/share/metricbeat/metricbeat.yml:ro
+        container_name: metricbeat
 
 networks:
   default:
