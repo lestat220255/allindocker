@@ -273,6 +273,7 @@ services:
         volumes:
             - /etc/localtime:/etc/localtime:ro
             - ${JUPYTER_CONF}:/home/:rw
+            - ${JUPYTER_CONF}:/etc/ansible/:rw
         container_name: jupyter
 
 networks:

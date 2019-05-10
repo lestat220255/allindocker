@@ -11,9 +11,14 @@
 
 ## 目录结构
 ```bash
+├── ansible #ansible配置目录
+│   ├── ansible.cfg
+│   ├── ansible_on_jupyter.ipynb
+│   ├── hello.yml
+│   ├── hosts #自行创建
+│   └── keys #ansible ssh证书目录
 ├── certificates #证书
 ├── docker-compose.yml #配置文件
-├── downloads
 ├── LICENSE
 ├── logs #日志
 │   ├── mysql
@@ -27,7 +32,6 @@
 ├── README.md
 ├── redis
 ├── redis-slave
-├── showdoc
 ├── src #docker容器目录(包含[Dockerfile/配置文件])
 │   ├── es
 │   ├── fb
@@ -41,10 +45,7 @@
 │   ├── php72
 │   ├── php73
 │   ├── phpRedisAdmin
-│   ├── proxy_pool
 │   ├── redis
-│   ├── showdoc
-│   └── you-get
 ├── tools
 │   ├── mysql_backup_from_docker.sh #mysql备份脚本(sudo chmod +x ./mysql_backup_from_docker.sh)
 │   ├── mysql_restore_to_docker.sh #mysql还原脚本(sudo chmod +x ./mysql_restore_to_docker.sh)
@@ -78,8 +79,6 @@ mysql57-slave: `9007`:`3306`
 redis: `6379`:`6379`  
 phpmyadmin: `9906`:`80`  
 phpredisadmin: `9379`:`80`  
-showdoc: `9015`:`80`  
-aria2: `9080`:`80`,`9443`:`443`,`6800`:`6800`  
 
 ---
 
