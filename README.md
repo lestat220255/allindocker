@@ -73,12 +73,7 @@ sudo docker-compose up -d
 ---
 
 ## 默认端口说明
-openresty: `80`:`80`,`443`:`443`  
-mysql57: `9006`:`3306`  
-mysql57-slave: `9007`:`3306`  
-redis: `6379`:`6379`  
-phpmyadmin: `9906`:`80`  
-phpredisadmin: `9379`:`80`  
+详见`.env`
 
 ---
 
