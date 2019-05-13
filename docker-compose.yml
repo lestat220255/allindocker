@@ -276,6 +276,21 @@ services:
             - ${JUPYTER_CONF}:/etc/ansible/:rw
         container_name: jupyter
 
+    server1:
+      ports:
+        - 2221:22/tcp
+      image: chusiang/ansible-managed-node:ubuntu-14.04
+
+    server2:
+      ports:
+        - 2223:22/tcp
+      image: chusiang/ansible-managed-node:ubuntu-14.04
+
+    server3:
+      ports:
+        - 2222:22/tcp
+      image: chusiang/ansible-managed-node:ubuntu-14.04
+
 networks:
   default:
     driver: bridge
