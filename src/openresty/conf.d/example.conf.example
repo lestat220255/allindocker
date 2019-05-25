@@ -1,0 +1,44 @@
+server {
+    listen       80;
+    server_name  HOST_NAME;
+
+    access_log  /var/log/nginx/HOST_NAME.access.log  main;
+    error_log  /var/log/nginx/HOST_NAME.error.log  debug;
+
+    client_max_body_size 200M;
+
+    root   ABS_PATH;
+
+    location / {
+        default_type text/html;
+
+        #在不同的执行阶段通过lua处理请求
+        #set_by_lua*: 流程分支处理判断变量初始化
+        #rewrite_by_lua*: 转发、重定向、缓存等功能(例如特定请求代理到外网)
+        #access_by_lua*: IP 准入、接口权限等情况集中处理(例如配合 iptable 完成简单防火墙)
+        #content_by_lua*: 内容生成
+        #header_filter_by_lua*: 响应头部过滤处理(例如添加头部信息)
+        #body_filter_by_lua*: 响应体过滤处理(例如完成应答内容统一成大写)
+        #log_by_lua*: 会话完成后本地异步完成日志记录(日志可以记录在本地，还可以同步到其他机器)
+
+        try_files $uri $uri/ /index.php?$query_string;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $http_host;
+        proxy_set_header X-NginX-Proxy true;
+        index  index.html index.htm index.php;
+
+        #加载公共配置,包含安全相关的header,静态文件分类统一处理,文件压缩传输
+        include ../general/general.conf;
+    }
+
+
+    location ~ \.php$ {
+        #lua_need_request_body on;
+#        access_by_lua_file src/access_limit_by_specific_rules.lua;
+        fastcgi_pass   php73:9000;
+        fastcgi_index  index.php;
+        fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+        include        fastcgi_params;
+    }
+}
