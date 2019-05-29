@@ -51,6 +51,7 @@ RUN apk update && apk add --no-cache --virtual .build-deps \
         xml \
         zip \
         opcache \
+	bcmath \
 	&& docker-php-ext-install -j"$(getconf _NPROCESSORS_ONLN)" \
     iconv \
     #mcrypt \
