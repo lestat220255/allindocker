@@ -51,6 +51,7 @@ RUN apk update && apk add --no-cache --virtual .build-deps \
         xml \
         zip \
         opcache \
+        bcmath \
 	&& docker-php-ext-install -j"$(getconf _NPROCESSORS_ONLN)" \
     iconv \
     #mcrypt \
@@ -80,6 +81,12 @@ RUN mkdir -p /usr/local/share/composer \
 	#&& rm -f /tmp/composer-setup.* \
     # 配置composer中国全量镜像
     && composer config -g repo.packagist composer https://packagist.phpcomposer.com
+
+COPY librdkafka /tmp/librdkafka
+
+RUN cd /tmp/librdkafka/ && ./configure && make && make install
+
+RUN pecl install rdkafka
 
 # 工作目录,可与docker-compose.yml保持一致
 WORKDIR /data/www
