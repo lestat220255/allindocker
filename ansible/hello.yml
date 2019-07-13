@@ -1,0 +1,48 @@
+---
+
+- name: Ubuntu Initializing
+  hosts:
+    - server1
+    - server2
+    - server3
+  tasks:
+    # - name: touch a file which named `heheda`, and set the permissions
+    #   file:
+    #     path: /home/docker/heheda.txt
+    #     state: touch
+    #     mode: "u=rw,g=r,o=r"
+    # - name: write to file
+    #   shell: echo "aiyowa" >> /home/docker/heheda.txt
+    # - name: Install the package "tree"
+    #   apt:
+    #     name: tree
+    #     state: present
+    #   become: true
+    #   become_method: sudo
+    # - name: copy ssh public key to remote node
+    #   copy:
+    #     src: keys/zmartec
+    #     dest: /home/docker/.ssh/authorized_keys
+    #     owner: docker
+    #     group: docker
+    #     mode: 0644
+    # Debian, Ubuntu.
+   - name: install apt packages
+     apt: name=vim state=present
+     when: ansible_pkg_mgr == "apt"
+
+   # CentOS.
+   - name: install yum packages
+     yum: name=vim-minimal state=present
+     when: ansible_pkg_mgr == "yum"
+    # - name: checking vimrc
+    #   stat:
+    #     path: /home/docker/.vimrc
+    #   register: stat_vimrc
+
+    # - name: touch vimrc
+    #   file:
+    #     path: /home/docker/.vimrc
+    #     state: touch
+    #     mode: "u=rw,g=r,o=r"
+    #   when: stat_vimrc.stat.exists == false

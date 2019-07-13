@@ -181,6 +181,8 @@ services:
             - ${OPENRESTY_CERTS_DIR}:/etc/letsencrypt/:ro
             #日志目录
             - ${OPENRESTY_LOGS_DIR}:/var/log/nginx/:rw
+            #可用于简单身份认证的auth_basic密码文件(默认:password)
+            - ${OPENRESTY_PASSWD}:/etc/openresty/.htpasswd:ro
         restart: always
         container_name: openresty
     #mysql管理
@@ -206,64 +208,6 @@ services:
         ports:
             - "${PRA_PORT}:80"
         container_name: phpredisadmin
-    #文档系统
-#    showdoc:
-#        build: ./src/showdoc
-#        volumes:
-#        #项目文件
-#            - ./showdoc/:/var/www/html/:rw
-#        ports:
-#            - "${SHOWDOC_PORT}:80"
-#        container_name: showdoc
-#    #下载工具
-#    you-get:
-#        build: ./src/you-get
-#        container_name: you-get
-#        stdin_open: true
-#        tty: true
-#        #下载目录
-#        volumes:
-#            - "${DOWNLOAD_DIR}:/data/download:rw"
-#    #代理ip池
-#    proxy_pool:
-#        volumes:
-#            - ./src/proxy_pool:/usr/src/app
-#        ports:
-#            - "${PP_PORT}:5010"
-#        links:
-#            - redis
-#        build: ./src/proxy_pool/Docker
-#        container_name: proxy_pool
-#    #下载器
-#    h5ai:
-#        image: bixidock/h5ai
-#        volumes:
-#            - ${DOWNLOAD_DIR}:/var/www:rw
-#        restart: always
-#        container_name: h5ai
-#    aria2:
-#        image: wahyd4/aria2-ui:h5ai
-#        ports:
-#            - "${ARIA2_HTTP_PORT}:80"
-#            - "${ARIA2_HTTPS_PORT}:443"
-#            - "${ARIA2_RPC_PORT}:6800"
-#        volumes:
-#            - ${DOWNLOAD_DIR}:/var/www:rw
-#        # volumes:
-#        #   - /some_folder:/root/conf/key
-#        #   - ~/test/aria2.conf:/root/conf/aria2.conf
-#        environment:
-#            - DOMAIN=${ARIA2_DOMAIN}
-#            - PLEX_CLAIM=${ARIA2_PLEX_CLAIM}
-#            # - SSL=true
-#            # - RPC_SECRET=Hello
-#            - ARIA2_USER=${ARIA2_USER}
-#            - ARIA2_PWD=${ARIA2_PWD}
-#            - ENABLE_AUTH=${ARIA2_ENABLE_AUTH}
-#        links:
-#            - h5ai:file-manager
-#        restart: always
-#        container_name: aria2
     es:
         image: docker.elastic.co/elasticsearch/elasticsearch-oss:6.7.0 
         environment:
@@ -313,6 +257,39 @@ services:
         container_name: kibana
         depends_on:
             - es
+    metricbeat:
+        image: docker.elastic.co/beats/metricbeat:6.7.0
+        depends_on:
+            - logstash
+        volumes:
+            - /etc/localtime:/etc/localtime:ro
+            - ./src/metricbeat/metricbeat.yml:/usr/share/metricbeat/metricbeat.yml:ro
+        container_name: metricbeat
+    jupyter:
+        image: chusiang/ansible-jupyter
+        ports:
+            - "${JUPYTER_PORT}:8888"
+        tty: true
+        volumes:
+            - /etc/localtime:/etc/localtime:ro
+            - ${JUPYTER_CONF}:/home/:rw
+            - ${JUPYTER_CONF}:/etc/ansible/:rw
+        container_name: jupyter
+
+    server1:
+      ports:
+        - 2221:22/tcp
+      image: chusiang/ansible-managed-node:ubuntu-14.04
+
+    server2:
+      ports:
+        - 2223:22/tcp
+      image: chusiang/ansible-managed-node:ubuntu-14.04
+
+    server3:
+      ports:
+        - 2222:22/tcp
+      image: chusiang/ansible-managed-node:ubuntu-14.04
 
 networks:
   default:

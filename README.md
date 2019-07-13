@@ -5,40 +5,47 @@
 ---
 
 ## 简介
-一个胶水项目(openresty+php+redis+mysql),用来快速搭建php的开发环境,各个容器版本,默认端口映射关系可在`docker-compose.yml`文件里查看,通过`.env`文件配置环境变量
+一个快速搭建开发环境的脚手架(openresty+php+redis+mysql+elk日志管理系统),用来快速搭建php的开发环境,各个容器版本,默认端口映射关系可在`docker-compose.yml`文件里查看,通过`.env`文件配置环境变量
 
 ---
 
 ## 目录结构
 ```bash
+├── ansible #ansible配置目录
+│   ├── ansible.cfg
+│   ├── ansible_on_jupyter.ipynb
+│   ├── hello.yml
+│   ├── hosts #自行创建
+│   └── keys #ansible ssh证书目录
 ├── certificates #证书
 ├── docker-compose.yml #配置文件
-├── downloads
 ├── LICENSE
 ├── logs #日志
+│   ├── mysql
 │   ├── openresty
 │   └── php72
+│   └── php73
 ├── lua-scripts #自定义lua脚本目录(openresty配置文件可直接读取)
 │   ├── access_limit_by_specific_rules.lua
 │   ├── heartbeat.lua
 │   └── redis.lua
 ├── README.md
 ├── redis
-│   └── dump.rdb
 ├── redis-slave
-├── showdoc
 ├── src #docker容器目录(包含[Dockerfile/配置文件])
+│   ├── es
+│   ├── fb
+│   ├── kibana
+│   ├── logstash
 │   ├── openresty
 │   ├── php55
 │   ├── php56
 │   ├── php70
 │   ├── php71
 │   ├── php72
+│   ├── php73
 │   ├── phpRedisAdmin
-│   ├── proxy_pool
 │   ├── redis
-│   ├── showdoc
-│   └── you-get
 ├── tools
 │   ├── mysql_backup_from_docker.sh #mysql备份脚本(sudo chmod +x ./mysql_backup_from_docker.sh)
 │   ├── mysql_restore_to_docker.sh #mysql还原脚本(sudo chmod +x ./mysql_restore_to_docker.sh)
@@ -66,14 +73,7 @@ sudo docker-compose up -d
 ---
 
 ## 默认端口说明
-openresty: `80`:`80`,`443`:`443`  
-mysql57: `9006`:`3306`  
-mysql57-slave: `9007`:`3306`  
-redis: `6379`:`6379`  
-phpmyadmin: `9906`:`80`  
-phpredisadmin: `9379`:`80`  
-showdoc: `9015`:`80`  
-aria2: `9080`:`80`,`9443`:`443`,`6800`:`6800`  
+详见`.env`
 
 ---
 
@@ -145,8 +145,8 @@ dns resolver默认为`127.0.0.11`
 ---
 
 ## 其他说明
-- php各版本的Dockerfile内包含的主要是国内镜像(ali和daocloud),如果在国外云服务器上部署建议修改这些镜像为默认
-
+- php各版本的Dockerfile内包含的主要是国内镜像(ali和daocloud),如果在国外云服务器上部署建议修改这些镜像为默认  
+- 如果elasticsearch启动报错类似:`[1]: max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]`,则需要设置`sudo sysctl -w vm.max_map_count=262144`  
 
 ---
 

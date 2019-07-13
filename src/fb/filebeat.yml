@@ -10,8 +10,3 @@ processors:
 output.logstash:
   hosts: ["logstash:5044"]
 
-filebeat.inputs:
-  # 采集系统日志
-    - type: log
-      paths: 
-        - /var/log/nginx/*.log
