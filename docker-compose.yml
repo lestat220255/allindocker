@@ -257,39 +257,6 @@ services:
         container_name: kibana
         depends_on:
             - es
-    metricbeat:
-        image: docker.elastic.co/beats/metricbeat:6.7.0
-        depends_on:
-            - logstash
-        volumes:
-            - /etc/localtime:/etc/localtime:ro
-            - ./src/metricbeat/metricbeat.yml:/usr/share/metricbeat/metricbeat.yml:ro
-        container_name: metricbeat
-    jupyter:
-        image: chusiang/ansible-jupyter
-        ports:
-            - "${JUPYTER_PORT}:8888"
-        tty: true
-        volumes:
-            - /etc/localtime:/etc/localtime:ro
-            - ${JUPYTER_CONF}:/home/:rw
-            - ${JUPYTER_CONF}:/etc/ansible/:rw
-        container_name: jupyter
-
-    server1:
-      ports:
-        - 2221:22/tcp
-      image: chusiang/ansible-managed-node:ubuntu-14.04
-
-    server2:
-      ports:
-        - 2223:22/tcp
-      image: chusiang/ansible-managed-node:ubuntu-14.04
-
-    server3:
-      ports:
-        - 2222:22/tcp
-      image: chusiang/ansible-managed-node:ubuntu-14.04
 
 networks:
   default:
